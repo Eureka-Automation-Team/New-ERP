@@ -1,0 +1,10 @@
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\bin\Debug\netstandard2.0\Eureka.DNC.deps.json
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\bin\Debug\netstandard2.0\Eureka.DNC.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\bin\Debug\netstandard2.0\Eureka.DNC.pdb
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\bin\Debug\netstandard2.0\MxFwlib32.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.AssemblyInfoInputs.cache
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.AssemblyInfo.cs
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.csproj.CopyComplete
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.pdb
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.csprojAssemblyReference.cache

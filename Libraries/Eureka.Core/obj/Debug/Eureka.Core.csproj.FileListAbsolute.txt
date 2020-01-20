@@ -1,0 +1,11 @@
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\Eureka.Core.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\Eureka.Core.pdb
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\obj\Debug\Eureka.Core.csproj.CopyComplete
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\obj\Debug\Eureka.Core.dll
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\obj\Debug\Eureka.Core.pdb
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Core\obj\Debug\Eureka.Core.csprojAssemblyReference.cache

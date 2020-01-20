@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2E85CBE-905D-4F1F-AB09-D2C0888A37E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Eureka.CNC</RootNamespace>
+    <AssemblyName>Eureka.CNC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FocasInterface">
+      <HintPath>..\..\..\..\FocasTester\FocasInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Presentations\ConnectCncPresenter.cs" />
+    <Compile Include="Presentations\JobEntityPresenter.cs" />
+    <Compile Include="Presentations\JobListPresenter.cs" />
+    <Compile Include="Presentations\LoginPresenter.cs" />
+    <Compile Include="Presentations\MachineListPresenter.cs" />
+    <Compile Include="Presentations\MainPresenter.cs" />
+    <Compile Include="Presentations\SingleCalendarPresenter.cs" />
+    <Compile Include="Presentations\TaskManagementPresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\JobBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\JobBoxControl.Designer.cs">
+      <DependentUpon>JobBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RadiusButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ConnectCNCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConnectCNCForm.Designer.cs">
+      <DependentUpon>ConnectCNCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ISingleCalendarView.cs" />
+    <Compile Include="Views\Controls\SingleCalendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\SingleCalendarForm.Designer.cs">
+      <DependentUpon>SingleCalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DashboardsForm.Designer.cs">
+      <DependentUpon>DashboardsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IConnectCNCView.cs" />
+    <Compile Include="Views\IJobEntityView.cs" />
+    <Compile Include="Views\IJobListView.cs" />
+    <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IMachineListView.cs" />
+    <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\ITaskManagementView.cs" />
+    <Compile Include="Views\ITaskMonitoringView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\JobEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobEntityForm.Designer.cs">
+      <DependentUpon>JobEntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobListForm.Designer.cs">
+      <DependentUpon>JobListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MachineListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MachineListForm.Designer.cs">
+      <DependentUpon>MachineListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TaskManagementForm.Designer.cs">
+      <DependentUpon>TaskManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskMonitoringUc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TaskMonitoringUc.Designer.cs">
+      <DependentUpon>TaskMonitoringUc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\JobBoxControl.resx">
+      <DependentUpon>JobBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConnectCNCForm.resx">
+      <DependentUpon>ConnectCNCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\SingleCalendarForm.resx">
+      <DependentUpon>SingleCalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DashboardsForm.resx">
+      <DependentUpon>DashboardsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobEntityForm.resx">
+      <DependentUpon>JobEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobListForm.resx">
+      <DependentUpon>JobListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MachineListForm.resx">
+      <DependentUpon>MachineListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaskManagementForm.resx">
+      <DependentUpon>TaskManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaskMonitoringUc.resx">
+      <DependentUpon>TaskMonitoringUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Eureka.Core.Domain.CNC.ProgramListDet.datasource" />
+    <None Include="Properties\DataSources\Eureka.Core.Domain.Manufacturing.JobEntityModel.datasource" />
+    <None Include="Properties\DataSources\Eureka.Core.Domain.Manufacturing.JobTaskModel.datasource" />
+    <None Include="Properties\DataSources\Eureka.Core.Domain.Manufacturing.MachineModel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Eureka.Core\Eureka.Core.csproj">
+      <Project>{91f0e319-fe15-402a-9ed1-093987d5381e}</Project>
+      <Name>Eureka.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Eureka.Data\Eureka.Data.csproj">
+      <Project>{5277007a-d6fd-4444-a2ac-2be4fcfc53df}</Project>
+      <Name>Eureka.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Eureka.DNC\Eureka.DNC.csproj">
+      <Project>{8eb76c5d-ea4b-4825-9b03-d8ce7c96b220}</Project>
+      <Name>Eureka.DNC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Eureka.Services\Eureka.Services.csproj">
+      <Project>{c0b5de04-3653-4bf0-953f-9a6c8137a0b4}</Project>
+      <Name>Eureka.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\FocasTester\Fwlib32.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

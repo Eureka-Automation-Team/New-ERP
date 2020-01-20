@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5277007A-D6FD-4444-A2AC-2BE4FCFC53DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eureka.Data</RootNamespace>
+    <AssemblyName>Eureka.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdoNet\Commons\GLDailyRateDao.cs" />
+    <Compile Include="AdoNet\Commons\CurrencyDao.cs" />
+    <Compile Include="AdoNet\Commons\ICurrencyDao.cs" />
+    <Compile Include="AdoNet\Commons\ITaxCodeDao.cs" />
+    <Compile Include="AdoNet\Commons\TaxCodeDao.cs" />
+    <Compile Include="AdoNet\DaoFactory.cs" />
+    <Compile Include="AdoNet\Db.cs" />
+    <Compile Include="AdoNet\Commons\DocSeqDao.cs" />
+    <Compile Include="AdoNet\Inventory\IItemMasterDao.cs" />
+    <Compile Include="AdoNet\Inventory\IItemOnhandDao.cs" />
+    <Compile Include="AdoNet\Inventory\IItemTransactionDao.cs" />
+    <Compile Include="AdoNet\Inventory\IShelfLocationDao.cs" />
+    <Compile Include="AdoNet\Inventory\ItemMasterDao.cs" />
+    <Compile Include="AdoNet\Inventory\ItemOnhandDao.cs" />
+    <Compile Include="AdoNet\Inventory\ItemTransactionDao.cs" />
+    <Compile Include="AdoNet\Inventory\ShelfLocationDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\IJobEntityDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\IJobTaskDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\IMachineDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\JobEntityDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\JobTaskDao.cs" />
+    <Compile Include="AdoNet\Manufacturing\MachineDao.cs" />
+    <Compile Include="AdoNet\Payables\ITermDao.cs" />
+    <Compile Include="AdoNet\Payables\IVendorDao.cs" />
+    <Compile Include="AdoNet\Payables\IVendorSiteDao.cs" />
+    <Compile Include="AdoNet\Payables\TermDao.cs" />
+    <Compile Include="AdoNet\Payables\VendorDao.cs" />
+    <Compile Include="AdoNet\Payables\VendorSiteDao.cs" />
+    <Compile Include="AdoNet\Projects\BomNumberDao.cs" />
+    <Compile Include="AdoNet\Projects\CostGroupDao.cs" />
+    <Compile Include="AdoNet\Projects\CostsBomsRelatedDao.cs" />
+    <Compile Include="AdoNet\Projects\IBomNumberDao.cs" />
+    <Compile Include="AdoNet\Projects\ICostGroupDao.cs" />
+    <Compile Include="AdoNet\Projects\ICostsBomsRelatedDao.cs" />
+    <Compile Include="AdoNet\Projects\IProjectBomDao.cs" />
+    <Compile Include="AdoNet\Projects\IProjectCostDao.cs" />
+    <Compile Include="AdoNet\Projects\IProjectDao.cs" />
+    <Compile Include="AdoNet\Projects\ProjectBomDao.cs" />
+    <Compile Include="AdoNet\Projects\ProjectCostDao.cs" />
+    <Compile Include="AdoNet\Projects\ProjectDao.cs" />
+    <Compile Include="AdoNet\Purchasing\ApproveListHeadDao.cs" />
+    <Compile Include="AdoNet\Purchasing\ApproveListLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IApproveListHeadDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IApproveListLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOHeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOLineLocationDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOLoggingDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOReceiptHaeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IPOReceiptLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IRequisitionHeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\IRequisitionLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POHeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POLineLocationDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POLoggingDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POReceiptHaeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\POReceiptLineDao.cs" />
+    <Compile Include="AdoNet\Purchasing\RequisitionHeaderDao.cs" />
+    <Compile Include="AdoNet\Purchasing\RequisitionLineDao.cs" />
+    <Compile Include="AdoNet\Security\MenuDao.cs" />
+    <Compile Include="AdoNet\Security\RoleDao.cs" />
+    <Compile Include="AdoNet\Security\UserDao.cs" />
+    <Compile Include="Extenders.cs" />
+    <Compile Include="Factories.cs" />
+    <Compile Include="AdoNet\Commons\IDocSeqDao.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="AdoNet\Security\IMenuDao.cs" />
+    <Compile Include="AdoNet\Security\IRoleDao.cs" />
+    <Compile Include="AdoNet\Security\IUserDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.POReportModel.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eureka.Core\Eureka.Core.csproj">
+      <Project>{91f0e319-fe15-402a-9ed1-093987d5381e}</Project>
+      <Name>Eureka.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
