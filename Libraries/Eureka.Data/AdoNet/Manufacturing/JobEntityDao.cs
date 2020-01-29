@@ -14,33 +14,33 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobEntityModel> GetAll()
         {
-            string sql = @"SELECT jb.job_entity_id, jb.organization_id, jb.last_update_date
-                            , jb.last_updated_by, jb.creation_date, jb.created_by
-                            , jb.job_entity_name, jb.job_entiry_date, jb.entity_type
-                            , jb.description, jb.primary_item_id, jb.primary_item_code
-                            , jb.primary_item_model, jb.segment1, jb.segment2
-                            , jb.segment3, jb.segment4, jb.segment5
-                            , jb.open_status, jb.cancel_flag, jb.primary_quantity
-                            , jb.process_flag, jb.completed_flag, jb.po_header_id, jb.po_line_id
-                          FROM mfg_job_entities jb
-                          ORDER BY jb.job_entiry_date ASC";
+            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+                            , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
+                            , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
+                            , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
+                            , jb.PrimaryItemModel, jb.Segment1, jb.Segment2
+                            , jb.Segment3, jb.Segment4, jb.Segment5
+                            , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
+                            , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
+                          FROM JobEntities jb
+                          ORDER BY jb.JobEntiryDate ASC";
 
             return db.Read(sql, Make).ToList();
         }
 
         public List<JobEntityModel> GetByDate(DateTime startDate, DateTime endDate)
         {
-            string sql = @"SELECT jb.job_entity_id, jb.organization_id, jb.last_update_date
-                            , jb.last_updated_by, jb.creation_date, jb.created_by
-                            , jb.job_entity_name, jb.job_entiry_date, jb.entity_type
-                            , jb.description, jb.primary_item_id, jb.primary_item_code
-                            , jb.primary_item_model, jb.segment1, jb.segment2
-                            , jb.segment3, jb.segment4, jb.segment5
-                            , jb.open_status, jb.cancel_flag, jb.primary_quantity
-                            , jb.process_flag, jb.completed_flag, jb.po_header_id, jb.po_line_id
-                          FROM mfg_job_entities jb
-                            WHERE cast(jb.job_entiry_date as date) BETWEEN cast(@StartDate as date) AND cast(@EndDate as date)
-                            ORDER BY jb.job_entiry_date ASC";
+            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+                            , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
+                            , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
+                            , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
+                            , jb.PrimaryItemModel, jb.Segment1, jb.Segment2
+                            , jb.Segment3, jb.Segment4, jb.Segment5
+                            , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
+                            , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
+                          FROM JobEntities jb
+                            WHERE cast(jb.JobEntiryDate as date) BETWEEN cast(@StartDate as date) AND cast(@EndDate as date)
+                            ORDER BY jb.JobEntiryDate ASC";
 
             object[] parms = { "@StartDate", startDate, "@EndDate", endDate };
             return db.Read(sql, Make, parms).ToList();
@@ -48,108 +48,108 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public JobEntityModel GetByID(int id)
         {
-            string sql = @"SELECT jb.job_entity_id, jb.organization_id, jb.last_update_date
-                            , jb.last_updated_by, jb.creation_date, jb.created_by
-                            , jb.job_entity_name, jb.job_entiry_date, jb.entity_type
-                            , jb.description, jb.primary_item_id, jb.primary_item_code
-                            , jb.primary_item_model, jb.segment1, jb.segment2
-                            , jb.segment3, jb.segment4, jb.segment5
-                            , jb.open_status, jb.cancel_flag, jb.primary_quantity
-                            , jb.process_flag, jb.completed_flag, jb.po_header_id, jb.po_line_id
-                          FROM mfg_job_entities jb
-                            WHERE jb.job_entity_id = @job_entity_id";
+            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+                            , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
+                            , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
+                            , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
+                            , jb.PrimaryItemModel, jb.Segment1, jb.Segment2
+                            , jb.Segment3, jb.Segment4, jb.Segment5
+                            , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
+                            , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
+                          FROM JobEntities jb
+                            WHERE jb.JobEntityId = @JobEntityId";
 
-            object[] parms = { "@job_entity_id", id};
+            object[] parms = { "@JobEntityId", id};
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public JobEntityModel GetByPOLineID(int poLineId)
         {
-            string sql = @"SELECT jb.job_entity_id, jb.organization_id, jb.last_update_date
-                            , jb.last_updated_by, jb.creation_date, jb.created_by
-                            , jb.job_entity_name, jb.job_entiry_date, jb.entity_type
-                            , jb.description, jb.primary_item_id, jb.primary_item_code
-                            , jb.primary_item_model, jb.segment1, jb.segment2
-                            , jb.segment3, jb.segment4, jb.segment5
-                            , jb.open_status, jb.cancel_flag, jb.primary_quantity
-                            , jb.process_flag, jb.completed_flag, jb.po_header_id, jb.po_line_id
-                          FROM mfg_job_entities jb
-                            WHERE jb.job_entity_id = @job_entity_id";
+            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+                            , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
+                            , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
+                            , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
+                            , jb.PrimaryItemModel, jb.Segment1, jb.Segment2
+                            , jb.Segment3, jb.Segment4, jb.Segment5
+                            , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
+                            , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
+                          FROM JobEntities jb
+                            WHERE jb.JobEntityId = @JobEntityId";
 
-            object[] parms = { "@po_line_id", poLineId };
+            object[] parms = { "@PoLineId", poLineId };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public JobEntityModel GetByJobName(string jobName)
         {
-            string sql = @"SELECT jb.job_entity_id, jb.organization_id, jb.last_update_date
-                            , jb.last_updated_by, jb.creation_date, jb.created_by
-                            , jb.job_entity_name, jb.job_entiry_date, jb.entity_type
-                            , jb.description, jb.primary_item_id, jb.primary_item_code
-                            , jb.primary_item_model, jb.segment1, jb.segment2
-                            , jb.segment3, jb.segment4, jb.segment5
-                            , jb.open_status, jb.cancel_flag, jb.primary_quantity
-                            , jb.process_flag, jb.completed_flag, jb.po_header_id, jb.po_line_id
-                          FROM mfg_job_entities jb
-                            WHERE jb.job_entity_name = @job_entity_name";
+            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+                            , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
+                            , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
+                            , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
+                            , jb.PrimaryItemModel, jb.Segment1, jb.Segment2
+                            , jb.Segment3, jb.Segment4, jb.Segment5
+                            , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
+                            , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
+                          FROM JobEntities jb
+                            WHERE jb.JobEntityName = @JobEntityName";
 
-            object[] parms = { "@job_entity_name", jobName };
+            object[] parms = { "@JobEntityName", jobName };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public int Insert(JobEntityModel model)
         {
             string sql =
-                @"INSERT INTO mfg_job_entities
-                           (organization_id
-                           ,last_update_date
-                           ,last_updated_by
-                           ,creation_date
-                           ,created_by
-                           ,job_entity_name
-                           ,job_entiry_date
-                           ,entity_type
-                           ,description
-                           ,primary_item_id
-                           ,primary_item_code
-                           ,primary_item_model
-                           ,primary_quantity
-                           ,segment1
+                @"INSERT INTO JobEntities
+                           (OrganizationId
+                           ,LastUpdateDate
+                           ,LastUpdatedBy
+                           ,CreationDate
+                           ,CreatedBy
+                           ,JobEntityName
+                           ,JobEntiryDate
+                           ,EntityType
+                           ,Description
+                           ,PrimaryItemId
+                           ,PrimaryItemCode
+                           ,PrimaryItemModel
+                           ,PrimaryQuantity
+                           ,Segment1
                            ,segment2
                            ,segment3
                            ,segment4
                            ,segment5
-                           ,open_status
-                           ,cancel_flag
-                           ,process_flag
-                           ,completed_flag
-                           ,po_header_id
-                           ,po_line_id)
+                           ,OpenStatus
+                           ,CancelFlag
+                           ,ProcessFlag
+                           ,CompletedFlag
+                           ,PoHeaderId
+                           ,PoLineId)
                      VALUES
-                           (@organization_id
-                           ,@last_update_date
-                           ,@last_updated_by
-                           ,@creation_date
-                           ,@created_by
-                           ,@job_entity_name
-                           ,@job_entiry_date
-                           ,@entity_type
-                           ,@description
-                           ,@primary_item_id
-                           ,@primary_item_code
-                           ,@primary_item_model
-                           ,@primary_quantity
-                           ,@segment1
+                           (@OrganizationId
+                           ,@LastUpdateDate
+                           ,@LastUpdatedBy
+                           ,@CreationDate
+                           ,@CreatedBy
+                           ,@JobEntityName
+                           ,@JobEntiryDate
+                           ,@EntityType
+                           ,@Description
+                           ,@PrimaryItemId
+                           ,@PrimaryItemCode
+                           ,@PrimaryItemModel
+                           ,@PrimaryQuantity
+                           ,@Segment1
                            ,@segment2
                            ,@segment3
                            ,@segment4
                            ,@segment5
-                           ,@open_status
-                           ,@cancel_flag
-                           ,@process_flag
-                           ,@completed_flag
-                           ,@po_header_id
-                           ,@po_line_id)";
+                           ,@OpenStatus
+                           ,@CancelFlag
+                           ,@ProcessFlag
+                           ,@CompletedFlag
+                           ,@PoHeaderId
+                           ,@PoLineId)";
 
             return db.Insert(sql, Take(model));
         }
@@ -157,41 +157,41 @@ namespace Eureka.Data.AdoNet.Manufacturing
         public void Update(JobEntityModel model)
         {
             string sql =
-            @"UPDATE mfg_job_entities
-                   SET organization_id = @organization_id
-                      ,last_update_date = @last_update_date
-                      ,last_updated_by = @last_updated_by
-                      ,creation_date = @creation_date
-                      ,created_by = @created_by
-                      ,job_entity_name = @job_entity_name
-                      ,job_entiry_date = @job_entiry_date
-                      ,entity_type = @entity_type
-                      ,description = @description
-                      ,primary_item_id = @primary_item_id
-                      ,primary_item_code = @primary_item_code
-                      ,primary_item_model = @primary_item_model
-                      ,primary_quantity = @primary_quantity
-                      ,segment1 = @segment1
+            @"UPDATE JobEntities
+                   SET OrganizationId = @OrganizationId
+                      ,LastUpdateDate = @LastUpdateDate
+                      ,LastUpdatedBy = @LastUpdatedBy
+                      ,CreationDate = @CreationDate
+                      ,CreatedBy = @CreatedBy
+                      ,JobEntityName = @JobEntityName
+                      ,JobEntiryDate = @JobEntiryDate
+                      ,EntityType = @EntityType
+                      ,Description = @Description
+                      ,PrimaryItemId = @PrimaryItemId
+                      ,PrimaryItemCode = @PrimaryItemCode
+                      ,PrimaryItemModel = @PrimaryItemModel
+                      ,PrimaryQuantity = @PrimaryQuantity
+                      ,Segment1 = @Segment1
                       ,segment2 = @segment2
                       ,segment3 = @segment3
                       ,segment4 = @segment4
                       ,segment5 = @segment5
-                      ,open_status = @open_status
-                      ,cancel_flag = @cancel_flag
-                      ,process_flag = @process_flag
-                      ,completed_flag = @completed_flag
-                      ,po_header_id = @po_header_id
-                      ,po_line_id = @po_line_id
-                 WHERE job_entity_id = @job_entity_id";
+                      ,OpenStatus = @OpenStatus
+                      ,CancelFlag = @CancelFlag
+                      ,ProcessFlag = @ProcessFlag
+                      ,CompletedFlag = @CompletedFlag
+                      ,PoHeaderId = @PoHeaderId
+                      ,PoLineId = @PoLineId
+                 WHERE JobEntityId = @JobEntityId";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(JobEntityModel model)
         {
-            string sql = @"DELETE FROM mfg_job_entities WHERE job_entity_id = @job_entity_id";
+            string sql = @"DELETE FROM JobEntities WHERE JobEntityId = @JobEntityId";
 
-            object[] parms = { "@job_entity_id", model.JobEntityId };
+            object[] parms = { "@JobEntityId", model.JobEntityId };
             db.Update(sql, parms);
         }
 
@@ -199,10 +199,10 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobEntityModel> MakeWithStats = reader =>
         {
             var row = Make(reader);
-            //row.ItemCode = reader["segment1"].AsString();
+            //row.ItemCode = reader["Segment1"].AsString();
             //row.ManuID = reader["segment2"].AsString();
             //row.BrandMat = reader["segment3"].AsString();
-            //row.ItemDescription = reader["item_description"].AsString();
+            //row.ItemDescription = reader["item_Description"].AsString();
             return row;
         };
 
@@ -210,62 +210,62 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobEntityModel> Make = reader =>
              new JobEntityModel
              {
-                 JobEntityId = reader["job_entity_id"].AsInt(),
-                 OrganizationId = reader["organization_id"].AsInt(),
-                 LastUpdateDate = reader["last_update_date"].AsDateTime(),
-                 LastUpdatedBy = reader["last_updated_by"].AsInt(),
-                 CreationDate = reader["creation_date"].AsDateTime(),
-                 CreatedBy = reader["created_by"].AsInt(),
-                 JobEntityName = reader["job_entity_name"].AsString(),
-                 EntityType = reader["entity_type"].AsInt(),
-                 JobEntiryDate = reader["job_entiry_date"].AsDateTime(),
-                 Description = reader["description"].AsString(),
-                 PrimaryItemId = reader["primary_item_id"].AsInt(),
-                 PrimaryItemCode = reader["primary_item_code"].AsString(),
-                 PrimaryItemModel = reader["primary_item_model"].AsString(),
-                 PrimaryQuantity = reader["primary_quantity"].AsDouble(),
-                 Segment1 = reader["segment1"].AsString(),
+                 JobEntityId = reader["JobEntityId"].AsInt(),
+                 OrganizationId = reader["OrganizationId"].AsInt(),
+                 LastUpdateDate = reader["LastUpdateDate"].AsDateTime(),
+                 LastUpdatedBy = reader["LastUpdatedBy"].AsInt(),
+                 CreationDate = reader["CreationDate"].AsDateTime(),
+                 CreatedBy = reader["CreatedBy"].AsInt(),
+                 JobEntityName = reader["JobEntityName"].AsString(),
+                 EntityType = reader["EntityType"].AsInt(),
+                 JobEntiryDate = reader["JobEntiryDate"].AsDateTime(),
+                 Description = reader["Description"].AsString(),
+                 PrimaryItemId = reader["PrimaryItemId"].AsInt(),
+                 PrimaryItemCode = reader["PrimaryItemCode"].AsString(),
+                 PrimaryItemModel = reader["PrimaryItemModel"].AsString(),
+                 PrimaryQuantity = reader["PrimaryQuantity"].AsDouble(),
+                 Segment1 = reader["Segment1"].AsString(),
                  Segment2 = reader["segment2"].AsString(),
                  Segment3 = reader["segment3"].AsString(),
                  Segment4 = reader["segment4"].AsString(),
                  Segment5 = reader["segment5"].AsString(),
-                 OpenStatus = (reader["open_status"].AsString() == "Y") ? true : false,
-                 ProcessFlag = (reader["process_flag"].AsString() == "Y") ? true : false,
-                 CompletedFlag = (reader["completed_flag"].AsString() == "Y") ? true : false,
-                 CancelFlag = (reader["cancel_flag"].AsString() == "Y") ? true : false,
-                 PoHeaderId = reader["po_header_id"].AsInt(),
-                 PoLineId = reader["po_line_id"].AsInt()
+                 OpenStatus = reader["OpenStatus"].AsBool(),
+                 ProcessFlag = reader["ProcessFlag"].AsBool(),
+                 CompletedFlag = reader["CompletedFlag"].AsBool(),
+                 CancelFlag = reader["CancelFlag"].AsBool(),
+                 PoHeaderId = reader["PoHeaderId"].AsInt(),
+                 PoLineId = reader["PoLineId"].AsInt()
              };
 
         private object[] Take(JobEntityModel model)
         {
             return new object[]
             {
-                "@job_entity_id", model.JobEntityId,
-                "@organization_id", model.OrganizationId,
-                "@last_update_date", model.LastUpdateDate,
-                "@last_updated_by", model.LastUpdatedBy,
-                "@creation_date", model.CreationDate,
-                "@created_by", model.CreatedBy,
-                "@job_entity_name", model.JobEntityName,
-                "@job_entiry_date", model.JobEntiryDate,
-                "@entity_type", model.EntityType,
-                "@description", model.Description,
-                "@primary_item_id", model.PrimaryItemId,
-                "@primary_item_code", model.PrimaryItemCode,
-                "@primary_item_model", model.PrimaryItemModel,
-                "@primary_quantity", model.PrimaryQuantity,
-                "@segment1", model.Segment1,
+                "@JobEntityId", model.JobEntityId,
+                "@OrganizationId", model.OrganizationId,
+                "@LastUpdateDate", model.LastUpdateDate,
+                "@LastUpdatedBy", model.LastUpdatedBy,
+                "@CreationDate", model.CreationDate,
+                "@CreatedBy", model.CreatedBy,
+                "@JobEntityName", model.JobEntityName,
+                "@JobEntiryDate", model.JobEntiryDate,
+                "@EntityType", model.EntityType,
+                "@Description", model.Description,
+                "@PrimaryItemId", model.PrimaryItemId,
+                "@PrimaryItemCode", model.PrimaryItemCode,
+                "@PrimaryItemModel", model.PrimaryItemModel,
+                "@PrimaryQuantity", model.PrimaryQuantity,
+                "@Segment1", model.Segment1,
                 "@segment2", model.Segment2,
                 "@segment3", model.Segment3,
                 "@segment4", model.Segment4,
                 "@segment5", model.Segment5,
-                "@open_status", (model.OpenStatus) ? "Y" : "N",
-                "@process_flag", (model.ProcessFlag) ? "Y" : "N",
-                "@completed_flag", (model.CompletedFlag) ? "Y" : "N",
-                "@cancel_flag", (model.CancelFlag) ? "Y" : "N",
-                "@po_header_id", model.PoHeaderId,
-                "@po_line_id", model.PoLineId
+                "@OpenStatus", (model.OpenStatus) ? 1 : 0,
+                "@ProcessFlag", (model.ProcessFlag) ? 1 : 0,
+                "@CompletedFlag", (model.CompletedFlag) ? 1 : 0,
+                "@CancelFlag", (model.CancelFlag) ? 1 : 0,
+                "@PoHeaderId", model.PoHeaderId,
+                "@PoLineId", model.PoLineId
             };
         }
     }

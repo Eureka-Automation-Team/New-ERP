@@ -12,102 +12,102 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobTaskModel> GetPendingTask()
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE jt.release_flag = 0 AND jt.ready_flag = 1
-                            ORDER BY jt.task_seq ASC";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE jt.ReleaseFlag = 0 AND jt.ReadyFlag = 1
+                            ORDER BY jt.TaskSeq ASC";
 
             return db.Read(sql, MakeWithStats).ToList();
         }
 
         public List<JobTaskModel> GetInspectionTask()
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE jt.outbound_finish_flag = 1
-                                AND ISNULL(jt.qc_status, 'NONE') = 'NONE'
-                            ORDER BY jt.task_seq ASC";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE jt.OutboundFinishFlag = 1
+                                AND ISNULL(jt.QCStatus, 'NONE') = 'NONE'
+                            ORDER BY jt.TaskSeq ASC";
 
             return db.Read(sql, MakeWithStats).ToList();
         }
 
         public List<JobTaskModel> GetByJobID(int jobId)
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE jt.job_entity_id = @job_entity_id
-                            ORDER BY jt.task_seq ASC";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE jt.JobEntityId = @JobEntityId
+                            ORDER BY jt.TaskSeq ASC";
 
-            object[] parms = { "@job_entity_id", jobId };
+            object[] parms = { "@JobEntityId", jobId };
             return db.Read(sql, MakeWithStats, parms).ToList();
         }
 
         public List<JobTaskModel> GetByDateRange(DateTime startDate, DateTime endDate)
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE cast(jt.start_date as date) BETWEEN cast(@StartDate as date) AND cast(@EndDate as date)
-                            ORDER BY jt.task_seq ASC";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE cast(jt.StartDate as date) BETWEEN cast(@StartDate as date) AND cast(@EndDate as date)
+                            ORDER BY jt.TaskSeq ASC";
 
             object[] parms = { "@StartDate", startDate, "@EndDate", endDate };
             return db.Read(sql, Make, parms).ToList();
@@ -115,58 +115,58 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public JobTaskModel GetByID(int id)
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE jt.task_id = @task_id";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE jt.TaskId = @TaskId";
 
-            object[] parms = { "@task_id", id };
+            object[] parms = { "@TaskId", id };
             return db.Read(sql, MakeWithStats, parms).FirstOrDefault();
         }
 
         public JobTaskModel GetReadyToTransferNC()
         {
-            string sql = @"SELECT  jt.task_id, jt.task_seq, jt.job_entity_id
-                                , jt.task_number, jt.job_number, jt.description
-                                , jt.manager, jt.start_date, jt.end_date
-                                , jt.cancel_flag, jt.last_update_date, jt.last_updated_by
-                                , jt.creation_date, jt.created_by, jt.error_text
-                                , jt.ready_flag, jt.source, jt.shelf_number
-                                , jt.mc_process_flag, jt.mc_pick_flag, jt.mc_load_flag
-                                , jt.mc_finish_flag, jt.material_code, jt.table_number
-                                , jt.nc_file, jt.due_date, jt.machine_no
-                                , jt.priority, jt.mc_unload_flag, jt.mc_push_flag
-                                , jt.on_shelf_flag, jt.outbound_flag, jt.qc_status, jt.standard_time
-                                , jt.release_flag, jt.upload_ncfile_flag, jt.reserve_shelf_flag
-                                , jt.outbound_finish_flag, jt.Start_Flag, jt.machine_no_ready
-                                , jb.primary_item_code, jb.primary_item_model, jb.primary_quantity
-                                , jt.trf_ncfile_to_mc_flag, jt.transfer_message
-                            FROM  mfg_job_tasks jt
-                            LEFT JOIN mfg_job_entities jb ON(jt.job_entity_id = jb.job_entity_id)
-                            WHERE jt.mc_process_flag = 0
-							AND jt.machine_no_ready is not null
-							AND jt.ready_flag = 1
-							AND jt.release_flag = 1
-							AND jt.on_shelf_flag = 1
-							AND jt.upload_ncfile_flag = 1
-							AND jt.trf_ncfile_to_mc_flag = 0
-							AND jt.cancel_flag = 0
-							AND jt.transfer_message is null
-							ORDER BY jt.priority, jt.start_date ASC";
+            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            WHERE jt.McProcessFlag = 0
+							AND jt.MachineNoReady is not null
+							AND jt.ReadyFlag = 1
+							AND jt.ReleaseFlag = 1
+							AND jt.OnShelfFlag = 1
+							AND jt.UploadNcfileFlag = 1
+							AND jt.TransferNCFileToMachineFlag = 0
+							AND jt.CancelFlag = 0
+							AND jt.TransferMessage is null
+							ORDER BY jt.Priority, jt.StartDate ASC";
 
             return db.Read(sql, MakeWithStats).FirstOrDefault();
         }
@@ -174,90 +174,94 @@ namespace Eureka.Data.AdoNet.Manufacturing
         public int Insert(JobTaskModel model)
         {
             string sql =
-                @"INSERT INTO mfg_job_tasks
-                       (task_seq
-                       ,job_entity_id
-                       ,task_number
-                       ,job_number
-                       ,description
-                       ,manager
-                       ,start_date
-                       ,end_date
-                       ,cancel_flag
-                       ,last_update_date
-                       ,last_updated_by
-                       ,creation_date
-                       ,created_by
-                       ,error_text
-                       ,ready_flag
-                       ,source
-                       ,shelf_number
-                       ,mc_process_flag
-                       ,mc_pick_flag
-                       ,mc_load_flag
-                       ,mc_finish_flag
-                       ,material_code
-                       ,table_number
-                       ,nc_file
-                       ,due_date
-                       ,machine_no
-                       ,priority
-                       ,mc_unload_flag
-                       ,mc_push_flag
-                       ,on_shelf_flag
-                       ,outbound_flag
-                       ,qc_status
-                       ,standard_time
-                       ,release_flag
-                       ,upload_ncfile_flag
-                       ,reserve_shelf_flag
-                       ,machine_no_ready
-                       ,outbound_finish_flag
-                       ,Start_Flag
-                       ,trf_ncfile_to_mc_flag
-                       ,transfer_message)
+                @"INSERT INTO JobTasks
+                       (TaskSeq
+                       ,JobEntityId
+                       ,TaskNumber
+                       ,JobNumber
+                       ,Description
+                       ,Manager
+                       ,StartDate
+                       ,EndDate
+                       ,CancelFlag
+                       ,LastUpdateDate
+                       ,LastUpdatedBy
+                       ,CreationDate
+                       ,CreatedBy
+                       ,ErrorText
+                       ,ReadyFlag
+                       ,Source
+                       ,ShelfNumber
+                       ,McProcessFlag
+                       ,McPickFlag
+                       ,McLoadFlag
+                       ,McFinishFlag
+                       ,MaterialCode
+                       ,TableNumber
+                       ,NcFile
+                       ,DueDate
+                       ,MachineNo
+                       ,Priority
+                       ,McUnloadFlag
+                       ,McPushFlag
+                       ,OnShelfFlag
+                       ,OutboundFlag
+                       ,QCStatus
+                       ,StandardTime
+                       ,ReleaseFlag
+                       ,UploadNcfileFlag
+                       ,ReserveShelfFlag
+                       ,MachineNoReady
+                       ,OutboundFinishFlag
+                       ,StartFlag
+                       ,TransferNCFileToMachineFlag
+                       ,TransferMessage
+                       ,PrimaryQuantity
+                       ,MachineId)
                  VALUES
-                       (@task_seq
-                       ,@job_entity_id
-                       ,@task_number
-                       ,@job_number
-                       ,@description
-                       ,@manager
-                       ,@start_date
-                       ,@end_date
-                       ,@cancel_flag
-                       ,@last_update_date
-                       ,@last_updated_by
-                       ,@creation_date
-                       ,@created_by
-                       ,@error_text
-                       ,@ready_flag
-                       ,@source
-                       ,@shelf_number
-                       ,@mc_process_flag
-                       ,@mc_pick_flag
-                       ,@mc_load_flag
-                       ,@mc_finish_flag
-                       ,@material_code
-                       ,@table_number
-                       ,@nc_file
-                       ,@due_date
-                       ,@machine_no
-                       ,@priority
-                       ,@mc_unload_flag
-                       ,@mc_push_flag
-                       ,@on_shelf_flag
-                       ,@outbound_flag
-                       ,@qc_status
-                       ,@standard_time
-                       ,@release_flag
-                       ,@upload_ncfile_flag
-                       ,@reserve_shelf_flag
-                       ,@machine_no_ready
-                       ,@outbound_finish_flag
-                       ,@Start_Flag
-                       ,@trf_ncfile_to_mc_flag
-                       ,@transfer_message)";
+                       (@TaskSeq
+                       ,@JobEntityId
+                       ,@TaskNumber
+                       ,@JobNumber
+                       ,@Description
+                       ,@Manager
+                       ,@StartDate
+                       ,@EndDate
+                       ,@CancelFlag
+                       ,@LastUpdateDate
+                       ,@LastUpdatedBy
+                       ,@CreationDate
+                       ,@CreatedBy
+                       ,@ErrorText
+                       ,@ReadyFlag
+                       ,@Source
+                       ,@ShelfNumber
+                       ,@McProcessFlag
+                       ,@McPickFlag
+                       ,@McLoadFlag
+                       ,@McFinishFlag
+                       ,@MaterialCode
+                       ,@TableNumber
+                       ,@NcFile
+                       ,@DueDate
+                       ,@MachineNo
+                       ,@Priority
+                       ,@McUnloadFlag
+                       ,@McPushFlag
+                       ,@OnShelfFlag
+                       ,@OutboundFlag
+                       ,@QCStatus
+                       ,@StandardTime
+                       ,@ReleaseFlag
+                       ,@UploadNcfileFlag
+                       ,@ReserveShelfFlag
+                       ,@MachineNoReady
+                       ,@OutboundFinishFlag
+                       ,@StartFlag
+                       ,@TransferNCFileToMachineFlag
+                       ,@TransferMessage
+                       ,@PrimaryQuantity
+                       ,@MachineId)";
 
             return db.Insert(sql, Take(model));
         }
@@ -265,58 +269,59 @@ namespace Eureka.Data.AdoNet.Manufacturing
         public void Update(JobTaskModel model)
         {
             string sql =
-            @"UPDATE mfg_job_tasks
-                   SET task_seq = @task_seq
-                      ,job_entity_id = @job_entity_id
-                      ,task_number = @task_number
-                      ,job_number = @job_number
-                      ,description = @description
-                      ,manager = @manager
-                      ,start_date = @start_date
-                      ,end_date = @end_date
-                      ,cancel_flag = @cancel_flag
-                      ,last_update_date = @last_update_date
-                      ,last_updated_by = @last_updated_by
-                      ,creation_date = @creation_date
-                      ,created_by = @created_by
-                      ,error_text = @error_text
-                      ,ready_flag = @ready_flag
-                      ,release_flag = @release_flag
-                      ,upload_ncfile_flag = @upload_ncfile_flag
-                      ,source = @source
-                      ,shelf_number = @shelf_number
-                      ,reserve_shelf_flag = @reserve_shelf_flag
-                      ,mc_process_flag = @mc_process_flag
-                      ,mc_pick_flag = @mc_pick_flag
-                      ,mc_load_flag = @mc_load_flag
-                      ,mc_finish_flag = @mc_finish_flag
-                      ,material_code = @material_code
-                      ,table_number = @table_number
-                      ,nc_file = @nc_file
-                      ,due_date = @due_date
-                      ,machine_no = @machine_no
-                      ,priority = @priority
-                      ,mc_unload_flag = @mc_unload_flag
-                      ,mc_push_flag = @mc_push_flag
-                      ,on_shelf_flag = @on_shelf_flag
-                      ,outbound_flag = @outbound_flag
-                      ,qc_status = @qc_status
-                      ,standard_time = @standard_time
-                      ,machine_no_ready = @machine_no_ready
-                      ,outbound_finish_flag = @outbound_finish_flag
-                      ,Start_Flag = @Start_Flag
-                      ,trf_ncfile_to_mc_flag = @trf_ncfile_to_mc_flag
-                      ,transfer_message = @transfer_message
-                 WHERE task_id = @task_id";
+            @"UPDATE JobTasks
+                   SET TaskSeq = @TaskSeq
+                      ,JobEntityId = @JobEntityId
+                      ,TaskNumber = @TaskNumber
+                      ,JobNumber = @JobNumber
+                      ,Description = @Description
+                      ,Manager = @Manager
+                      ,StartDate = @StartDate
+                      ,EndDate = @EndDate
+                      ,CancelFlag = @CancelFlag
+                      ,LastUpdateDate = @LastUpdateDate
+                      ,LastUpdatedBy = @LastUpdatedBy
+                      ,CreationDate = @CreationDate
+                      ,CreatedBy = @CreatedBy
+                      ,ErrorText = @ErrorText
+                      ,ReadyFlag = @ReadyFlag
+                      ,ReleaseFlag = @ReleaseFlag
+                      ,UploadNcfileFlag = @UploadNcfileFlag
+                      ,Source = @Source
+                      ,ShelfNumber = @ShelfNumber
+                      ,ReserveShelfFlag = @ReserveShelfFlag
+                      ,McProcessFlag = @McProcessFlag
+                      ,McPickFlag = @McPickFlag
+                      ,McLoadFlag = @McLoadFlag
+                      ,McFinishFlag = @McFinishFlag
+                      ,MaterialCode = @MaterialCode
+                      ,TableNumber = @TableNumber
+                      ,NcFile = @NcFile
+                      ,DueDate = @DueDate
+                      ,MachineNo = @MachineNo
+                      ,Priority = @Priority
+                      ,McUnloadFlag = @McUnloadFlag
+                      ,McPushFlag = @McPushFlag
+                      ,OnShelfFlag = @OnShelfFlag
+                      ,OutboundFlag = @OutboundFlag
+                      ,QCStatus = @QCStatus
+                      ,StandardTime = @StandardTime
+                      ,MachineNoReady = @MachineNoReady
+                      ,OutboundFinishFlag = @OutboundFinishFlag
+                      ,StartFlag = @StartFlag
+                      ,TransferNCFileToMachineFlag = @TransferNCFileToMachineFlag
+                      ,TransferMessage = @TransferMessage
+                      ,MachineId = @MachineId
+                 WHERE TaskId = @TaskId";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(JobTaskModel model)
         {
-            string sql = @"DELETE FROM mfg_job_tasks WHERE task_id = @task_id";
+            string sql = @"DELETE FROM JobTasks WHERE TaskId = @TaskId";
 
-            object[] parms = { "@task_id", model.TaskId };
+            object[] parms = { "@TaskId", model.TaskId };
             db.Update(sql, parms);
         }
 
@@ -324,9 +329,9 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobTaskModel> MakeWithStats = reader =>
         {
             var row = Make(reader);
-            row.PrimaryItemCode = reader["primary_item_code"].AsString();
-            row.PrimaryItemModel = reader["primary_item_model"].AsString();
-            row.PrimaryQuantity = reader["primary_quantity"].AsDouble();
+            row.PrimaryItemCode = reader["PrimaryItemCode"].AsString();
+            row.PrimaryItemModel = reader["PrimaryItemModel"].AsString();
+            row.PrimaryQuantity = reader["PrimaryQuantity"].AsDouble();
             return row;
         };
 
@@ -334,98 +339,101 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobTaskModel> Make = reader =>
              new JobTaskModel
              {
-                 TaskId = reader["task_id"].AsInt(),
-                 TaskSeq = reader["task_seq"].AsInt(),
-                 JobId = reader["job_entity_id"].AsInt(),
-                 TaskNumber = reader["task_number"].AsString(),
-                 JobNumber = reader["job_number"].AsString(),
-                 Description = reader["description"].AsString(),
-                 Manager = reader["manager"].AsString(),
-                 //StartDate = reader["start_date"].AsDateTime(),
-                 StartDate = (reader["start_date"] != DBNull.Value) ? reader["start_date"].AsDateTime() : (DateTime?)null,
-                 //EndDate = reader["end_date"].AsDateTime(),
-                 //EndDate = (reader["end_date"] != DBNull.Value) ? reader["end_date"].AsDateTime() : (DateTime?)null,
-                 CancelFlag = (reader["cancel_flag"].AsInt() == 1) ? true : false,
-                 LastUpdateDate = reader["last_update_date"].AsDateTime(),
-                 LastUpdatedBy = reader["last_updated_by"].AsInt(),
-                 CreationDate = reader["creation_date"].AsDateTime(),
-                 CreatedBy = reader["created_by"].AsInt(),
-                 ErrorText = reader["error_text"].AsString(),
-                 ReadyFlag = (reader["ready_flag"].AsInt() == 1) ? true : false,
-                 ReleaseFlag = (reader["release_flag"].AsInt() == 1) ? true : false,
-                 UploadNcfileFlag = (reader["upload_ncfile_flag"].AsInt() == 1) ? true : false,
-                 Source = reader["source"].AsString(),
-                 ShelfNumber = reader["shelf_number"].AsString(),
-                 ReserveShelfFlag = (reader["reserve_shelf_flag"].AsInt() == 1) ? true : false,
-                 OnShelfFlag = (reader["on_shelf_flag"].AsInt() == 1) ? true : false,
-                 McProcessFlag = (reader["mc_process_flag"].AsInt() == 1) ? true : false,
-                 McPickFlag = (reader["mc_pick_flag"].AsInt() == 1) ? true : false,
-                 McLoadFlag = (reader["mc_load_flag"].AsInt() == 1) ? true : false,
-                 McFinishFlag = (reader["mc_finish_flag"].AsInt() == 1) ? true : false,
-                 McUnloadFlag = (reader["mc_unload_flag"].AsInt() == 1) ? true : false,
-                 McPushFlag = (reader["mc_push_flag"].AsInt() == 1) ? true : false,
-                 OutboundFlag = (reader["outbound_flag"].AsInt() == 1) ? true : false,
-                 OutboundFinishFlag = (reader["outbound_finish_flag"].AsInt() == 1) ? true : false,
-                 QCStatus = reader["qc_status"].AsString(),
-                 MaterialCode = reader["material_code"].AsString(),
-                 TableNumber = reader["table_number"].AsString(),
-                 NcFile = reader["nc_file"].AsString(),
-                 DueDate = (reader["due_date"] != DBNull.Value) ? reader["due_date"].AsDateTime() : (DateTime?)null,
-                 MachineNo = reader["machine_no"].AsString(),
-                 MachineNoReady = reader["machine_no_ready"].AsString(),
-                 Priority = reader["priority"].AsInt(),
-                 StandardTime = reader["standard_time"].AsDouble(),
-                 StartFlag = (reader["Start_Flag"].AsInt() == 1) ? true : false,
-                 TransferNCFileToMachineFlag = (reader["trf_ncfile_to_mc_flag"].AsInt() == 1) ? true : false,
-                 TransferMessage = reader["transfer_message"].AsString()
+                 TaskId = reader["TaskId"].AsInt(),
+                 TaskSeq = reader["TaskSeq"].AsInt(),
+                 JobId = reader["JobEntityId"].AsInt(),
+                 TaskNumber = reader["TaskNumber"].AsString(),
+                 JobNumber = reader["JobNumber"].AsString(),
+                 Description = reader["Description"].AsString(),
+                 Manager = reader["Manager"].AsString(),
+                 //StartDate = reader["StartDate"].AsDateTime(),
+                 StartDate = (reader["StartDate"] != DBNull.Value) ? reader["StartDate"].AsDateTime() : (DateTime?)null,
+                 //EndDate = reader["EndDate"].AsDateTime(),
+                 //EndDate = (reader["EndDate"] != DBNull.Value) ? reader["EndDate"].AsDateTime() : (DateTime?)null,
+                 CancelFlag = (reader["CancelFlag"].AsInt() == 1) ? true : false,
+                 LastUpdateDate = reader["LastUpdateDate"].AsDateTime(),
+                 LastUpdatedBy = reader["LastUpdatedBy"].AsInt(),
+                 CreationDate = reader["CreationDate"].AsDateTime(),
+                 CreatedBy = reader["CreatedBy"].AsInt(),
+                 ErrorText = reader["ErrorText"].AsString(),
+                 ReadyFlag = reader["ReadyFlag"].AsBool(),
+                 ReleaseFlag = reader["ReleaseFlag"].AsBool(),
+                 UploadNcfileFlag = reader["UploadNcfileFlag"].AsBool(),
+                 Source = reader["Source"].AsString(),
+                 ShelfNumber = reader["ShelfNumber"].AsString(),
+                 ReserveShelfFlag = reader["ReserveShelfFlag"].AsBool(),
+                 OnShelfFlag = reader["OnShelfFlag"].AsBool(),
+                 McProcessFlag = reader["McProcessFlag"].AsBool(),
+                 McPickFlag = reader["McPickFlag"].AsBool(),
+                 McLoadFlag = reader["McLoadFlag"].AsBool(),
+                 McFinishFlag = reader["McFinishFlag"].AsBool(),
+                 McUnloadFlag = reader["McUnloadFlag"].AsBool(),
+                 McPushFlag = reader["McPushFlag"].AsBool(),
+                 OutboundFlag = reader["OutboundFlag"].AsBool(),
+                 OutboundFinishFlag = reader["OutboundFinishFlag"].AsBool(),
+                 QCStatus = reader["QCStatus"].AsString(),
+                 MaterialCode = reader["MaterialCode"].AsString(),
+                 TableNumber = reader["TableNumber"].AsString(),
+                 NcFile = reader["NcFile"].AsString(),
+                 DueDate = (reader["DueDate"] != DBNull.Value) ? reader["DueDate"].AsDateTime() : (DateTime?)null,
+                 MachineNo = reader["MachineNo"].AsString(),
+                 MachineNoReady = reader["MachineNoReady"].AsString(),
+                 Priority = reader["Priority"].AsInt(),
+                 StandardTime = reader["StandardTime"].AsDouble(),
+                 StartFlag = (reader["StartFlag"].AsInt() == 1) ? true : false,
+                 TransferNCFileToMachineFlag = reader["TransferNCFileToMachineFlag"].AsBool(),
+                 TransferMessage = reader["TransferMessage"].AsString(),
+                 MachineId = reader["MachineId"].AsInt()
              };
 
         private object[] Take(JobTaskModel model)
         {
             return new object[]
             {
-                "@task_id", model.TaskId,
-                "@task_seq", model.TaskSeq,
-                "@job_entity_id", model.JobId,
-                "@task_number", model.TaskNumber,
-                "@job_number", model.JobNumber,
-                "@description", model.Description,
-                "@manager", model.Manager,
-                "@start_date", model.StartDate,
-                "@end_date", model.EndDate,
-                "@cancel_flag", (model.CancelFlag) ? 1 : 0,
-                "@last_update_date", model.LastUpdateDate,
-                "@last_updated_by", model.LastUpdatedBy,
-                "@creation_date", model.CreationDate,
-                "@created_by", model.CreatedBy,
-                "@error_text", model.ErrorText,
-                "@ready_flag", (model.ReadyFlag) ? 1 : 0,
-                "@release_flag", (model.ReleaseFlag) ? 1 : 0,
-                "@upload_ncfile_flag", (model.UploadNcfileFlag) ? 1 : 0,
-                "@source", model.Source,
-                "@shelf_number", model.ShelfNumber,
-                "@reserve_shelf_flag", (model.ReserveShelfFlag) ? 1 : 0,
-                "@on_shelf_flag", (model.OnShelfFlag) ? 1 : 0,
-                "@mc_process_flag", (model.McProcessFlag) ? 1 : 0,
-                "@mc_pick_flag", (model.McPickFlag) ? 1 : 0,
-                "@mc_load_flag", (model.McLoadFlag) ? 1 : 0,
-                "@mc_finish_flag", (model.McFinishFlag) ? 1 : 0,
-                "@mc_unload_flag", (model.McUnloadFlag) ? 1 : 0,
-                "@mc_push_flag", (model.McPushFlag) ? 1 : 0,
-                "@outbound_flag", (model.OutboundFlag) ? 1 : 0,
-                "@outbound_finish_flag", (model.OutboundFinishFlag) ? 1 : 0,                
-                "@qc_status", string.IsNullOrEmpty(model.QCStatus) ? "NONE" : model.QCStatus,
-                "@material_code", model.MaterialCode,
-                "@table_number", model.TableNumber,
-                "@nc_file", model.NcFile,
-                "@due_date", model.DueDate,
-                "@machine_no", model.MachineNo,
-                "@machine_no_ready", model.MachineNoReady,
-                "@priority", model.Priority,
-                "@standard_time", model.StandardTime,
-                "@Start_Flag",(model.StartFlag) ? 1 : 0,
-                "@trf_ncfile_to_mc_flag",(model.TransferNCFileToMachineFlag) ? 1 : 0,
-                "@transfer_message", model.TransferMessage
+                "@TaskId", model.TaskId,
+                "@TaskSeq", model.TaskSeq,
+                "@JobEntityId", model.JobId,
+                "@TaskNumber", model.TaskNumber,
+                "@JobNumber", model.JobNumber,
+                "@Description", model.Description,
+                "@Manager", model.Manager,
+                "@StartDate", model.StartDate,
+                "@EndDate", model.EndDate,
+                "@CancelFlag", (model.CancelFlag) ? 1 : 0,
+                "@LastUpdateDate", model.LastUpdateDate,
+                "@LastUpdatedBy", model.LastUpdatedBy,
+                "@CreationDate", model.CreationDate,
+                "@CreatedBy", model.CreatedBy,
+                "@ErrorText", model.ErrorText,
+                "@ReadyFlag", (model.ReadyFlag) ? 1 : 0,
+                "@ReleaseFlag", (model.ReleaseFlag) ? 1 : 0,
+                "@UploadNcfileFlag", (model.UploadNcfileFlag) ? 1 : 0,
+                "@Source", model.Source,
+                "@ShelfNumber", model.ShelfNumber,
+                "@ReserveShelfFlag", (model.ReserveShelfFlag) ? 1 : 0,
+                "@OnShelfFlag", (model.OnShelfFlag) ? 1 : 0,
+                "@McProcessFlag", (model.McProcessFlag) ? 1 : 0,
+                "@McPickFlag", (model.McPickFlag) ? 1 : 0,
+                "@McLoadFlag", (model.McLoadFlag) ? 1 : 0,
+                "@McFinishFlag", (model.McFinishFlag) ? 1 : 0,
+                "@McUnloadFlag", (model.McUnloadFlag) ? 1 : 0,
+                "@McPushFlag", (model.McPushFlag) ? 1 : 0,
+                "@OutboundFlag", (model.OutboundFlag) ? 1 : 0,
+                "@OutboundFinishFlag", (model.OutboundFinishFlag) ? 1 : 0,                
+                "@QCStatus", string.IsNullOrEmpty(model.QCStatus) ? "NONE" : model.QCStatus,
+                "@MaterialCode", model.MaterialCode,
+                "@TableNumber", model.TableNumber,
+                "@NcFile", model.NcFile,
+                "@DueDate", model.DueDate,
+                "@MachineNo", model.MachineNo,
+                "@MachineNoReady", model.MachineNoReady,
+                "@Priority", model.Priority,
+                "@StandardTime", model.StandardTime,
+                "@StartFlag",(model.StartFlag) ? 1 : 0,
+                "@TransferNCFileToMachineFlag",(model.TransferNCFileToMachineFlag) ? 1 : 0,
+                "@TransferMessage", model.TransferMessage,
+                "@PrimaryQuantity", model.PrimaryQuantity,
+                "@MachineId", model.MachineId
             };
         }
     }

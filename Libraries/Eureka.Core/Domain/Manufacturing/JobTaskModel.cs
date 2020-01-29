@@ -59,5 +59,6 @@ namespace Eureka.Core.Domain.Manufacturing
         public string PrimaryItemModel { get; set; } //***************
         public double PrimaryQuantity { get; set; } //***************
         public bool StartFlag { get; set; } //***************
+        public int MachineId { get; set; }
     }
 }

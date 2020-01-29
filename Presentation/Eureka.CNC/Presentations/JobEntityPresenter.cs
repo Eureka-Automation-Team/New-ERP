@@ -428,6 +428,8 @@ namespace Eureka.CNC.Presentations
                 line.LastUpdatedBy = _view.EpiSession.User.Id;
                 line.JobNumber = job.JobEntityName;
                 line.Description = line.TaskNumber;
+                line.PrimaryQuantity = 1;
+                line.MachineId = 3;
 
                 if (line.TaskId == 0)
                 {

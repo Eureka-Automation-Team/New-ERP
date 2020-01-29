@@ -10,69 +10,69 @@ namespace Eureka.Data.AdoNet.Manufacturing
 {
     public class MachineDao : IMachineDao
     {
-        private static Db db = new Db("ms_sql");
+        private static Db db = new Db("ms_sql_job");
 
         public List<MachineModel> GetAll()
         {
-            string sql = @"SELECT  mch.machine_id, mch.machine_code, mch.ip_address
-	                        , mch.port, mch.last_update_date, mch.last_updated_by
-	                        , mch.creation_date, mch.created_by, mch.enable_flag
-	                        , mch.active_flag
-                          FROM mfg_machines mch
-                          ORDER BY mch.machine_id";
+            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
+	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
+	                        , mch.ActiveFlag
+                          FROM Machines mch
+                          ORDER BY mch.MachineId";
 
             return db.Read(sql, Make).ToList();
         }
 
         public MachineModel GetByCode(string machineCode)
         {
-            string sql = @"SELECT  mch.machine_id, mch.machine_code, mch.ip_address
-	                        , mch.port, mch.last_update_date, mch.last_updated_by
-	                        , mch.creation_date, mch.created_by, mch.enable_flag
-	                        , mch.active_flag
-                          FROM mfg_machines mch
-                          WHERE mch.machine_code = @machine_code";
+            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
+	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
+	                        , mch.ActiveFlag
+                          FROM Machines mch
+                          WHERE mch.MachineCode = @MachineCode";
 
-            object[] parms = { "@machine_code", machineCode };
+            object[] parms = { "@MachineCode", machineCode };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public MachineModel GetByID(int id)
         {
-            string sql = @"SELECT  mch.machine_id, mch.machine_code, mch.ip_address
-	                        , mch.port, mch.last_update_date, mch.last_updated_by
-	                        , mch.creation_date, mch.created_by, mch.enable_flag
-	                        , mch.active_flag
-                          FROM mfg_machines mch
-                          WHERE mch.machine_id = @machine_id";
+            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
+	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
+	                        , mch.ActiveFlag
+                          FROM Machines mch
+                          WHERE mch.MachineId = @MachineId";
 
-            object[] parms = { "@machine_id", id };
+            object[] parms = { "@MachineId", id };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public int Insert(MachineModel model)
         {
             string sql =
-                @"INSERT INTO mfg_machines
-                           (machine_code
-                           ,ip_address
-                           ,port
-                           ,last_update_date
-                           ,last_updated_by
-                           ,creation_date
-                           ,created_by
-                           ,enable_flag
-                           ,active_flag)
+                @"INSERT INTO Machines
+                           (MachineCode
+                           ,IpAddress
+                           ,PortNumber
+                           ,LastUpdateDate
+                           ,LastUpdatedBy
+                           ,CreationDate
+                           ,CreatedBy
+                           ,EnableFlag
+                           ,ActiveFlag)
                      VALUES
-                           (@machine_code
-                           ,@ip_address
-                           ,@port
-                           ,@last_update_date
-                           ,@last_updated_by
-                           ,@creation_date
-                           ,@created_by
-                           ,@enable_flag
-                           ,@active_flag)";
+                           (@MachineCode
+                           ,@IpAddress
+                           ,@PortNumber
+                           ,@LastUpdateDate
+                           ,@LastUpdatedBy
+                           ,@CreationDate
+                           ,@CreatedBy
+                           ,@EnableFlag
+                           ,@ActiveFlag)";
 
             return db.Insert(sql, Take(model));
         }
@@ -80,26 +80,26 @@ namespace Eureka.Data.AdoNet.Manufacturing
         public void Update(MachineModel model)
         {
             string sql =
-            @"UPDATE mfg_machines
-                   SET machine_code = @machine_code
-                      ,ip_address = @ip_address
-                      ,port = @port
-                      ,last_update_date = @last_update_date
-                      ,last_updated_by = @last_updated_by
-                      ,creation_date = @creation_date
-                      ,created_by = @created_by
-                      ,enable_flag = @enable_flag
-                      ,active_flag = @active_flag
-                 WHERE machine_id = @machine_id";
+            @"UPDATE Machines
+                   SET MachineCode = @MachineCode
+                      ,IpAddress = @IpAddress
+                      ,PortNumber = @PortNumber
+                      ,LastUpdateDate = @LastUpdateDate
+                      ,LastUpdatedBy = @LastUpdatedBy
+                      ,CreationDate = @CreationDate
+                      ,CreatedBy = @CreatedBy
+                      ,EnableFlag = @EnableFlag
+                      ,ActiveFlag = @ActiveFlag
+                 WHERE MachineId = @MachineId";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(MachineModel model)
         {
-            string sql = @"DELETE FROM mfg_machines WHERE machine_id = @machine_id";
+            string sql = @"DELETE FROM Machines WHERE MachineId = @MachineId";
 
-            object[] parms = { "@machine_id", model.MachineId };
+            object[] parms = { "@MachineId", model.MachineId };
             db.Update(sql, parms);
         }
 
@@ -107,32 +107,32 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, MachineModel> Make = reader =>
              new MachineModel
              {
-                 MachineId = reader["machine_id"].AsInt(),
-                 MachineCode = reader["machine_code"].AsString(),
-                 IpAddress = reader["ip_address"].AsString(),
-                 Port = reader["port"].AsInt(),
-                 LastUpdateDate = (reader["last_update_date"] != DBNull.Value) ? reader["last_update_date"].AsDateTime() : (DateTime?)null,
-                 LastUpdatedBy = reader["last_updated_by"].AsInt(),
-                 CreationDate = (reader["creation_date"] != DBNull.Value) ? reader["creation_date"].AsDateTime() : (DateTime?)null,
-                 CreatedBy = reader["created_by"].AsInt(),
-                 EnableFlag = (reader["enable_flag"].AsString() == "Y") ? true : false,
-                 ActiveFlag = (reader["active_flag"].AsString() == "Y") ? true : false
+                 MachineId = reader["MachineId"].AsInt(),
+                 MachineCode = reader["MachineCode"].AsString(),
+                 IpAddress = reader["IpAddress"].AsString(),
+                 Port = reader["PortNumber"].AsInt(),
+                 LastUpdateDate = (reader["LastUpdateDate"] != DBNull.Value) ? reader["LastUpdateDate"].AsDateTime() : (DateTime?)null,
+                 LastUpdatedBy = reader["LastUpdatedBy"].AsInt(),
+                 CreationDate = (reader["CreationDate"] != DBNull.Value) ? reader["CreationDate"].AsDateTime() : (DateTime?)null,
+                 CreatedBy = reader["CreatedBy"].AsInt(),
+                 EnableFlag = (reader["EnableFlag"].AsString() == "Y") ? true : false,
+                 ActiveFlag = (reader["ActiveFlag"].AsString() == "Y") ? true : false
              };
 
         private object[] Take(MachineModel model)
         {
             return new object[]
             {
-                "@machine_id", model.MachineId,
-                "@machine_code", model.MachineCode,
-                "@ip_address", model.IpAddress,
-                "@port", model.Port,
-                "@last_update_date", model.LastUpdateDate,
-                "@last_updated_by", model.LastUpdatedBy,
-                "@creation_date", model.CreationDate,
-                "@created_by", model.CreatedBy,
-                "@enable_flag", (model.EnableFlag) ? "Y" : "N",
-                "@active_flag", (model.ActiveFlag) ? "Y" : "N"
+                "@MachineId", model.MachineId,
+                "@MachineCode", model.MachineCode,
+                "@IpAddress", model.IpAddress,
+                "@PortNumber", model.Port,
+                "@LastUpdateDate", model.LastUpdateDate,
+                "@LastUpdatedBy", model.LastUpdatedBy,
+                "@CreationDate", model.CreationDate,
+                "@CreatedBy", model.CreatedBy,
+                "@EnableFlag", (model.EnableFlag) ? "Y" : "N",
+                "@ActiveFlag", (model.ActiveFlag) ? "Y" : "N"
             };
         }
     }
