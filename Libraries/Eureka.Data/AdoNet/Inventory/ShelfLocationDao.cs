@@ -14,14 +14,14 @@ namespace Eureka.Data.AdoNet.Inventory
 
         public List<ShelfLocationModel> GetAll()
         {
-            string sql = @"SELECT loc.LocationId, loc.LevelNo, loc.ColumnNo
+            string sql = @"SELECT loc.Id, loc.LevelNo, loc.ColumnNo
 		                        , loc.CombindLocation, loc.ItemId, loc.TaskId
 		                        , loc.ReserveFlag, loc.FillFlag, loc.AvailableFlag
-		                        , loc.CreatedBy, loc.CreatedDate, loc.LastUpdatedBy
+		                        , loc.CreatedBy, loc.CreationDate, loc.LastUpdatedBy
 		                        , loc.LastUpdateDate, loc.Attribute1, loc.Attribute2
 		                        , loc.Attribute3, loc.Attribute4, loc.Attribute5
 		                        , loc.Priority
-	                        FROM InvLocations loc
+	                        FROM ShelfLocations loc
                             ORDER BY loc.Priority, loc.LevelNo, loc.ColumnNo ASC";
 
             return db.Read(sql, Make).ToList();
@@ -29,14 +29,14 @@ namespace Eureka.Data.AdoNet.Inventory
 
         public List<ShelfLocationModel> GetAllAvailable()
         {
-            string sql = @"SELECT loc.LocationId, loc.LevelNo, loc.ColumnNo
+            string sql = @"SELECT loc.Id, loc.LevelNo, loc.ColumnNo
 		                        , loc.CombindLocation, loc.ItemId, loc.TaskId
 		                        , loc.ReserveFlag, loc.FillFlag, loc.AvailableFlag
-		                        , loc.CreatedBy, loc.CreatedDate, loc.LastUpdatedBy
+		                        , loc.CreatedBy, loc.CreationDate, loc.LastUpdatedBy
 		                        , loc.LastUpdateDate, loc.Attribute1, loc.Attribute2
 		                        , loc.Attribute3, loc.Attribute4, loc.Attribute5
 		                        , loc.Priority
-	                        FROM InvLocations loc
+	                        FROM ShelfLocations loc
                             WHERE loc.AvailableFlag = 1                            
                             ORDER BY loc.Priority, loc.LevelNo, loc.ColumnNo ASC";
 
@@ -45,14 +45,14 @@ namespace Eureka.Data.AdoNet.Inventory
 
         public List<ShelfLocationModel> GetAllReserved()
         {
-            string sql = @"SELECT loc.LocationId, loc.LevelNo, loc.ColumnNo
+            string sql = @"SELECT loc.Id, loc.LevelNo, loc.ColumnNo
 		                        , loc.CombindLocation, loc.ItemId, loc.TaskId
 		                        , loc.ReserveFlag, loc.FillFlag, loc.AvailableFlag
-		                        , loc.CreatedBy, loc.CreatedDate, loc.LastUpdatedBy
+		                        , loc.CreatedBy, loc.CreationDate, loc.LastUpdatedBy
 		                        , loc.LastUpdateDate, loc.Attribute1, loc.Attribute2
 		                        , loc.Attribute3, loc.Attribute4, loc.Attribute5
 		                        , loc.Priority
-	                        FROM InvLocations loc
+	                        FROM ShelfLocations loc
                             WHERE loc.ReserveFlag = 1
                                 AND loc.AvailableFlag = 1
                             ORDER BY loc.Priority, loc.LevelNo, loc.ColumnNo ASC";
@@ -62,24 +62,24 @@ namespace Eureka.Data.AdoNet.Inventory
 
         public ShelfLocationModel GetByID(int id)
         {
-            string sql = @"SELECT loc.LocationId, loc.LevelNo, loc.ColumnNo
+            string sql = @"SELECT loc.Id, loc.LevelNo, loc.ColumnNo
 		                        , loc.CombindLocation, loc.ItemId, loc.TaskId
 		                        , loc.ReserveFlag, loc.FillFlag, loc.AvailableFlag
-		                        , loc.CreatedBy, loc.CreatedDate, loc.LastUpdatedBy
+		                        , loc.CreatedBy, loc.CreationDate, loc.LastUpdatedBy
 		                        , loc.LastUpdateDate, loc.Attribute1, loc.Attribute2
 		                        , loc.Attribute3, loc.Attribute4, loc.Attribute5
 		                        , loc.Priority
-	                        FROM InvLocations loc
-                            WHERE loc.LocationId = @LocationId";
+	                        FROM ShelfLocations loc
+                            WHERE loc.Id = @Id";
 
-            object[] parms = { "@LocationId", id };
+            object[] parms = { "@Id", id };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public int Insert(ShelfLocationModel model)
         {
             string sql =
-                @"INSERT INTO InvLocations
+                @"INSERT INTO ShelfLocations
                        (LevelNo
                        ,ColumnNo
                        ,CombindLocation
@@ -89,7 +89,7 @@ namespace Eureka.Data.AdoNet.Inventory
                        ,FillFlag
                        ,AvailableFlag
                        ,CreatedBy
-                       ,CreatedDate
+                       ,CreationDate
                        ,LastUpdatedBy
                        ,LastUpdateDate
                        ,attribute1
@@ -108,7 +108,7 @@ namespace Eureka.Data.AdoNet.Inventory
                        ,@FillFlag
                        ,@AvailableFlag
                        ,@CreatedBy
-                       ,@CreatedDate
+                       ,@CreationDate
                        ,@LastUpdatedBy
                        ,@LastUpdateDate
                        ,@attribute1
@@ -124,7 +124,7 @@ namespace Eureka.Data.AdoNet.Inventory
         public void Update(ShelfLocationModel model)
         {
             string sql =
-            @"UPDATE InvLocations
+            @"UPDATE ShelfLocations
                    SET LevelNo = @LevelNo
                       ,ColumnNo = @ColumnNo
                       ,CombindLocation = @CombindLocation
@@ -134,7 +134,7 @@ namespace Eureka.Data.AdoNet.Inventory
                       ,FillFlag = @FillFlag
                       ,AvailableFlag = @AvailableFlag
                       ,CreatedBy = @CreatedBy
-                      ,CreatedDate = @CreatedDate
+                      ,CreationDate = @CreationDate
                       ,LastUpdatedBy = @LastUpdatedBy
                       ,LastUpdateDate = @LastUpdateDate
                       ,attribute1 = @attribute1
@@ -143,16 +143,16 @@ namespace Eureka.Data.AdoNet.Inventory
                       ,attribute4 = @attribute4
                       ,attribute5 = @attribute5
                       ,Priority = @Priority
-                 WHERE LocationId = @LocationId";
+                 WHERE Id = @Id";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(ShelfLocationModel model)
         {
-            string sql = @"DELETE FROM InvLocations WHERE LocationId = @LocationId";
+            string sql = @"DELETE FROM ShelfLocations WHERE Id = @Id";
 
-            object[] parms = { "@LocationId", model.LocationId };
+            object[] parms = { "@Id", model.LocationId };
             db.Update(sql, parms);
         }
 
@@ -171,17 +171,17 @@ namespace Eureka.Data.AdoNet.Inventory
         private static Func<IDataReader, ShelfLocationModel> Make = reader =>
              new ShelfLocationModel
              {
-                 LocationId = reader["LocationId"].AsInt(),
+                 LocationId = reader["Id"].AsInt(),
                  LevelNo = reader["LevelNo"].AsInt(),
                  ColumnNo = reader["ColumnNo"].AsInt(),
                  CombindLocation = reader["CombindLocation"].AsString(),
                  ItemId = reader["ItemId"].AsInt(),
                  TaskId = reader["TaskId"].AsInt(),
-                 ReserveFlag = (reader["ReserveFlag"].AsInt() == 1) ? true : false,
-                 FillFlag = (reader["FillFlag"].AsInt() == 1) ? true : false,
-                 AvailableFlag = (reader["AvailableFlag"].AsInt() == 1) ? true : false,
+                 ReserveFlag = reader["ReserveFlag"].AsBool(),
+                 FillFlag = reader["FillFlag"].AsBool(),
+                 AvailableFlag = reader["AvailableFlag"].AsBool(),
                  CreatedBy = reader["CreatedBy"].AsInt(),
-                 CreationDate = reader["CreatedDate"].AsDateTime(),
+                 CreationDate = reader["CreationDate"].AsDateTime(),
                  LastUpdatedBy = reader["LastUpdatedBy"].AsInt(),
                  LastUpdateDate = reader["LastUpdateDate"].AsDateTime(),
                  Attribute1 = reader["attribute1"].AsString(),
@@ -196,17 +196,17 @@ namespace Eureka.Data.AdoNet.Inventory
         {
             return new object[]
             {
-                "@LocationId", model.LocationId,
+                "@Id", model.LocationId,
                 "@LevelNo", model.LevelNo,
                 "@ColumnNo", model.ColumnNo,
                 "@CombindLocation", model.CombindLocation,
                 "@ItemId", model.ItemId,
                 "@TaskId", model.TaskId,
-                "@ReserveFlag", (model.ReserveFlag) ? 1 : 0,
-                "@FillFlag", (model.FillFlag) ? 1 : 0,
-                "@AvailableFlag", (model.AvailableFlag) ? 1 : 0,
+                "@ReserveFlag", model.ReserveFlag,
+                "@FillFlag", model.FillFlag,
+                "@AvailableFlag", model.AvailableFlag,
                 "@CreatedBy", model.CreatedBy,
-                "@CreatedDate", model.CreationDate,
+                "@CreationDate", model.CreationDate,
                 "@LastUpdatedBy", model.LastUpdatedBy,
                 "@LastUpdateDate", model.LastUpdateDate,
                 "@attribute1", model.Attribute1,

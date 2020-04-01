@@ -1483,6 +1483,7 @@ namespace Eureka.Froms.Presentations.Purchasing
         {
             CalculateLine();
             POHeaderModel po = _view.poHead;
+            po.LastUpdatedBy = _view.EpiSession.User.Id;
             string typeLookup = string.Empty;
             //if (!po.SubmitFlag)
             //{

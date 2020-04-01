@@ -14,23 +14,23 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<MachineModel> GetAll()
         {
-            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+            string sql = @"SELECT  mch.Id, mch.MachineCode, mch.IpAddress
 	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
 	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
 	                        , mch.ActiveFlag
-                          FROM Machines mch
-                          ORDER BY mch.MachineId";
+                          FROM MachinesMaster mch
+                          ORDER BY mch.Id";
 
             return db.Read(sql, Make).ToList();
         }
 
         public MachineModel GetByCode(string machineCode)
         {
-            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+            string sql = @"SELECT  mch.Id, mch.MachineCode, mch.IpAddress
 	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
 	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
 	                        , mch.ActiveFlag
-                          FROM Machines mch
+                          FROM MachinesMaster mch
                           WHERE mch.MachineCode = @MachineCode";
 
             object[] parms = { "@MachineCode", machineCode };
@@ -39,21 +39,21 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public MachineModel GetByID(int id)
         {
-            string sql = @"SELECT  mch.MachineId, mch.MachineCode, mch.IpAddress
+            string sql = @"SELECT  mch.Id, mch.MachineCode, mch.IpAddress
 	                        , mch.PortNumber, mch.LastUpdateDate, mch.LastUpdatedBy
 	                        , mch.CreationDate, mch.CreatedBy, mch.EnableFlag
 	                        , mch.ActiveFlag
-                          FROM Machines mch
-                          WHERE mch.MachineId = @MachineId";
+                          FROM MachinesMaster mch
+                          WHERE mch.Id = @Id";
 
-            object[] parms = { "@MachineId", id };
+            object[] parms = { "@Id", id };
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public int Insert(MachineModel model)
         {
             string sql =
-                @"INSERT INTO Machines
+                @"INSERT INTO MachinesMaster
                            (MachineCode
                            ,IpAddress
                            ,PortNumber
@@ -80,7 +80,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         public void Update(MachineModel model)
         {
             string sql =
-            @"UPDATE Machines
+            @"UPDATE MachinesMaster
                    SET MachineCode = @MachineCode
                       ,IpAddress = @IpAddress
                       ,PortNumber = @PortNumber
@@ -90,16 +90,16 @@ namespace Eureka.Data.AdoNet.Manufacturing
                       ,CreatedBy = @CreatedBy
                       ,EnableFlag = @EnableFlag
                       ,ActiveFlag = @ActiveFlag
-                 WHERE MachineId = @MachineId";
+                 WHERE Id = @Id";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(MachineModel model)
         {
-            string sql = @"DELETE FROM Machines WHERE MachineId = @MachineId";
+            string sql = @"DELETE FROM MachinesMaster WHERE Id = @Id";
 
-            object[] parms = { "@MachineId", model.MachineId };
+            object[] parms = { "@Id", model.MachineId };
             db.Update(sql, parms);
         }
 
@@ -107,7 +107,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, MachineModel> Make = reader =>
              new MachineModel
              {
-                 MachineId = reader["MachineId"].AsInt(),
+                 MachineId = reader["Id"].AsInt(),
                  MachineCode = reader["MachineCode"].AsString(),
                  IpAddress = reader["IpAddress"].AsString(),
                  Port = reader["PortNumber"].AsInt(),
@@ -123,7 +123,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         {
             return new object[]
             {
-                "@MachineId", model.MachineId,
+                "@Id", model.MachineId,
                 "@MachineCode", model.MachineCode,
                 "@IpAddress", model.IpAddress,
                 "@PortNumber", model.Port,

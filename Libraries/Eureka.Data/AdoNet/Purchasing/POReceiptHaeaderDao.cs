@@ -429,6 +429,7 @@ namespace Eureka.Data.AdoNet.Purchasing
                             LEFT JOIN po_headers_all poh ON(rvl.po_header_id = poh.po_header_id)
                             WHERE rvh.received_flag = 'Y'
                             AND rvh.receipt_num BETWEEN @start_number AND @end_number
+                            AND pol.cancel_flag = 'N'
                             ORDER BY rvh.receipt_header_id ASC";
 
             object[] parms = { "@start_number", startNo, "@end_number", endNo };

@@ -1,6 +1,7 @@
 ﻿using Eureka.Core.Domain.Security;
 using Eureka.Core.Domain.Users;
 using Eureka.Data;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 
@@ -52,6 +53,18 @@ namespace Eureka.Services
         public void EnableMenu(MenuModel menu)
         {
             factory.MenuDao.Enable(menu);
+        }
+
+        public bool MatchingPass(string oldPass, string matchingPass)
+        {
+            return oldPass == factory.UserDao.EncryptPass(matchingPass);
+        }
+
+        public void UpdatePass(UserModel user)
+        {
+            user.Password = factory.UserDao.EncryptPass(user.Password);
+            user.LastLogOnDate = DateTime.Now;
+            factory.UserDao.UpdateUser(user);
         }
     }
 }

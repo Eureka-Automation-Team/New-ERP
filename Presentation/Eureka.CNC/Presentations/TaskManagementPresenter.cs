@@ -187,6 +187,8 @@ namespace Eureka.CNC.Presentations
                                 curr.ShelfNumber = location.CombindLocation;
                                 location.ReserveFlag = true;
                                 location.TaskId = curr.TaskId;
+                                location.CreationDate = DateTime.Now;
+                                location.LastUpdateDate = DateTime.Now;
                                 _repoLocation.UpdateLocation(location);
                             }
 

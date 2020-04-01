@@ -18,5 +18,9 @@ namespace Eureka.Services
         MenuModel GetMenuById(int id, int roleId);
         void DisableMenu(MenuModel menu);
         void EnableMenu(MenuModel menu);
+
+        bool MatchingPass(string oldPass, string matchingPass);
+
+        void UpdatePass(UserModel user);
     }
 }

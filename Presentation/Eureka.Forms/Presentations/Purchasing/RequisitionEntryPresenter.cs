@@ -119,6 +119,7 @@ namespace Eureka.Froms.Presentations.Purchasing
                         item.LastUpdateDate = DateTime.Now;
                         item.ApprovedFlag = false;
                         item.RejectFlag = true;
+                        item.CancelFlag = true;
                         item.Status = "REJECT";
                         item.RejectComment = "Reject by Requisition Line";
 
@@ -129,6 +130,10 @@ namespace Eureka.Froms.Presentations.Purchasing
                     //_view.reqHead = _repository.GetHeadByID(req.RequisitionHeaderId);
                     Refresh_Click(null, null);
                     KeepLogging("REJECT REQUISITION");
+
+                    _repoPrj.ProjectCost_Reset(_view.projHead.Id);
+                    _view.projBudget = _repoPrj.GetProjectCostByProjID(_view.projHead.Id);
+                    _view.BindingBudgetLines(_view.projBudget);
                 }
             }
         }

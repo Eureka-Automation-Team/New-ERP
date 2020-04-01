@@ -91,6 +91,7 @@ namespace Eureka.Data.AdoNet.Purchasing
                             LEFT JOIN po_requisition_lines_all rel ON(pl.po_line_id = rel.po_line_id)
                             LEFT JOIN po_headers_all poh ON(pl.po_header_id = poh.po_header_id)
                           WHERE pl.po_header_id = @po_header_id
+								AND pl.cancel_flag = 'N'
                           ORDER BY pl.po_line_num ASC";
 
             object[] parms = { "@po_header_id", id };

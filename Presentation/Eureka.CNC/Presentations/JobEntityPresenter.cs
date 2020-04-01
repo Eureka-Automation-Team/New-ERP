@@ -429,7 +429,7 @@ namespace Eureka.CNC.Presentations
                 line.JobNumber = job.JobEntityName;
                 line.Description = line.TaskNumber;
                 line.PrimaryQuantity = 1;
-                line.MachineId = 3;
+                line.MachineId = 1;
 
                 if (line.TaskId == 0)
                 {

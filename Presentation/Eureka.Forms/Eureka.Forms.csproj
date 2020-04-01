@@ -149,6 +149,7 @@
     <Compile Include="Presentations\Purchasing\RequisitionFinalPresenter.cs" />
     <Compile Include="Presentations\Purchasing\RequisitionListPresenter.cs" />
     <Compile Include="Presentations\Security\ButtonCtrolPresenter.cs" />
+    <Compile Include="Presentations\Security\ChangePasswordPresenter.cs" />
     <Compile Include="Presentations\Security\LoginPresenter.cs" />
     <Compile Include="Presentations\Security\MainPresenter.cs" />
     <Compile Include="Presentations\Security\UserListPresenter.cs" />
@@ -356,6 +357,13 @@
     <Compile Include="Views\Purchasing\RequisitionListForm.Designer.cs">
       <DependentUpon>RequisitionListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Security\ChangPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Security\ChangPassword.Designer.cs">
+      <DependentUpon>ChangPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Security\IChangePasswordView.cs" />
     <Compile Include="Views\Security\ILoginView.cs" />
     <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\IView.cs" />
@@ -472,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchasing\RequisitionListForm.resx">
       <DependentUpon>RequisitionListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Security\ChangPassword.resx">
+      <DependentUpon>ChangPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Security\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

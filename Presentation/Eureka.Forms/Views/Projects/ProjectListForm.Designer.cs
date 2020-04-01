@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectListForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectListForm));
             this.txtProjectNum = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.dgvProjects = new MetroFramework.Controls.MetroGrid();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -65,17 +69,13 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvProjects = new MetroFramework.Controls.MetroGrid();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectModelBindingSource)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).BeginInit();
             this.bindingNav.SuspendLayout();
             this.metroPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProjectNum
@@ -127,6 +127,99 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // dgvProjects
+            // 
+            this.dgvProjects.AllowUserToOrderColumns = true;
+            this.dgvProjects.AllowUserToResizeRows = false;
+            this.dgvProjects.AutoGenerateColumns = false;
+            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProjects.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvProjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProjects.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProjects.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProjects.ColumnHeadersHeight = 25;
+            this.dgvProjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.projectNumDataGridViewTextBoxColumn1,
+            this.projectDateDataGridViewTextBoxColumn1});
+            this.dgvProjects.DataSource = this.projectModelBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProjects.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvProjects.EnableHeadersVisualStyles = false;
+            this.dgvProjects.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvProjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvProjects.Location = new System.Drawing.Point(0, 0);
+            this.dgvProjects.Name = "dgvProjects";
+            this.dgvProjects.ReadOnly = true;
+            this.dgvProjects.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProjects.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProjects.RowHeadersWidth = 30;
+            this.dgvProjects.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProjects.RowTemplate.Height = 60;
+            this.dgvProjects.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProjects.Size = new System.Drawing.Size(459, 374);
+            this.dgvProjects.StandardTab = true;
+            this.dgvProjects.Style = MetroFramework.MetroColorStyle.Green;
+            this.dgvProjects.TabIndex = 38;
+            this.dgvProjects.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.dgvProjects.UseCustomBackColor = true;
+            this.dgvProjects.UseCustomForeColor = true;
+            this.dgvProjects.UseStyleColors = true;
+            this.dgvProjects.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellDoubleClick_1);
+            this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged_1);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // projectNumDataGridViewTextBoxColumn1
+            // 
+            this.projectNumDataGridViewTextBoxColumn1.DataPropertyName = "ProjectNum";
+            this.projectNumDataGridViewTextBoxColumn1.HeaderText = "Project No.";
+            this.projectNumDataGridViewTextBoxColumn1.Name = "projectNumDataGridViewTextBoxColumn1";
+            this.projectNumDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // projectDateDataGridViewTextBoxColumn1
+            // 
+            this.projectDateDataGridViewTextBoxColumn1.DataPropertyName = "ProjectDate";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.projectDateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.projectDateDataGridViewTextBoxColumn1.HeaderText = "Project Date";
+            this.projectDateDataGridViewTextBoxColumn1.Name = "projectDateDataGridViewTextBoxColumn1";
+            this.projectDateDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // projectModelBindingSource
             // 
@@ -276,6 +369,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -461,99 +555,6 @@
             this.projectDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.projectDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // dgvProjects
-            // 
-            this.dgvProjects.AllowUserToOrderColumns = true;
-            this.dgvProjects.AllowUserToResizeRows = false;
-            this.dgvProjects.AutoGenerateColumns = false;
-            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProjects.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvProjects.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProjects.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvProjects.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProjects.ColumnHeadersHeight = 25;
-            this.dgvProjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.projectNumDataGridViewTextBoxColumn1,
-            this.projectDateDataGridViewTextBoxColumn1});
-            this.dgvProjects.DataSource = this.projectModelBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProjects.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvProjects.EnableHeadersVisualStyles = false;
-            this.dgvProjects.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvProjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvProjects.Location = new System.Drawing.Point(0, 0);
-            this.dgvProjects.Name = "dgvProjects";
-            this.dgvProjects.ReadOnly = true;
-            this.dgvProjects.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProjects.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvProjects.RowHeadersWidth = 30;
-            this.dgvProjects.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvProjects.RowTemplate.Height = 60;
-            this.dgvProjects.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(459, 374);
-            this.dgvProjects.StandardTab = true;
-            this.dgvProjects.Style = MetroFramework.MetroColorStyle.Green;
-            this.dgvProjects.TabIndex = 38;
-            this.dgvProjects.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.dgvProjects.UseCustomBackColor = true;
-            this.dgvProjects.UseCustomForeColor = true;
-            this.dgvProjects.UseStyleColors = true;
-            this.dgvProjects.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellDoubleClick_1);
-            this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged_1);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // projectNumDataGridViewTextBoxColumn1
-            // 
-            this.projectNumDataGridViewTextBoxColumn1.DataPropertyName = "ProjectNum";
-            this.projectNumDataGridViewTextBoxColumn1.HeaderText = "Project No.";
-            this.projectNumDataGridViewTextBoxColumn1.Name = "projectNumDataGridViewTextBoxColumn1";
-            this.projectNumDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // projectDateDataGridViewTextBoxColumn1
-            // 
-            this.projectDateDataGridViewTextBoxColumn1.DataPropertyName = "ProjectDate";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.projectDateDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.projectDateDataGridViewTextBoxColumn1.HeaderText = "Project Date";
-            this.projectDateDataGridViewTextBoxColumn1.Name = "projectDateDataGridViewTextBoxColumn1";
-            this.projectDateDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // ProjectListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +569,7 @@
             this.Text = "Projects";
             this.Load += new System.EventHandler(this.ProjectListForm_Load);
             this.metroPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectModelBindingSource)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -575,7 +577,6 @@
             this.bindingNav.ResumeLayout(false);
             this.bindingNav.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

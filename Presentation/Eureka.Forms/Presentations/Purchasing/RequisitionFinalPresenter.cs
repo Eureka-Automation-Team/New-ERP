@@ -410,7 +410,7 @@ namespace Eureka.Froms.Presentations.Purchasing
                             pol.BOM = item.BomNo;
                             pol.Suplier = item.SuplierSymbol;
                             pol.BaseUnitPrice = item.FinalUnitPrice * (head.Rate == 0 ? 1 : head.Rate);
-                            pol.UnitPrice = item.FinalUnitPrice * (head.Rate == 0 ? 1 : head.Rate);
+                            pol.UnitPrice = pol.BaseUnitPrice;// item.FinalUnitPrice * (head.Rate == 0 ? 1 : head.Rate);
                             pol.DueDate = item.DueDate;
                             pol.ECN = item.EcnNo;
                             pol.CSR = item.CsrNo;
@@ -767,8 +767,16 @@ namespace Eureka.Froms.Presentations.Purchasing
                     frm.ShowDialog();
                     if (frm.projSelected != null)
                     {
-                        _view.projectParam = frm.projSelected.FirstOrDefault();
-                        _view.projectNumber = _view.projectParam.ProjectNum;
+                        try
+                        {
+                            _view.projectParam = frm.projSelected.FirstOrDefault();
+                            _view.projectNumber = _view.projectParam.ProjectNum;
+                        }
+                        catch
+                        {
+                            _view.projectParam = null;
+                        }
+
                     }
                     else
                         _view.projectParam = null;

@@ -1,5 +1,6 @@
 ﻿using Eureka.Core.Domain.Security;
 using Eureka.Forms.Views.Controls;
+using Eureka.Forms.Views.Security;
 using Eureka.Froms.Presentations.Security;
 using Eureka.Services;
 using KimtToo.VisualReactive;
@@ -154,6 +155,12 @@ namespace Eureka.Froms.Views
         {
             if (ParentMenu_Click != null)
                 ParentMenu_Click(sender, e);
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            ChangPassword frm = new ChangPassword();
+            frm.ShowDialog();
         }
     }
 }

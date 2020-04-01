@@ -48,9 +48,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.bntProjectCost = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuItems = new Eureka.Forms.Views.Controls.MenuButtonCtrl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.menuItems = new Eureka.Forms.Views.Controls.MenuButtonCtrl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.monitoringStatus.SuspendLayout();
@@ -73,9 +74,9 @@
             this.lblLogOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLogOn.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogOn.ForeColor = System.Drawing.Color.Green;
-            this.lblLogOn.Location = new System.Drawing.Point(636, 62);
+            this.lblLogOn.Location = new System.Drawing.Point(399, 64);
             this.lblLogOn.Name = "lblLogOn";
-            this.lblLogOn.Size = new System.Drawing.Size(441, 32);
+            this.lblLogOn.Size = new System.Drawing.Size(637, 32);
             this.lblLogOn.TabIndex = 1;
             this.lblLogOn.Text = "Log On : Manager";
             this.lblLogOn.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -272,16 +273,6 @@
             this.panel1.Size = new System.Drawing.Size(263, 485);
             this.panel1.TabIndex = 6;
             // 
-            // menuItems
-            // 
-            this.menuItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuItems.ItemMenus = null;
-            this.menuItems.Location = new System.Drawing.Point(0, 2);
-            this.menuItems.Name = "menuItems";
-            this.menuItems.ParentMenu = null;
-            this.menuItems.Size = new System.Drawing.Size(263, 483);
-            this.menuItems.TabIndex = 7;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
@@ -299,11 +290,42 @@
             this.panel3.Size = new System.Drawing.Size(559, 485);
             this.panel3.TabIndex = 7;
             // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroTile1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroTile1.Location = new System.Drawing.Point(1042, 67);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(35, 30);
+            this.metroTile1.TabIndex = 8;
+            this.metroTile1.Tag = "Home";
+            this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.UseCustomBackColor = true;
+            this.metroTile1.UseCustomForeColor = true;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseStyleColors = true;
+            this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // menuItems
+            // 
+            this.menuItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuItems.ItemMenus = null;
+            this.menuItems.Location = new System.Drawing.Point(0, 2);
+            this.menuItems.Name = "menuItems";
+            this.menuItems.ParentMenu = null;
+            this.menuItems.Size = new System.Drawing.Size(263, 483);
+            this.menuItems.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 629);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMainMenu);
@@ -350,6 +372,7 @@
         private System.Windows.Forms.Panel panel2;
         private Forms.Views.Controls.MenuButtonCtrl menuItems;
         private System.Windows.Forms.Panel panel3;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }
 

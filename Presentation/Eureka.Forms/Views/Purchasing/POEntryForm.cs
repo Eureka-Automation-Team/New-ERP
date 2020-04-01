@@ -107,45 +107,45 @@ namespace Eureka.Froms.Views.Purchasing
             set
             {
                 _poHead = value;
-                if (_poHead != null)
+                if (value != null)
                 {
-                    txtPoNum.Text = _poHead.PoNum;
-                    cboTypeLookupCode.Text = _poHead.TypeLookupCode;
-                    dtpPODate.Value = _poHead.PODate;
-                    txtVendorNum.Text = _poHead.VendorNum;
-                    txtVendorName.Text = _poHead.VendorName;
-                    txtTermCode.Text = _poHead.TermCode;
-                    txtTermDesc.Text = _poHead.TermDesc;
-                    cboStatusCode.Text = _poHead.StatusCode;
-                    txtCurrencyCode.Text = _poHead.CurrencyCode;
-                    txtCurrencyCode1.Text = _poHead.CurrencyCode;
-                    txtCurrencyCode2.Text = _poHead.CurrencyCode;
-                    txtCurrencyCode3.Text = _poHead.CurrencyCode;
-                    txtCurrencyCode4.Text = _poHead.CurrencyCode;
-                    txtCurrencyCode5.Text = _poHead.CurrencyCode;
-                    txtRate.Text = _poHead.Rate.ToString("#0.0000");
-                    txtBuyerName.Text = _poHead.BuyerName;
-                    txtTaxCode.Text = _poHead.TaxCode;
-                    txtTaxRate.Text = _poHead.TaxRate.ToString();
-                    txtRemarks.Text = _poHead.Remarks;
-                    txtProjectNum.Text = _poHead.ProjectNum;
-                    chkJobFlag.Checked = _poHead.JobFlag;
-                    chkApprovedFlag.Checked = _poHead.ApprovedFlag;
-                    chkCancelFlag.Checked = _poHead.CancelFlag;
-                    chkReceivedFlag.Checked = _poHead.ReceivedFlag;
+                    txtPoNum.Text = value.PoNum;
+                    cboTypeLookupCode.Text = value.TypeLookupCode;
+                    dtpPODate.Value = value.PODate;
+                    txtVendorNum.Text = value.VendorNum;
+                    txtVendorName.Text = value.VendorName;
+                    txtTermCode.Text = value.TermCode;
+                    txtTermDesc.Text = value.TermDesc;
+                    cboStatusCode.Text = value.StatusCode;
+                    txtCurrencyCode.Text = value.CurrencyCode;
+                    txtCurrencyCode1.Text = value.CurrencyCode;
+                    txtCurrencyCode2.Text = value.CurrencyCode;
+                    txtCurrencyCode3.Text = value.CurrencyCode;
+                    txtCurrencyCode4.Text = value.CurrencyCode;
+                    txtCurrencyCode5.Text = value.CurrencyCode;
+                    txtRate.Text = value.Rate.ToString("#0.0000");
+                    txtBuyerName.Text = value.BuyerName;
+                    txtTaxCode.Text = value.TaxCode;
+                    txtTaxRate.Text = value.TaxRate.ToString();
+                    txtRemarks.Text = value.Remarks;
+                    txtProjectNum.Text = value.ProjectNum;
+                    chkJobFlag.Checked = value.JobFlag;
+                    chkApprovedFlag.Checked = value.ApprovedFlag;
+                    chkCancelFlag.Checked = value.CancelFlag;
+                    chkReceivedFlag.Checked = value.ReceivedFlag;
 
-                    revicseMenuItem.Enabled = _poHead.ApprovedFlag;
-                    tnvSubmitPO.Enabled = !_poHead.SubmitFlag;
-                    mnuDeleteRow.Enabled = !_poHead.SubmitFlag;
-                    tnvUnSubmitPO.Enabled = _poHead.SubmitFlag;
-                    printPurchaseOrderToolStripMenuItem.Enabled = _poHead.SubmitFlag;
-                    //bindingNavigatorSaveItem.Enabled = !_poHead.SubmitFlag;
-                    bindingNavigatorSaveItem.Enabled = !_poHead.ReceivedFlag;
-                    cancelRowToolStripMenuItem.Enabled = !_poHead.ReceivedFlag;
-                    tnvCancelPO.Enabled = !_poHead.CancelFlag;
-                    tnvUnSubmitPO.Enabled = !_poHead.ApprovedFlag;
+                    revicseMenuItem.Enabled = value.ApprovedFlag;
+                    tnvSubmitPO.Enabled = !value.SubmitFlag;
+                    mnuDeleteRow.Enabled = !value.SubmitFlag;
+                    tnvUnSubmitPO.Enabled = value.SubmitFlag;
+                    printPurchaseOrderToolStripMenuItem.Enabled = value.SubmitFlag;
+                    //bindingNavigatorSaveItem.Enabled = !value.SubmitFlag;
+                    bindingNavigatorSaveItem.Enabled = !value.ReceivedFlag;
+                    cancelRowToolStripMenuItem.Enabled = !value.ReceivedFlag;
+                    tnvCancelPO.Enabled = !value.CancelFlag;
+                    tnvUnSubmitPO.Enabled = !value.ApprovedFlag;
 
-                    if (_poHead.CancelFlag)
+                    if (value.CancelFlag)
                     {
                         tnvSubmitPO.Enabled = false;
                         mnuDeleteRow.Enabled = false;
@@ -154,25 +154,25 @@ namespace Eureka.Froms.Views.Purchasing
                         bindingNavigatorSaveItem.Enabled = false;
                     }
 
-                    chkApprovedFlag.Enabled = _poHead.SubmitFlag;
-                    if (_poHead.CurrencyCode == "THB")
+                    chkApprovedFlag.Enabled = value.SubmitFlag;
+                    if (value.CurrencyCode == "THB")
                     {
-                        txtSubTotal.Text = _poHead.SubTotal.ToString("#,##0.00");
-                        txtDiscount.Text = _poHead.Discount.ToString("#,##0.00");
-                        txtTaxAmount.Text = _poHead.TaxAmount.ToString("#,##0.00");
-                        txtFreight.Text = _poHead.Freight.ToString("#,##0.00");
-                        txtTotalAmount.Text = _poHead.TotalAmount.ToString("#,##0.00");
+                        txtSubTotal.Text = value.SubTotal.ToString("#,##0.00");
+                        txtDiscount.Text = value.Discount.ToString("#,##0.00");
+                        txtTaxAmount.Text = value.TaxAmount.ToString("#,##0.00");
+                        txtFreight.Text = value.Freight.ToString("#,##0.00");
+                        txtTotalAmount.Text = value.TotalAmount.ToString("#,##0.00");
                     }
                     else
                     {
-                        txtSubTotal.Text = _poHead.SubTotal.ToString("#,##0.000");
-                        txtDiscount.Text = _poHead.Discount.ToString("#,##0.000");
-                        txtTaxAmount.Text = _poHead.TaxAmount.ToString("#,##0.000");
-                        txtFreight.Text = _poHead.Freight.ToString("#,##0.000");
-                        txtTotalAmount.Text = _poHead.TotalAmount.ToString("#,##0.000");
+                        txtSubTotal.Text = value.SubTotal.ToString("#,##0.000");
+                        txtDiscount.Text = value.Discount.ToString("#,##0.000");
+                        txtTaxAmount.Text = value.TaxAmount.ToString("#,##0.000");
+                        txtFreight.Text = value.Freight.ToString("#,##0.000");
+                        txtTotalAmount.Text = value.TotalAmount.ToString("#,##0.000");
                     }
                         
-                    if (string.IsNullOrEmpty(_poHead.PoNum))
+                    if (string.IsNullOrEmpty(value.PoNum))
                         cboTypeLookupCode.Enabled = true;
                     else
                         cboTypeLookupCode.Enabled = false;
@@ -538,8 +538,6 @@ namespace Eureka.Froms.Views.Purchasing
                 dgvLine.Columns[45].DefaultCellStyle.Format = "#,##0.000";
             }
                 
-
-
             dgvLine.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvLine.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvLine.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -558,7 +556,7 @@ namespace Eureka.Froms.Views.Purchasing
 
             dgvLine.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLine.AllowUserToResizeColumns = true;
-            //dgvLine.Columns[1].ReadOnly = true;
+            dgvLine.Columns[13].ReadOnly = true;
             dgvLine.Columns[45].ReadOnly = true;
         }
 

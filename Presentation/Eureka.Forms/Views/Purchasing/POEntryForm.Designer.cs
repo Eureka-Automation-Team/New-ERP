@@ -2040,7 +2040,7 @@
             this.txtRate.CustomButton.UseSelectable = true;
             this.txtRate.CustomButton.Visible = false;
             this.txtRate.Lines = new string[] {
-        "1.000"};
+        "1.0000"};
             this.txtRate.Location = new System.Drawing.Point(184, 126);
             this.txtRate.MaxLength = 32767;
             this.txtRate.Name = "txtRate";
@@ -2054,7 +2054,7 @@
             this.txtRate.Size = new System.Drawing.Size(62, 25);
             this.txtRate.Style = MetroFramework.MetroColorStyle.Green;
             this.txtRate.TabIndex = 20;
-            this.txtRate.Text = "1.000";
+            this.txtRate.Text = "1.0000";
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.UseSelectable = true;
             this.txtRate.UseStyleColors = true;

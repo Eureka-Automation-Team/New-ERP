@@ -12,7 +12,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobTaskModel> GetPendingTask()
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -28,7 +28,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
                             WHERE jt.ReleaseFlag = 0 AND jt.ReadyFlag = 1
                             ORDER BY jt.TaskSeq ASC";
 
@@ -37,7 +37,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobTaskModel> GetInspectionTask()
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -53,7 +53,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
                             WHERE jt.OutboundFinishFlag = 1
                                 AND ISNULL(jt.QCStatus, 'NONE') = 'NONE'
                             ORDER BY jt.TaskSeq ASC";
@@ -63,7 +63,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobTaskModel> GetByJobID(int jobId)
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -79,7 +79,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
                             WHERE jt.JobEntityId = @JobEntityId
                             ORDER BY jt.TaskSeq ASC";
 
@@ -89,7 +89,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobTaskModel> GetByDateRange(DateTime startDate, DateTime endDate)
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -105,7 +105,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
                             WHERE cast(jt.StartDate as date) BETWEEN cast(@StartDate as date) AND cast(@EndDate as date)
                             ORDER BY jt.TaskSeq ASC";
 
@@ -115,7 +115,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public JobTaskModel GetByID(int id)
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -131,16 +131,16 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
-                            WHERE jt.TaskId = @TaskId";
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
+                            WHERE jt.Id = @Id";
 
-            object[] parms = { "@TaskId", id };
+            object[] parms = { "@Id", id };
             return db.Read(sql, MakeWithStats, parms).FirstOrDefault();
         }
 
         public JobTaskModel GetReadyToTransferNC()
         {
-            string sql = @"SELECT  jt.TaskId, jt.TaskSeq, jt.JobEntityId
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
                                 , jt.TaskNumber, jt.JobNumber, jt.Description
                                 , jt.Manager, jt.StartDate, jt.EndDate
                                 , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
@@ -156,7 +156,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                                 , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
                                 , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
                             FROM  JobTasks jt
-                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.JobEntityId)
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
                             WHERE jt.McProcessFlag = 0
 							AND jt.MachineNoReady is not null
 							AND jt.ReadyFlag = 1
@@ -312,16 +312,16 @@ namespace Eureka.Data.AdoNet.Manufacturing
                       ,TransferNCFileToMachineFlag = @TransferNCFileToMachineFlag
                       ,TransferMessage = @TransferMessage
                       ,MachineId = @MachineId
-                 WHERE TaskId = @TaskId";
+                 WHERE Id = @Id";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(JobTaskModel model)
         {
-            string sql = @"DELETE FROM JobTasks WHERE TaskId = @TaskId";
+            string sql = @"DELETE FROM JobTasks WHERE Id = @Id";
 
-            object[] parms = { "@TaskId", model.TaskId };
+            object[] parms = { "@Id", model.TaskId };
             db.Update(sql, parms);
         }
 
@@ -339,7 +339,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobTaskModel> Make = reader =>
              new JobTaskModel
              {
-                 TaskId = reader["TaskId"].AsInt(),
+                 TaskId = reader["Id"].AsInt(),
                  TaskSeq = reader["TaskSeq"].AsInt(),
                  JobId = reader["JobEntityId"].AsInt(),
                  TaskNumber = reader["TaskNumber"].AsString(),
@@ -390,7 +390,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         {
             return new object[]
             {
-                "@TaskId", model.TaskId,
+                "@Id", model.TaskId,
                 "@TaskSeq", model.TaskSeq,
                 "@JobEntityId", model.JobId,
                 "@TaskNumber", model.TaskNumber,

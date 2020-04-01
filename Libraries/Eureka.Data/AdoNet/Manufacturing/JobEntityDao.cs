@@ -14,7 +14,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobEntityModel> GetAll()
         {
-            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+            string sql = @"SELECT jb.Id, jb.OrganizationId, jb.LastUpdateDate
                             , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
                             , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
                             , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
@@ -30,7 +30,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public List<JobEntityModel> GetByDate(DateTime startDate, DateTime endDate)
         {
-            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+            string sql = @"SELECT jb.Id, jb.OrganizationId, jb.LastUpdateDate
                             , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
                             , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
                             , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
@@ -48,7 +48,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public JobEntityModel GetByID(int id)
         {
-            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+            string sql = @"SELECT jb.Id, jb.OrganizationId, jb.LastUpdateDate
                             , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
                             , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
                             , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
@@ -57,15 +57,15 @@ namespace Eureka.Data.AdoNet.Manufacturing
                             , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
                             , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
                           FROM JobEntities jb
-                            WHERE jb.JobEntityId = @JobEntityId";
+                            WHERE jb.Id = @Id";
 
-            object[] parms = { "@JobEntityId", id};
+            object[] parms = { "@Id", id};
             return db.Read(sql, Make, parms).FirstOrDefault();
         }
 
         public JobEntityModel GetByPOLineID(int poLineId)
         {
-            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+            string sql = @"SELECT jb.Id, jb.OrganizationId, jb.LastUpdateDate
                             , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
                             , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
                             , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
@@ -74,7 +74,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                             , jb.OpenStatus, jb.CancelFlag, jb.PrimaryQuantity
                             , jb.ProcessFlag, jb.CompletedFlag, jb.PoHeaderId, jb.PoLineId
                           FROM JobEntities jb
-                            WHERE jb.JobEntityId = @JobEntityId";
+                            WHERE jb.Id = @Id";
 
             object[] parms = { "@PoLineId", poLineId };
             return db.Read(sql, Make, parms).FirstOrDefault();
@@ -82,7 +82,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
 
         public JobEntityModel GetByJobName(string jobName)
         {
-            string sql = @"SELECT jb.JobEntityId, jb.OrganizationId, jb.LastUpdateDate
+            string sql = @"SELECT jb.Id, jb.OrganizationId, jb.LastUpdateDate
                             , jb.LastUpdatedBy, jb.CreationDate, jb.CreatedBy
                             , jb.JobEntityName, jb.JobEntiryDate, jb.EntityType
                             , jb.Description, jb.PrimaryItemId, jb.PrimaryItemCode
@@ -182,16 +182,16 @@ namespace Eureka.Data.AdoNet.Manufacturing
                       ,CompletedFlag = @CompletedFlag
                       ,PoHeaderId = @PoHeaderId
                       ,PoLineId = @PoLineId
-                 WHERE JobEntityId = @JobEntityId";
+                 WHERE Id = @Id";
 
             db.Update(sql, Take(model));
         }
 
         public void Delete(JobEntityModel model)
         {
-            string sql = @"DELETE FROM JobEntities WHERE JobEntityId = @JobEntityId";
+            string sql = @"DELETE FROM JobEntities WHERE Id = @Id";
 
-            object[] parms = { "@JobEntityId", model.JobEntityId };
+            object[] parms = { "@Id", model.JobEntityId };
             db.Update(sql, parms);
         }
 
@@ -210,7 +210,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         private static Func<IDataReader, JobEntityModel> Make = reader =>
              new JobEntityModel
              {
-                 JobEntityId = reader["JobEntityId"].AsInt(),
+                 JobEntityId = reader["Id"].AsInt(),
                  OrganizationId = reader["OrganizationId"].AsInt(),
                  LastUpdateDate = reader["LastUpdateDate"].AsDateTime(),
                  LastUpdatedBy = reader["LastUpdatedBy"].AsInt(),
@@ -241,7 +241,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
         {
             return new object[]
             {
-                "@JobEntityId", model.JobEntityId,
+                "@Id", model.JobEntityId,
                 "@OrganizationId", model.OrganizationId,
                 "@LastUpdateDate", model.LastUpdateDate,
                 "@LastUpdatedBy", model.LastUpdatedBy,
