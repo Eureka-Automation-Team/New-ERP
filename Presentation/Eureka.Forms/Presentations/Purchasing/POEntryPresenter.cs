@@ -4,6 +4,7 @@ using Eureka.Core.Domain.Manufacturing;
 using Eureka.Core.Domain.Payables;
 using Eureka.Core.Domain.Projects;
 using Eureka.Core.Domain.Purchasing;
+using Eureka.Forms.Views.Purchasing;
 using Eureka.Froms.Views.Controls;
 using Eureka.Froms.Views.Payables;
 using Eureka.Froms.Views.Projects;
@@ -65,13 +66,36 @@ namespace Eureka.Froms.Presentations.Purchasing
             _view.SubmitPO_Click += SubmitPO_Click;
             _view.Print_PO += Print_PO;
             _view.Type_Change += Type_Change;
-            _view.Approved_Click += Approved_Click;
+            _view.Approved_Click += ValidateApproval;
             _view.UnSubmitPO_Click += UnSubmitPO_Click;
             _view.Delete_Row += Delete_Row;
             _view.GetLine_Selected += GetLine_Selected;
             _view.Refresh_Click += Refresh_Click;
             _view.Cancel_Click += Cancel_Click;
             _view.Cancel_Line += Cancel_Line;
+            _view.LineAdjustment += LineAdjustment;
+        }
+
+        private void LineAdjustment(object sender, EventArgs e)
+        {
+            using (POLineAdjustment frm = new POLineAdjustment(_view.poLine))
+            {
+                frm.ShowDialog();
+
+                _view.poLine = frm.poLines;
+                _view.BindingLines(frm.poLines);
+
+                POHeaderModel po = _view.poHead;
+                po.SubTotal = _view.poLine.Where(x => x.CancelFlag == false).Sum(x => x.ExtendedAmount);
+                _view.poHead = po;
+                _repository.UpdatePO(po);
+
+                var resProj = _view.poLine.GroupBy(x => x.RefProjectId)
+                                     .Select(group => new { ProjectId = group.Key, lines = group.ToList() })
+                                     .FirstOrDefault();
+                _view.projBudget = _repoProj.GetProjectCostByProjID(resProj.ProjectId);
+                _view.BindingBudgetLines(_view.projBudget);
+            }
         }
 
         private void Cancel_Line(object sender, EventArgs e)
@@ -424,12 +448,12 @@ namespace Eureka.Froms.Presentations.Purchasing
             }
         }
 
-        private void Approved_Click(object sender, EventArgs e)
+        private void ValidateApproval(object sender, EventArgs e)
         {
-            MetroCheckBox chk = sender as MetroCheckBox;
+            //MetroCheckBox chk = sender as MetroCheckBox;
             POHeaderModel po = _view.poHead;
             var pox = _repository.GetPOByID(po.PoHeaderId);
-            if (chk.Checked && !pox.ApprovedFlag)
+            if (po.ApprovedFlag && !pox.ApprovedFlag)
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure to Approve this PO: " + po.PoNum, "Please confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -870,6 +894,38 @@ namespace Eureka.Froms.Presentations.Purchasing
                         _view.projBudget = _repoProj.GetProjectCostByProjID(resProj.ProjectId);
                         _view.BindingBudgetLines(_view.projBudget);
                         //MessageBox.Show("Save PO lines is Completed.", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("PO Lines is Error! " + Environment.NewLine
+                    + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveApproved_Lines()
+        {
+            try
+            {
+                if (_view.poLine != null)
+                {
+                    if (_view.poLine.Count > 0)
+                    {
+                        List<POLineModel> list = _view.poLine;
+                        foreach (POLineModel item in list)
+                        {
+                            var line = _repository.GetPOLineByID(item.PoLineId);
+
+                            line.DueDate = item.DueDate;
+                            line.LastUpdatedBy = _view.EpiSession.User.Id;
+                            line.LastUpdateDate = DateTime.Now;
+
+                            _repository.UpdatePOLine(line);
+                        }
+
+                        _view.poLine = _repository.GetPOLineByPOID(_view.poHead.PoHeaderId);
+                        _view.BindingLines(_view.poLine);
                     }
                 }
             }
@@ -1533,17 +1589,20 @@ namespace Eureka.Froms.Presentations.Purchasing
                     po.PoNum = _repository.GetDocNoByType(typeLookup);
                     po.CreatedBy = _view.EpiSession.User.Id;
                     po.LastUpdatedBy = _view.EpiSession.User.Id;
-                    //po.RateDate = DateTime.Now;
-                    //po.RevisedDate = DateTime.Now;
-                    //po.ApprovedDate = DateTime.Now;
-                    //po.ClosedDate = DateTime.Now;
                     po.PoHeaderId = _repository.InsertPO(po);
                 }
                 else
                 {
+                //po.Discount = _view.poDiscount;
+                //po.Freight = _view.poFreight;
+                    ValidateApproval(null, null);
                     _repository.UpdatePO(po);
                     if(!po.SubmitFlag)
                         Save_Lines();
+
+                    if (po.ApprovedFlag)
+                        SaveApproved_Lines();
+
                 }
             //}
             //else

@@ -69,13 +69,18 @@ namespace Eureka.CNC.Views
                 if (cboFilterType.Text == "REREASE")
                 {
                     mnuRelease.Enabled = true;
-                    //mnuReSchedule.Enabled = true;
+                    mnuAutoScheduling.Enabled = false;
                     mnuQCInspection.Enabled = false;
                 }else if (cboFilterType.Text == "INSPECTION")
                 {
                     mnuRelease.Enabled = false;
-                    //mnuReSchedule.Enabled = false;
+                    mnuAutoScheduling.Enabled = false;
                     mnuQCInspection.Enabled = true;
+                }else if (cboFilterType.Text == "QUEUING")
+                {
+                    mnuRelease.Enabled = false;
+                    mnuAutoScheduling.Enabled = true;
+                    mnuQCInspection.Enabled = false;
                 }
 
             }
@@ -122,6 +127,9 @@ namespace Eureka.CNC.Views
         public event EventHandler QCNG_Click;
         public event EventHandler Sorting_Changed;
         public event EventHandler ReSchedule_Click;
+        public event EventHandler InsertUrgent;
+        public event EventHandler CellValidate;
+        public event EventHandler UpdateSchedule;
 
         public void BindingTask()
         {
@@ -201,6 +209,26 @@ namespace Eureka.CNC.Views
         {
             if (Sorting_Changed != null)
                 Sorting_Changed(sender, e);
+        }
+
+        private void urgentTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (InsertUrgent != null)
+                InsertUrgent(dgvTasks, e);
+        }
+
+        private void dgvTasks_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dgvTasks.Rows[e.RowIndex].IsNewRow) { return; }
+
+            if (CellValidate != null)
+                CellValidate(sender, e);
+        }
+
+        private void mnuAutoScheduling_Click(object sender, EventArgs e)
+        {
+            if (UpdateSchedule != null)
+                UpdateSchedule(dgvTasks, e);
         }
     }
 }

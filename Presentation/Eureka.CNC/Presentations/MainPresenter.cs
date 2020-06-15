@@ -97,7 +97,7 @@ namespace Eureka.CNC.Presentations.Security
                         if(machine != null)
                         {
                             ProgramTransferSrv srv = new ProgramTransferSrv(machine.IpAddress);
-                            string fileName = System.IO.Path.GetFileName(NewFile);
+                            string fileName = Path.GetFileName(NewFile);
                             resultMessage = srv.UploadCNCProgram(0, NewFile, out retValueInt);
 
                             if (retValueInt == 0)//EW_OK  = Upload file Successfully.

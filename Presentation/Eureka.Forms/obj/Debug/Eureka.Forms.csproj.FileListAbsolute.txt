@@ -120,3 +120,4 @@ D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\RdlCompile.compil
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\bin\Debug\Microsoft.SqlServer.Types.dll
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Inventory.ItemsDupplicateForm.resources
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Security.ChangPassword.resources
+D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Purchasing.POLineAdjustment.resources

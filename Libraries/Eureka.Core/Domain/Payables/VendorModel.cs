@@ -26,5 +26,7 @@ namespace Eureka.Core.Domain.Payables
         public DateTime EndDateActive { get; set; }
         public string VatRegistrationNum { get; set; }
 
+        public string Address { get; set; }
+
     }
 }

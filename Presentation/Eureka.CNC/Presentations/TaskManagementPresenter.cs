@@ -31,6 +31,133 @@ namespace Eureka.CNC.Presentations
             _view.QCPass_Click += QC_Pass;
             _view.QCNG_Click += QC_NG;
             _view.Sorting_Changed += Sorting;
+            _view.InsertUrgent += InsertUrgent;
+            _view.CellValidate += CellValidate;
+            _view.UpdateSchedule += UpdateSchedule;
+        }
+
+        private void UpdateSchedule(object sender, EventArgs e)
+        {
+            MetroGrid grd = sender as MetroGrid;
+            DialogResult dialogResult = MessageBox.Show("Are you sure to Release tasks.", "Please confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                foreach (DataGridViewRow dgr in grd.Rows)
+                {
+                    JobTaskModel curr = (JobTaskModel)dgr.DataBoundItem;
+                    if (curr.Priority > 0)
+                    {
+                        curr.LastUpdateDate = DateTime.Now;
+                        curr.LastUpdatedBy = _view.EpiSession.User.Id;
+
+                        _repository.UpdateTask(curr);
+                    }
+
+                }
+
+                List<JobTaskModel> list = new List<JobTaskModel>();
+                var result = _repository.GetReleaseTasks().OrderBy(o => o.Priority).ToList();
+                var macGroup = result.GroupBy(x => string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady).ToList();
+
+                foreach (var grp in macGroup)
+                {
+                    var lastTimeRecord = result.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key)
+                                               .OrderBy(o => o.Priority)
+                                               .FirstOrDefault();
+
+                    DateTime nextTime = lastTimeRecord.StartDate;
+
+                    foreach (var item in result.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key))
+                    {
+                        item.StartDate = nextTime;
+                        nextTime = item.EndDate;
+
+                        _repository.UpdateTask(item);
+                    }
+                }
+
+                Filter(null, null);
+            }
+        }
+    
+
+        private void CellValidate(object sender, EventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            DataGridViewCellValidatingEventArgs arg = e as DataGridViewCellValidatingEventArgs;
+
+            dgv.Rows[arg.RowIndex].ErrorText = "";
+            if (dgv.Rows[arg.RowIndex].IsNewRow) { return; }
+
+            string headerText = dgv.Columns[arg.ColumnIndex].Name;            
+            JobTaskModel curr = (JobTaskModel)_view.bindingTasks.Current;
+
+            if (headerText == "priorityDataGridViewTextBoxColumn")  //Item Code
+            {
+                int value = Convert.ToInt32(arg.FormattedValue.ToString());
+                if (value == 0)
+                {
+                    MessageBox.Show("Priority must not be zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    arg.Cancel = true;
+                }
+
+                var released1 = _repository.GetReleaseTasks().Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) 
+                                                                     == (string.IsNullOrEmpty(curr.MachineNoReady) ? curr.MachineNo : curr.MachineNoReady)).ToList();
+
+                var released2 = released1.Where(x => x.Priority == value).ToList();
+
+                var released = released2.Where(x => x.TaskId != curr.TaskId).ToList();
+
+                if (released.Count() != 0)
+                {                    
+                        MessageBox.Show(string.Format("Priority {0} is already in queuing."
+                                                        , value), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        arg.Cancel = true;
+                }                
+            }
+        }
+
+        private void InsertUrgent(object sender, EventArgs e)
+        {
+            MetroGrid grd = sender as MetroGrid;
+            if (grd.SelectedRows.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure to insert this Tasks as Urgent.", "Please confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    List<JobTaskModel> urgentTasks = new List<JobTaskModel>();
+
+                    foreach (DataGridViewRow dgr in grd.SelectedRows)
+                    {
+                        JobTaskModel curr = (JobTaskModel)dgr.DataBoundItem;
+                        urgentTasks.Add(curr);
+                    }
+
+                    RescheduleJobs(urgentTasks);
+                }
+            }
+        }
+
+        private void RescheduleJobs(List<JobTaskModel> tasks)
+        {
+            int i = tasks.Count() + 1;
+            var result = _repository.GetReleaseTasks();
+            foreach (var item in result.OrderBy(o => o.Priority))
+            {
+                item.Priority = i;
+                i++;
+                _repository.UpdateTask(item);
+            }
+
+            int n = 1;
+            foreach(var item in tasks.OrderBy(o => o.DueDate))
+            {
+                item.ReleaseFlag = true;
+                item.Priority = n;
+                n++;
+                _repository.UpdateTask(item);
+            }
         }
 
         private void Sorting(object sender, EventArgs e)
@@ -207,6 +334,7 @@ namespace Eureka.CNC.Presentations
         {
             Cursor.Current = Cursors.WaitCursor;
             List<JobTaskModel> tasks = new List<JobTaskModel>();
+            var released = _repository.GetReleaseTasks().OrderBy(o => o.Priority).ToList();
 
             if (_view.FilterType == "REREASE")
             {
@@ -214,6 +342,9 @@ namespace Eureka.CNC.Presentations
             }else if(_view.FilterType == "INSPECTION")
             {
                 tasks = _repository.GetInspectionTask().OrderBy(o => o.StartDate).ToList();
+            }else if(_view.FilterType == "QUEUING")
+            {
+                tasks = released;
             }
             else
             {
@@ -228,9 +359,64 @@ namespace Eureka.CNC.Presentations
             if (_view.FilterBy == "Model") tasks = tasks.Where(x => x.PrimaryItemModel.ToUpper().Contains(_view.FilterWord.ToUpper())).ToList();
             if (_view.FilterBy == "Machine Code") tasks = tasks.Where(x => x.MachineNo.ToUpper().Contains(_view.FilterWord.ToUpper())).ToList();
 
-            _view.tasks = tasks;
+            if(_view.FilterType == "REREASE")
+            {
+                tasks = RescheduleTask(tasks, released);
+            }
+            _view.tasks = tasks.OrderBy(x => x.MachineNo).ThenBy(x => x.Priority).ToList();
             _view.bindingTasks.DataSource = tasks;
             Cursor.Current = Cursors.Default;
+        }
+
+        private List<JobTaskModel> RescheduleTask(List<JobTaskModel> tasksPending, List<JobTaskModel> tasksQueuing)
+        {
+            List<JobTaskModel> list = new List<JobTaskModel>();
+            var macGroup = tasksPending.GroupBy(x => string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady).ToList();
+
+            foreach(var grp in macGroup)
+            {
+                var lastTimeRecord = tasksQueuing.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key)
+                                           .OrderByDescending(o => o.StartDate)
+                                           .FirstOrDefault();
+                                                          //.Max(x => x.EndDate);
+
+                var maxPriorityRecord = tasksQueuing.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key)
+                                                    .OrderByDescending(o => o.StartDate)
+                                                    .FirstOrDefault();
+
+                decimal maxPriority;
+                if (maxPriorityRecord != null)
+                {
+                    maxPriority = (decimal)maxPriorityRecord.Priority;
+                    maxPriority = Math.Round(maxPriority / 10, 0) * 10;
+                }
+                else
+                    maxPriority = 0;
+                
+                DateTime nextTime = DateTime.Now;
+
+                if(lastTimeRecord != null)
+                {
+                    nextTime = lastTimeRecord.EndDate;
+                }else
+                {
+                    nextTime = (DateTime)tasksPending.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key)
+                                                     .Max(x => x.EndDate);
+                }
+               
+                foreach (var item in tasksPending.Where(x => (string.IsNullOrEmpty(x.MachineNoReady) ? x.MachineNo : x.MachineNoReady) == grp.Key))
+                {
+                    maxPriority = maxPriority + 10;
+                    item.Priority = (int)maxPriority;
+
+                    item.StartDate = nextTime;
+                    nextTime = item.EndDate;
+
+                    list.Add(item);
+                }
+            }
+
+            return list;
         }
 
         private void Load(object sender, EventArgs e)

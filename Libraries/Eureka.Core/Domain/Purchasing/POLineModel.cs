@@ -46,7 +46,7 @@ namespace Eureka.Core.Domain.Purchasing
         [DisplayName("Load Bom Date")]
         public Nullable<DateTime> LoadBomDate { get; set; }      
         [DisplayName("Extended Cost")]
-        public double ExtendedAmount
+        public double ExtendedAmount                //20
         {
             get { return Quantity * UnitPrice; }
         }
@@ -82,7 +82,7 @@ namespace Eureka.Core.Domain.Purchasing
         public int CreatedBy { get; set; }
         public int ItemId { get; set; }
         
-        public double QunitityCompleted { get; set; }
+        public double QunitityCompleted { get; set; }           //30
         public double BaseUnitPrice { get; set; }
         public string TaxAbleFlag { get; set; }
         public string TaxCode { get; set; }

@@ -33,20 +33,48 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskManagementForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.dgvTasks = new MetroFramework.Controls.MetroGrid();
+            this.PrimaryItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrimaryItemModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrimaryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.urgentTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingNav = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.cboFilterType = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.cboFilterBy = new System.Windows.Forms.ToolStripComboBox();
+            this.txtFilterWord = new System.Windows.Forms.ToolStripTextBox();
+            this.mnuFilter = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuAutoScheduling = new System.Windows.Forms.ToolStripButton();
+            this.mnuRelease = new System.Windows.Forms.ToolStripButton();
+            this.mnuQCInspection = new System.Windows.Forms.ToolStripSplitButton();
+            this.mnuQCPass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQCNG = new System.Windows.Forms.ToolStripMenuItem();
+            this.cboSortType = new System.Windows.Forms.ToolStripComboBox();
+            this.cboSortBy = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taskIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taskSeqDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taskNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrimaryItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrimaryItemModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrimaryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.managerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,37 +107,12 @@
             this.mcPickFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.qCStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobTaskModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNav = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.cboFilterType = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.cboFilterBy = new System.Windows.Forms.ToolStripComboBox();
-            this.txtFilterWord = new System.Windows.Forms.ToolStripTextBox();
-            this.mnuFilter = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuRelease = new System.Windows.Forms.ToolStripButton();
-            this.mnuQCInspection = new System.Windows.Forms.ToolStripSplitButton();
-            this.mnuQCPass = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQCNG = new System.Windows.Forms.ToolStripMenuItem();
-            this.cboSortType = new System.Windows.Forms.ToolStripComboBox();
-            this.cboSortBy = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.mnuAutoScheduling = new System.Windows.Forms.ToolStripButton();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobTaskModelBindingSource)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).BeginInit();
             this.bindingNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobTaskModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -193,6 +196,7 @@
             this.ncFileDataGridViewTextBoxColumn,
             this.mcPickFlagDataGridViewCheckBoxColumn,
             this.qCStatusDataGridViewTextBoxColumn});
+            this.dgvTasks.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvTasks.DataSource = this.jobTaskModelBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -233,6 +237,320 @@
             this.dgvTasks.UseCustomBackColor = true;
             this.dgvTasks.UseCustomForeColor = true;
             this.dgvTasks.UseStyleColors = true;
+            this.dgvTasks.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvTasks_CellValidating);
+            // 
+            // PrimaryItemCode
+            // 
+            this.PrimaryItemCode.DataPropertyName = "PrimaryItemCode";
+            this.PrimaryItemCode.HeaderText = "Item Code";
+            this.PrimaryItemCode.Name = "PrimaryItemCode";
+            this.PrimaryItemCode.ReadOnly = true;
+            this.PrimaryItemCode.Width = 101;
+            // 
+            // PrimaryItemModel
+            // 
+            this.PrimaryItemModel.DataPropertyName = "PrimaryItemModel";
+            this.PrimaryItemModel.HeaderText = "Model";
+            this.PrimaryItemModel.Name = "PrimaryItemModel";
+            this.PrimaryItemModel.ReadOnly = true;
+            this.PrimaryItemModel.Width = 71;
+            // 
+            // PrimaryQuantity
+            // 
+            this.PrimaryQuantity.DataPropertyName = "PrimaryQuantity";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.PrimaryQuantity.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PrimaryQuantity.HeaderText = "Qty.";
+            this.PrimaryQuantity.Name = "PrimaryQuantity";
+            this.PrimaryQuantity.ReadOnly = true;
+            this.PrimaryQuantity.Width = 57;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.urgentTaskToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 26);
+            // 
+            // urgentTaskToolStripMenuItem
+            // 
+            this.urgentTaskToolStripMenuItem.Name = "urgentTaskToolStripMenuItem";
+            this.urgentTaskToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.urgentTaskToolStripMenuItem.Text = "Insert Urgent task";
+            this.urgentTaskToolStripMenuItem.Click += new System.EventHandler(this.urgentTaskToolStripMenuItem_Click);
+            // 
+            // bindingNav
+            // 
+            this.bindingNav.AddNewItem = null;
+            this.bindingNav.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNav.DeleteItem = null;
+            this.bindingNav.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNav.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bindingNav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.toolStripLabel1,
+            this.cboFilterType,
+            this.toolStripLabel2,
+            this.cboFilterBy,
+            this.txtFilterWord,
+            this.mnuFilter,
+            this.toolStripSeparator2,
+            this.mnuRelease,
+            this.mnuAutoScheduling,
+            this.mnuQCInspection,
+            this.cboSortType,
+            this.cboSortBy,
+            this.toolStripLabel3});
+            this.bindingNav.Location = new System.Drawing.Point(0, 0);
+            this.bindingNav.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNav.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNav.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNav.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNav.Name = "bindingNav";
+            this.bindingNav.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNav.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.bindingNav.Size = new System.Drawing.Size(1466, 31);
+            this.bindingNav.TabIndex = 40;
+            this.bindingNav.Text = "Navigator";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 28);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 28);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 28);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 28);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(60, 28);
+            this.toolStripLabel1.Text = "Filter Type";
+            // 
+            // cboFilterType
+            // 
+            this.cboFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFilterType.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cboFilterType.Items.AddRange(new object[] {
+            "REREASE",
+            "QUEUING",
+            "INSPECTION"});
+            this.cboFilterType.Name = "cboFilterType";
+            this.cboFilterType.Size = new System.Drawing.Size(121, 31);
+            this.cboFilterType.SelectedIndexChanged += new System.EventHandler(this.cboFilterType_SelectedIndexChanged);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(62, 28);
+            this.toolStripLabel2.Text = "Serarch by";
+            // 
+            // cboFilterBy
+            // 
+            this.cboFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFilterBy.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cboFilterBy.Items.AddRange(new object[] {
+            "*",
+            "Task",
+            "Job No.",
+            "Item Code",
+            "Model",
+            "Machine Code"});
+            this.cboFilterBy.Name = "cboFilterBy";
+            this.cboFilterBy.Size = new System.Drawing.Size(121, 31);
+            this.cboFilterBy.SelectedIndexChanged += new System.EventHandler(this.cboFilterBy_SelectedIndexChanged);
+            // 
+            // txtFilterWord
+            // 
+            this.txtFilterWord.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterWord.Name = "txtFilterWord";
+            this.txtFilterWord.Size = new System.Drawing.Size(150, 31);
+            // 
+            // mnuFilter
+            // 
+            this.mnuFilter.Image = ((System.Drawing.Image)(resources.GetObject("mnuFilter.Image")));
+            this.mnuFilter.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuFilter.Name = "mnuFilter";
+            this.mnuFilter.Size = new System.Drawing.Size(58, 28);
+            this.mnuFilter.Text = "Find";
+            this.mnuFilter.Click += new System.EventHandler(this.mnuFilter_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // mnuAutoScheduling
+            // 
+            this.mnuAutoScheduling.Image = ((System.Drawing.Image)(resources.GetObject("mnuAutoScheduling.Image")));
+            this.mnuAutoScheduling.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuAutoScheduling.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuAutoScheduling.Name = "mnuAutoScheduling";
+            this.mnuAutoScheduling.Size = new System.Drawing.Size(135, 28);
+            this.mnuAutoScheduling.Text = "Update Scheduling";
+            this.mnuAutoScheduling.Click += new System.EventHandler(this.mnuAutoScheduling_Click);
+            // 
+            // mnuRelease
+            // 
+            this.mnuRelease.Image = ((System.Drawing.Image)(resources.GetObject("mnuRelease.Image")));
+            this.mnuRelease.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuRelease.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuRelease.Name = "mnuRelease";
+            this.mnuRelease.Size = new System.Drawing.Size(104, 28);
+            this.mnuRelease.Text = "Release Tasks";
+            this.mnuRelease.Click += new System.EventHandler(this.mnuRelease_Click);
+            // 
+            // mnuQCInspection
+            // 
+            this.mnuQCInspection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuQCPass,
+            this.mnuQCNG});
+            this.mnuQCInspection.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCInspection.Image")));
+            this.mnuQCInspection.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuQCInspection.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuQCInspection.Name = "mnuQCInspection";
+            this.mnuQCInspection.Size = new System.Drawing.Size(122, 28);
+            this.mnuQCInspection.Text = "QC Inspection";
+            // 
+            // mnuQCPass
+            // 
+            this.mnuQCPass.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCPass.Image")));
+            this.mnuQCPass.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuQCPass.Name = "mnuQCPass";
+            this.mnuQCPass.Size = new System.Drawing.Size(108, 30);
+            this.mnuQCPass.Text = "PASS";
+            this.mnuQCPass.Click += new System.EventHandler(this.mnuQCPass_Click);
+            // 
+            // mnuQCNG
+            // 
+            this.mnuQCNG.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCNG.Image")));
+            this.mnuQCNG.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.mnuQCNG.Name = "mnuQCNG";
+            this.mnuQCNG.Size = new System.Drawing.Size(108, 30);
+            this.mnuQCNG.Text = "NG";
+            this.mnuQCNG.Click += new System.EventHandler(this.mnuQCNG_Click);
+            // 
+            // cboSortType
+            // 
+            this.cboSortType.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.cboSortType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSortType.Items.AddRange(new object[] {
+            "A-Z",
+            "Z-A"});
+            this.cboSortType.Name = "cboSortType";
+            this.cboSortType.Size = new System.Drawing.Size(121, 31);
+            this.cboSortType.SelectedIndexChanged += new System.EventHandler(this.cboSortType_SelectedIndexChanged);
+            // 
+            // cboSortBy
+            // 
+            this.cboSortBy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.cboSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSortBy.Items.AddRange(new object[] {
+            "Job No.",
+            "Task No.",
+            "Item Code",
+            "Model",
+            "Start Date",
+            "End Date",
+            "Due Date",
+            "Machine Code"});
+            this.cboSortBy.Name = "cboSortBy";
+            this.cboSortBy.Size = new System.Drawing.Size(121, 31);
+            this.cboSortBy.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox2_SelectedIndexChanged);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(47, 28);
+            this.toolStripLabel3.Text = "Sort By:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(1154, 6);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel5.TabIndex = 75;
+            this.metroLabel5.Text = "Sort by :";
+            this.metroLabel5.UseStyleColors = true;
             // 
             // priorityDataGridViewTextBoxColumn
             // 
@@ -282,32 +600,6 @@
             this.jobNumberDataGridViewTextBoxColumn.Name = "jobNumberDataGridViewTextBoxColumn";
             this.jobNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.jobNumberDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // PrimaryItemCode
-            // 
-            this.PrimaryItemCode.DataPropertyName = "PrimaryItemCode";
-            this.PrimaryItemCode.HeaderText = "Item Code";
-            this.PrimaryItemCode.Name = "PrimaryItemCode";
-            this.PrimaryItemCode.ReadOnly = true;
-            this.PrimaryItemCode.Width = 101;
-            // 
-            // PrimaryItemModel
-            // 
-            this.PrimaryItemModel.DataPropertyName = "PrimaryItemModel";
-            this.PrimaryItemModel.HeaderText = "Model";
-            this.PrimaryItemModel.Name = "PrimaryItemModel";
-            this.PrimaryItemModel.ReadOnly = true;
-            this.PrimaryItemModel.Width = 71;
-            // 
-            // PrimaryQuantity
-            // 
-            this.PrimaryQuantity.DataPropertyName = "PrimaryQuantity";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.PrimaryQuantity.DefaultCellStyle = dataGridViewCellStyle3;
-            this.PrimaryQuantity.HeaderText = "Qty.";
-            this.PrimaryQuantity.Name = "PrimaryQuantity";
-            this.PrimaryQuantity.ReadOnly = true;
-            this.PrimaryQuantity.Width = 57;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -572,277 +864,6 @@
             // 
             this.jobTaskModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Manufacturing.JobTaskModel);
             // 
-            // bindingNav
-            // 
-            this.bindingNav.AddNewItem = null;
-            this.bindingNav.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNav.DeleteItem = null;
-            this.bindingNav.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNav.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.toolStripLabel1,
-            this.cboFilterType,
-            this.toolStripLabel2,
-            this.cboFilterBy,
-            this.txtFilterWord,
-            this.mnuFilter,
-            this.toolStripSeparator2,
-            this.mnuAutoScheduling,
-            this.mnuRelease,
-            this.mnuQCInspection,
-            this.cboSortType,
-            this.cboSortBy,
-            this.toolStripLabel3});
-            this.bindingNav.Location = new System.Drawing.Point(0, 0);
-            this.bindingNav.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNav.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNav.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNav.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNav.Name = "bindingNav";
-            this.bindingNav.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNav.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNav.Size = new System.Drawing.Size(1466, 31);
-            this.bindingNav.TabIndex = 40;
-            this.bindingNav.Text = "Navigator";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 28);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 28);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 28);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 28);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(60, 28);
-            this.toolStripLabel1.Text = "Filter Type";
-            // 
-            // cboFilterType
-            // 
-            this.cboFilterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFilterType.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.cboFilterType.Items.AddRange(new object[] {
-            "REREASE",
-            "INSPECTION"});
-            this.cboFilterType.Name = "cboFilterType";
-            this.cboFilterType.Size = new System.Drawing.Size(121, 31);
-            this.cboFilterType.SelectedIndexChanged += new System.EventHandler(this.cboFilterType_SelectedIndexChanged);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(62, 28);
-            this.toolStripLabel2.Text = "Serarch by";
-            // 
-            // cboFilterBy
-            // 
-            this.cboFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFilterBy.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.cboFilterBy.Items.AddRange(new object[] {
-            "*",
-            "Task",
-            "Job No.",
-            "Item Code",
-            "Model",
-            "Machine Code"});
-            this.cboFilterBy.Name = "cboFilterBy";
-            this.cboFilterBy.Size = new System.Drawing.Size(121, 31);
-            this.cboFilterBy.SelectedIndexChanged += new System.EventHandler(this.cboFilterBy_SelectedIndexChanged);
-            // 
-            // txtFilterWord
-            // 
-            this.txtFilterWord.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFilterWord.Name = "txtFilterWord";
-            this.txtFilterWord.Size = new System.Drawing.Size(150, 31);
-            // 
-            // mnuFilter
-            // 
-            this.mnuFilter.Image = ((System.Drawing.Image)(resources.GetObject("mnuFilter.Image")));
-            this.mnuFilter.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuFilter.Name = "mnuFilter";
-            this.mnuFilter.Size = new System.Drawing.Size(58, 28);
-            this.mnuFilter.Text = "Find";
-            this.mnuFilter.Click += new System.EventHandler(this.mnuFilter_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // mnuRelease
-            // 
-            this.mnuRelease.Image = ((System.Drawing.Image)(resources.GetObject("mnuRelease.Image")));
-            this.mnuRelease.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuRelease.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuRelease.Name = "mnuRelease";
-            this.mnuRelease.Size = new System.Drawing.Size(104, 28);
-            this.mnuRelease.Text = "Release Tasks";
-            this.mnuRelease.Click += new System.EventHandler(this.mnuRelease_Click);
-            // 
-            // mnuQCInspection
-            // 
-            this.mnuQCInspection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuQCPass,
-            this.mnuQCNG});
-            this.mnuQCInspection.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCInspection.Image")));
-            this.mnuQCInspection.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuQCInspection.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuQCInspection.Name = "mnuQCInspection";
-            this.mnuQCInspection.Size = new System.Drawing.Size(122, 28);
-            this.mnuQCInspection.Text = "QC Inspection";
-            // 
-            // mnuQCPass
-            // 
-            this.mnuQCPass.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCPass.Image")));
-            this.mnuQCPass.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuQCPass.Name = "mnuQCPass";
-            this.mnuQCPass.Size = new System.Drawing.Size(188, 30);
-            this.mnuQCPass.Text = "PASS";
-            this.mnuQCPass.Click += new System.EventHandler(this.mnuQCPass_Click);
-            // 
-            // mnuQCNG
-            // 
-            this.mnuQCNG.Image = ((System.Drawing.Image)(resources.GetObject("mnuQCNG.Image")));
-            this.mnuQCNG.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuQCNG.Name = "mnuQCNG";
-            this.mnuQCNG.Size = new System.Drawing.Size(188, 30);
-            this.mnuQCNG.Text = "NG";
-            this.mnuQCNG.Click += new System.EventHandler(this.mnuQCNG_Click);
-            // 
-            // cboSortType
-            // 
-            this.cboSortType.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.cboSortType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSortType.Items.AddRange(new object[] {
-            "A-Z",
-            "Z-A"});
-            this.cboSortType.Name = "cboSortType";
-            this.cboSortType.Size = new System.Drawing.Size(121, 31);
-            this.cboSortType.SelectedIndexChanged += new System.EventHandler(this.cboSortType_SelectedIndexChanged);
-            // 
-            // cboSortBy
-            // 
-            this.cboSortBy.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.cboSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSortBy.Items.AddRange(new object[] {
-            "Job No.",
-            "Task No.",
-            "Item Code",
-            "Model",
-            "Start Date",
-            "End Date",
-            "Due Date",
-            "Machine Code"});
-            this.cboSortBy.Name = "cboSortBy";
-            this.cboSortBy.Size = new System.Drawing.Size(121, 31);
-            this.cboSortBy.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox2_SelectedIndexChanged);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(47, 28);
-            this.toolStripLabel3.Text = "Sort By:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(1154, 6);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(60, 19);
-            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel5.TabIndex = 75;
-            this.metroLabel5.Text = "Sort by :";
-            this.metroLabel5.UseStyleColors = true;
-            // 
-            // mnuAutoScheduling
-            // 
-            this.mnuAutoScheduling.Image = ((System.Drawing.Image)(resources.GetObject("mnuAutoScheduling.Image")));
-            this.mnuAutoScheduling.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.mnuAutoScheduling.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnuAutoScheduling.Name = "mnuAutoScheduling";
-            this.mnuAutoScheduling.Size = new System.Drawing.Size(123, 28);
-            this.mnuAutoScheduling.Text = "Auto Scheduling";
-            // 
             // TaskManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -857,10 +878,11 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobTaskModelBindingSource)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).EndInit();
             this.bindingNav.ResumeLayout(false);
             this.bindingNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobTaskModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -936,5 +958,7 @@
         private System.Windows.Forms.ToolStripComboBox cboSortBy;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripButton mnuAutoScheduling;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem urgentTaskToolStripMenuItem;
     }
 }

@@ -120,7 +120,7 @@ namespace Eureka.Froms.Presentations.Purchasing
             //Filter_Click(sender, e);
         }
 
-        public async Task<IPagedList<POHeaderModel>> GetPagedListAsync(int pageNumber = 1, int pageSize = 50)
+        public async Task<IPagedList<POHeaderModel>> GetPagedListAsync(int pageNumber = 1, int pageSize = 100)
         {
             return await Task.Factory.StartNew(() =>
             {

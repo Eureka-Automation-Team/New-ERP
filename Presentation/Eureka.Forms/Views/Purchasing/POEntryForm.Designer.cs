@@ -61,55 +61,6 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dgvPOs = new MetroFramework.Controls.MetroGrid();
-            this.poHeaderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pODateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeLookupCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdatedByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creationDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdByDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buyerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorSiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipToLocationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billToLocationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.termDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorizationStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.revisionNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.revisedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approvedFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.approvedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remarksDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.closedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approvalRequiredFlagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cancelFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.statusCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receivedFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.buyerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.submitFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.jobFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.revisionNoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pOHeaderModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCurrencyCode5 = new MetroFramework.Controls.MetroTextBox();
             this.txtFreight = new MetroFramework.Controls.MetroTextBox();
@@ -184,33 +135,6 @@
             this.CostRequisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RemainMessage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lineNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cBDAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTGAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mP1AmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budgetCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fcstCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ufLastForecastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ufBudgetRemainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ufProjectReasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdateByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.excessCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costRequisitionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remainPercentageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remainMessageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectCostModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNav = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -238,6 +162,84 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.printPurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuLineAdjustment = new System.Windows.Forms.ToolStripMenuItem();
+            this.poHeaderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pODateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeLookupCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdatedByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creationDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buyerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorSiteIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipToLocationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billToLocationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.termDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rateTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorizationStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.revisionNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.revisedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvedFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.approvedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarksDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvalRequiredFlagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cancelFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.statusCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectNumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receivedFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buyerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.submitFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.jobFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.revisionNoteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pOHeaderModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lineNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cBDAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTGAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mP1AmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.budgetCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fcstCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actCostAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ufLastForecastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ufBudgetRemainDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ufProjectReasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdateByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.excessCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costRequisitionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remainPercentageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remainMessageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectCostModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -251,7 +253,6 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOHeaderModelBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprovalList)).BeginInit();
             this.metroPanel6.SuspendLayout();
@@ -262,9 +263,10 @@
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudget)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectCostModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).BeginInit();
             this.bindingNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pOHeaderModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectCostModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -484,437 +486,6 @@
             this.dgvPOs.UseStyleColors = true;
             this.dgvPOs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPOs_CellDoubleClick_1);
             this.dgvPOs.SelectionChanged += new System.EventHandler(this.dgvPOs_SelectionChanged);
-            // 
-            // poHeaderIdDataGridViewTextBoxColumn
-            // 
-            this.poHeaderIdDataGridViewTextBoxColumn.DataPropertyName = "PoHeaderId";
-            this.poHeaderIdDataGridViewTextBoxColumn.HeaderText = "PoHeaderId";
-            this.poHeaderIdDataGridViewTextBoxColumn.Name = "poHeaderIdDataGridViewTextBoxColumn";
-            this.poHeaderIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.poHeaderIdDataGridViewTextBoxColumn.Visible = false;
-            this.poHeaderIdDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // poNumDataGridViewTextBoxColumn
-            // 
-            this.poNumDataGridViewTextBoxColumn.DataPropertyName = "PoNum";
-            this.poNumDataGridViewTextBoxColumn.HeaderText = "PO No.";
-            this.poNumDataGridViewTextBoxColumn.Name = "poNumDataGridViewTextBoxColumn";
-            this.poNumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.poNumDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // pODateDataGridViewTextBoxColumn
-            // 
-            this.pODateDataGridViewTextBoxColumn.DataPropertyName = "PODate";
-            this.pODateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.pODateDataGridViewTextBoxColumn.Name = "pODateDataGridViewTextBoxColumn";
-            this.pODateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pODateDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // typeLookupCodeDataGridViewTextBoxColumn
-            // 
-            this.typeLookupCodeDataGridViewTextBoxColumn.DataPropertyName = "TypeLookupCode";
-            this.typeLookupCodeDataGridViewTextBoxColumn.HeaderText = "TypeLookupCode";
-            this.typeLookupCodeDataGridViewTextBoxColumn.Name = "typeLookupCodeDataGridViewTextBoxColumn";
-            this.typeLookupCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeLookupCodeDataGridViewTextBoxColumn.Visible = false;
-            this.typeLookupCodeDataGridViewTextBoxColumn.Width = 144;
-            // 
-            // lastUpdateDateDataGridViewTextBoxColumn1
-            // 
-            this.lastUpdateDateDataGridViewTextBoxColumn1.DataPropertyName = "LastUpdateDate";
-            this.lastUpdateDateDataGridViewTextBoxColumn1.HeaderText = "LastUpdateDate";
-            this.lastUpdateDateDataGridViewTextBoxColumn1.Name = "lastUpdateDateDataGridViewTextBoxColumn1";
-            this.lastUpdateDateDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lastUpdateDateDataGridViewTextBoxColumn1.Visible = false;
-            this.lastUpdateDateDataGridViewTextBoxColumn1.Width = 136;
-            // 
-            // lastUpdatedByDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedByDataGridViewTextBoxColumn.DataPropertyName = "LastUpdatedBy";
-            this.lastUpdatedByDataGridViewTextBoxColumn.HeaderText = "LastUpdatedBy";
-            this.lastUpdatedByDataGridViewTextBoxColumn.Name = "lastUpdatedByDataGridViewTextBoxColumn";
-            this.lastUpdatedByDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdatedByDataGridViewTextBoxColumn.Visible = false;
-            this.lastUpdatedByDataGridViewTextBoxColumn.Width = 126;
-            // 
-            // creationDateDataGridViewTextBoxColumn1
-            // 
-            this.creationDateDataGridViewTextBoxColumn1.DataPropertyName = "CreationDate";
-            this.creationDateDataGridViewTextBoxColumn1.HeaderText = "CreationDate";
-            this.creationDateDataGridViewTextBoxColumn1.Name = "creationDateDataGridViewTextBoxColumn1";
-            this.creationDateDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.creationDateDataGridViewTextBoxColumn1.Visible = false;
-            this.creationDateDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // createdByDataGridViewTextBoxColumn1
-            // 
-            this.createdByDataGridViewTextBoxColumn1.DataPropertyName = "CreatedBy";
-            this.createdByDataGridViewTextBoxColumn1.HeaderText = "CreatedBy";
-            this.createdByDataGridViewTextBoxColumn1.Name = "createdByDataGridViewTextBoxColumn1";
-            this.createdByDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.createdByDataGridViewTextBoxColumn1.Visible = false;
-            this.createdByDataGridViewTextBoxColumn1.Width = 98;
-            // 
-            // buyerNameDataGridViewTextBoxColumn
-            // 
-            this.buyerNameDataGridViewTextBoxColumn.DataPropertyName = "BuyerName";
-            this.buyerNameDataGridViewTextBoxColumn.HeaderText = "Buyer";
-            this.buyerNameDataGridViewTextBoxColumn.Name = "buyerNameDataGridViewTextBoxColumn";
-            this.buyerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.buyerNameDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // vendorIdDataGridViewTextBoxColumn
-            // 
-            this.vendorIdDataGridViewTextBoxColumn.DataPropertyName = "VendorId";
-            this.vendorIdDataGridViewTextBoxColumn.HeaderText = "VendorId";
-            this.vendorIdDataGridViewTextBoxColumn.Name = "vendorIdDataGridViewTextBoxColumn";
-            this.vendorIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vendorIdDataGridViewTextBoxColumn.Visible = false;
-            this.vendorIdDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // vendorSiteIdDataGridViewTextBoxColumn
-            // 
-            this.vendorSiteIdDataGridViewTextBoxColumn.DataPropertyName = "VendorSiteId";
-            this.vendorSiteIdDataGridViewTextBoxColumn.HeaderText = "VendorSiteId";
-            this.vendorSiteIdDataGridViewTextBoxColumn.Name = "vendorSiteIdDataGridViewTextBoxColumn";
-            this.vendorSiteIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vendorSiteIdDataGridViewTextBoxColumn.Visible = false;
-            this.vendorSiteIdDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // vendorNumDataGridViewTextBoxColumn
-            // 
-            this.vendorNumDataGridViewTextBoxColumn.DataPropertyName = "VendorNum";
-            this.vendorNumDataGridViewTextBoxColumn.HeaderText = "Vendor Code";
-            this.vendorNumDataGridViewTextBoxColumn.Name = "vendorNumDataGridViewTextBoxColumn";
-            this.vendorNumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vendorNumDataGridViewTextBoxColumn.Width = 119;
-            // 
-            // vendorNameDataGridViewTextBoxColumn
-            // 
-            this.vendorNameDataGridViewTextBoxColumn.DataPropertyName = "VendorName";
-            this.vendorNameDataGridViewTextBoxColumn.HeaderText = "Vendor Name";
-            this.vendorNameDataGridViewTextBoxColumn.Name = "vendorNameDataGridViewTextBoxColumn";
-            this.vendorNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vendorNameDataGridViewTextBoxColumn.Width = 122;
-            // 
-            // shipToLocationIdDataGridViewTextBoxColumn
-            // 
-            this.shipToLocationIdDataGridViewTextBoxColumn.DataPropertyName = "ShipToLocationId";
-            this.shipToLocationIdDataGridViewTextBoxColumn.HeaderText = "ShipToLocationId";
-            this.shipToLocationIdDataGridViewTextBoxColumn.Name = "shipToLocationIdDataGridViewTextBoxColumn";
-            this.shipToLocationIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.shipToLocationIdDataGridViewTextBoxColumn.Visible = false;
-            this.shipToLocationIdDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // billToLocationIdDataGridViewTextBoxColumn
-            // 
-            this.billToLocationIdDataGridViewTextBoxColumn.DataPropertyName = "BillToLocationId";
-            this.billToLocationIdDataGridViewTextBoxColumn.HeaderText = "BillToLocationId";
-            this.billToLocationIdDataGridViewTextBoxColumn.Name = "billToLocationIdDataGridViewTextBoxColumn";
-            this.billToLocationIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.billToLocationIdDataGridViewTextBoxColumn.Visible = false;
-            this.billToLocationIdDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // termIdDataGridViewTextBoxColumn
-            // 
-            this.termIdDataGridViewTextBoxColumn.DataPropertyName = "TermId";
-            this.termIdDataGridViewTextBoxColumn.HeaderText = "TermId";
-            this.termIdDataGridViewTextBoxColumn.Name = "termIdDataGridViewTextBoxColumn";
-            this.termIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.termIdDataGridViewTextBoxColumn.Visible = false;
-            this.termIdDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // termCodeDataGridViewTextBoxColumn
-            // 
-            this.termCodeDataGridViewTextBoxColumn.DataPropertyName = "TermCode";
-            this.termCodeDataGridViewTextBoxColumn.HeaderText = "TermCode";
-            this.termCodeDataGridViewTextBoxColumn.Name = "termCodeDataGridViewTextBoxColumn";
-            this.termCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.termCodeDataGridViewTextBoxColumn.Visible = false;
-            this.termCodeDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // termDescDataGridViewTextBoxColumn
-            // 
-            this.termDescDataGridViewTextBoxColumn.DataPropertyName = "TermDesc";
-            this.termDescDataGridViewTextBoxColumn.HeaderText = "TermDesc";
-            this.termDescDataGridViewTextBoxColumn.Name = "termDescDataGridViewTextBoxColumn";
-            this.termDescDataGridViewTextBoxColumn.ReadOnly = true;
-            this.termDescDataGridViewTextBoxColumn.Visible = false;
-            this.termDescDataGridViewTextBoxColumn.Width = 92;
-            // 
-            // currencyCodeDataGridViewTextBoxColumn
-            // 
-            this.currencyCodeDataGridViewTextBoxColumn.DataPropertyName = "CurrencyCode";
-            this.currencyCodeDataGridViewTextBoxColumn.HeaderText = "CurrencyCode";
-            this.currencyCodeDataGridViewTextBoxColumn.Name = "currencyCodeDataGridViewTextBoxColumn";
-            this.currencyCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.currencyCodeDataGridViewTextBoxColumn.Visible = false;
-            this.currencyCodeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rateTypeDataGridViewTextBoxColumn
-            // 
-            this.rateTypeDataGridViewTextBoxColumn.DataPropertyName = "RateType";
-            this.rateTypeDataGridViewTextBoxColumn.HeaderText = "RateType";
-            this.rateTypeDataGridViewTextBoxColumn.Name = "rateTypeDataGridViewTextBoxColumn";
-            this.rateTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rateTypeDataGridViewTextBoxColumn.Visible = false;
-            this.rateTypeDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // rateDateDataGridViewTextBoxColumn
-            // 
-            this.rateDateDataGridViewTextBoxColumn.DataPropertyName = "RateDate";
-            this.rateDateDataGridViewTextBoxColumn.HeaderText = "RateDate";
-            this.rateDateDataGridViewTextBoxColumn.Name = "rateDateDataGridViewTextBoxColumn";
-            this.rateDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rateDateDataGridViewTextBoxColumn.Visible = false;
-            this.rateDateDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // rateDataGridViewTextBoxColumn
-            // 
-            this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
-            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate";
-            this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
-            this.rateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rateDataGridViewTextBoxColumn.Visible = false;
-            this.rateDataGridViewTextBoxColumn.Width = 61;
-            // 
-            // authorizationStatusDataGridViewTextBoxColumn
-            // 
-            this.authorizationStatusDataGridViewTextBoxColumn.DataPropertyName = "AuthorizationStatus";
-            this.authorizationStatusDataGridViewTextBoxColumn.HeaderText = "AuthorizationStatus";
-            this.authorizationStatusDataGridViewTextBoxColumn.Name = "authorizationStatusDataGridViewTextBoxColumn";
-            this.authorizationStatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.authorizationStatusDataGridViewTextBoxColumn.Visible = false;
-            this.authorizationStatusDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // revisionNumDataGridViewTextBoxColumn
-            // 
-            this.revisionNumDataGridViewTextBoxColumn.DataPropertyName = "RevisionNum";
-            this.revisionNumDataGridViewTextBoxColumn.HeaderText = "RevisionNum";
-            this.revisionNumDataGridViewTextBoxColumn.Name = "revisionNumDataGridViewTextBoxColumn";
-            this.revisionNumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.revisionNumDataGridViewTextBoxColumn.Visible = false;
-            this.revisionNumDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // revisedDateDataGridViewTextBoxColumn
-            // 
-            this.revisedDateDataGridViewTextBoxColumn.DataPropertyName = "RevisedDate";
-            this.revisedDateDataGridViewTextBoxColumn.HeaderText = "RevisedDate";
-            this.revisedDateDataGridViewTextBoxColumn.Name = "revisedDateDataGridViewTextBoxColumn";
-            this.revisedDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.revisedDateDataGridViewTextBoxColumn.Visible = false;
-            this.revisedDateDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // approvedFlagDataGridViewCheckBoxColumn
-            // 
-            this.approvedFlagDataGridViewCheckBoxColumn.DataPropertyName = "ApprovedFlag";
-            this.approvedFlagDataGridViewCheckBoxColumn.HeaderText = "ApprovedFlag";
-            this.approvedFlagDataGridViewCheckBoxColumn.Name = "approvedFlagDataGridViewCheckBoxColumn";
-            this.approvedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.approvedFlagDataGridViewCheckBoxColumn.Visible = false;
-            this.approvedFlagDataGridViewCheckBoxColumn.Width = 104;
-            // 
-            // approvedDateDataGridViewTextBoxColumn
-            // 
-            this.approvedDateDataGridViewTextBoxColumn.DataPropertyName = "ApprovedDate";
-            this.approvedDateDataGridViewTextBoxColumn.HeaderText = "ApprovedDate";
-            this.approvedDateDataGridViewTextBoxColumn.Name = "approvedDateDataGridViewTextBoxColumn";
-            this.approvedDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.approvedDateDataGridViewTextBoxColumn.Visible = false;
-            this.approvedDateDataGridViewTextBoxColumn.Width = 128;
-            // 
-            // remarksDataGridViewTextBoxColumn1
-            // 
-            this.remarksDataGridViewTextBoxColumn1.DataPropertyName = "Remarks";
-            this.remarksDataGridViewTextBoxColumn1.HeaderText = "Remarks";
-            this.remarksDataGridViewTextBoxColumn1.Name = "remarksDataGridViewTextBoxColumn1";
-            this.remarksDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.remarksDataGridViewTextBoxColumn1.Visible = false;
-            this.remarksDataGridViewTextBoxColumn1.Width = 85;
-            // 
-            // closedDateDataGridViewTextBoxColumn
-            // 
-            this.closedDateDataGridViewTextBoxColumn.DataPropertyName = "ClosedDate";
-            this.closedDateDataGridViewTextBoxColumn.HeaderText = "ClosedDate";
-            this.closedDateDataGridViewTextBoxColumn.Name = "closedDateDataGridViewTextBoxColumn";
-            this.closedDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.closedDateDataGridViewTextBoxColumn.Visible = false;
-            this.closedDateDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // approvalRequiredFlagDataGridViewTextBoxColumn
-            // 
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.DataPropertyName = "ApprovalRequiredFlag";
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.HeaderText = "ApprovalRequiredFlag";
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.Name = "approvalRequiredFlagDataGridViewTextBoxColumn";
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.ReadOnly = true;
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.Visible = false;
-            this.approvalRequiredFlagDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // cancelFlagDataGridViewCheckBoxColumn
-            // 
-            this.cancelFlagDataGridViewCheckBoxColumn.DataPropertyName = "CancelFlag";
-            this.cancelFlagDataGridViewCheckBoxColumn.HeaderText = "CancelFlag";
-            this.cancelFlagDataGridViewCheckBoxColumn.Name = "cancelFlagDataGridViewCheckBoxColumn";
-            this.cancelFlagDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.cancelFlagDataGridViewCheckBoxColumn.Visible = false;
-            this.cancelFlagDataGridViewCheckBoxColumn.Width = 86;
-            // 
-            // statusCodeDataGridViewTextBoxColumn
-            // 
-            this.statusCodeDataGridViewTextBoxColumn.DataPropertyName = "StatusCode";
-            this.statusCodeDataGridViewTextBoxColumn.HeaderText = "StatusCode";
-            this.statusCodeDataGridViewTextBoxColumn.Name = "statusCodeDataGridViewTextBoxColumn";
-            this.statusCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusCodeDataGridViewTextBoxColumn.Visible = false;
-            this.statusCodeDataGridViewTextBoxColumn.Width = 106;
-            // 
-            // taxCodeDataGridViewTextBoxColumn
-            // 
-            this.taxCodeDataGridViewTextBoxColumn.DataPropertyName = "TaxCode";
-            this.taxCodeDataGridViewTextBoxColumn.HeaderText = "TaxCode";
-            this.taxCodeDataGridViewTextBoxColumn.Name = "taxCodeDataGridViewTextBoxColumn";
-            this.taxCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.taxCodeDataGridViewTextBoxColumn.Visible = false;
-            this.taxCodeDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // taxRateDataGridViewTextBoxColumn
-            // 
-            this.taxRateDataGridViewTextBoxColumn.DataPropertyName = "TaxRate";
-            this.taxRateDataGridViewTextBoxColumn.HeaderText = "TaxRate";
-            this.taxRateDataGridViewTextBoxColumn.Name = "taxRateDataGridViewTextBoxColumn";
-            this.taxRateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.taxRateDataGridViewTextBoxColumn.Visible = false;
-            this.taxRateDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // subTotalDataGridViewTextBoxColumn
-            // 
-            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
-            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.subTotalDataGridViewTextBoxColumn.Visible = false;
-            this.subTotalDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // taxAmountDataGridViewTextBoxColumn
-            // 
-            this.taxAmountDataGridViewTextBoxColumn.DataPropertyName = "TaxAmount";
-            this.taxAmountDataGridViewTextBoxColumn.HeaderText = "TaxAmount";
-            this.taxAmountDataGridViewTextBoxColumn.Name = "taxAmountDataGridViewTextBoxColumn";
-            this.taxAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.taxAmountDataGridViewTextBoxColumn.Visible = false;
-            this.taxAmountDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
-            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            this.discountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.discountDataGridViewTextBoxColumn.Visible = false;
-            this.discountDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // freightDataGridViewTextBoxColumn
-            // 
-            this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
-            this.freightDataGridViewTextBoxColumn.HeaderText = "Freight";
-            this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
-            this.freightDataGridViewTextBoxColumn.ReadOnly = true;
-            this.freightDataGridViewTextBoxColumn.Visible = false;
-            this.freightDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // totalAmountDataGridViewTextBoxColumn
-            // 
-            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-            this.totalAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalAmountDataGridViewTextBoxColumn.Visible = false;
-            this.totalAmountDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Visible = false;
-            this.statusDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // statusNameDataGridViewTextBoxColumn
-            // 
-            this.statusNameDataGridViewTextBoxColumn.DataPropertyName = "StatusName";
-            this.statusNameDataGridViewTextBoxColumn.HeaderText = "StatusName";
-            this.statusNameDataGridViewTextBoxColumn.Name = "statusNameDataGridViewTextBoxColumn";
-            this.statusNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusNameDataGridViewTextBoxColumn.Visible = false;
-            this.statusNameDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // projectIdDataGridViewTextBoxColumn1
-            // 
-            this.projectIdDataGridViewTextBoxColumn1.DataPropertyName = "ProjectId";
-            this.projectIdDataGridViewTextBoxColumn1.HeaderText = "ProjectId";
-            this.projectIdDataGridViewTextBoxColumn1.Name = "projectIdDataGridViewTextBoxColumn1";
-            this.projectIdDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.projectIdDataGridViewTextBoxColumn1.Visible = false;
-            this.projectIdDataGridViewTextBoxColumn1.Width = 88;
-            // 
-            // projectNumDataGridViewTextBoxColumn1
-            // 
-            this.projectNumDataGridViewTextBoxColumn1.DataPropertyName = "ProjectNum";
-            this.projectNumDataGridViewTextBoxColumn1.HeaderText = "ProjectNum";
-            this.projectNumDataGridViewTextBoxColumn1.Name = "projectNumDataGridViewTextBoxColumn1";
-            this.projectNumDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.projectNumDataGridViewTextBoxColumn1.Visible = false;
-            this.projectNumDataGridViewTextBoxColumn1.Width = 107;
-            // 
-            // receivedFlagDataGridViewCheckBoxColumn
-            // 
-            this.receivedFlagDataGridViewCheckBoxColumn.DataPropertyName = "ReceivedFlag";
-            this.receivedFlagDataGridViewCheckBoxColumn.HeaderText = "ReceivedFlag";
-            this.receivedFlagDataGridViewCheckBoxColumn.Name = "receivedFlagDataGridViewCheckBoxColumn";
-            this.receivedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.receivedFlagDataGridViewCheckBoxColumn.Visible = false;
-            this.receivedFlagDataGridViewCheckBoxColumn.Width = 99;
-            // 
-            // buyerIdDataGridViewTextBoxColumn
-            // 
-            this.buyerIdDataGridViewTextBoxColumn.DataPropertyName = "BuyerId";
-            this.buyerIdDataGridViewTextBoxColumn.HeaderText = "BuyerId";
-            this.buyerIdDataGridViewTextBoxColumn.Name = "buyerIdDataGridViewTextBoxColumn";
-            this.buyerIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.buyerIdDataGridViewTextBoxColumn.Visible = false;
-            this.buyerIdDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // submitFlagDataGridViewCheckBoxColumn
-            // 
-            this.submitFlagDataGridViewCheckBoxColumn.DataPropertyName = "SubmitFlag";
-            this.submitFlagDataGridViewCheckBoxColumn.HeaderText = "SubmitFlag";
-            this.submitFlagDataGridViewCheckBoxColumn.Name = "submitFlagDataGridViewCheckBoxColumn";
-            this.submitFlagDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.submitFlagDataGridViewCheckBoxColumn.Visible = false;
-            this.submitFlagDataGridViewCheckBoxColumn.Width = 83;
-            // 
-            // jobFlagDataGridViewCheckBoxColumn
-            // 
-            this.jobFlagDataGridViewCheckBoxColumn.DataPropertyName = "JobFlag";
-            this.jobFlagDataGridViewCheckBoxColumn.HeaderText = "JobFlag";
-            this.jobFlagDataGridViewCheckBoxColumn.Name = "jobFlagDataGridViewCheckBoxColumn";
-            this.jobFlagDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.jobFlagDataGridViewCheckBoxColumn.Visible = false;
-            this.jobFlagDataGridViewCheckBoxColumn.Width = 63;
-            // 
-            // revisionNoteDataGridViewTextBoxColumn
-            // 
-            this.revisionNoteDataGridViewTextBoxColumn.DataPropertyName = "RevisionNote";
-            this.revisionNoteDataGridViewTextBoxColumn.HeaderText = "RevisionNote";
-            this.revisionNoteDataGridViewTextBoxColumn.Name = "revisionNoteDataGridViewTextBoxColumn";
-            this.revisionNoteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.revisionNoteDataGridViewTextBoxColumn.Visible = false;
-            this.revisionNoteDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // pOHeaderModelBindingSource
-            // 
-            this.pOHeaderModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Purchasing.POHeaderModel);
             // 
             // groupBox3
             // 
@@ -1610,35 +1181,37 @@
             this.mnuPasteRows,
             this.toolStripSeparator4,
             this.mnuDeleteRow,
-            this.cancelRowToolStripMenuItem});
+            this.cancelRowToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.mnuLineAdjustment});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(172, 76);
+            this.metroContextMenu1.Size = new System.Drawing.Size(181, 126);
             // 
             // mnuPasteRows
             // 
             this.mnuPasteRows.Name = "mnuPasteRows";
             this.mnuPasteRows.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.mnuPasteRows.Size = new System.Drawing.Size(171, 22);
+            this.mnuPasteRows.Size = new System.Drawing.Size(180, 22);
             this.mnuPasteRows.Text = "Paste rows";
             this.mnuPasteRows.Click += new System.EventHandler(this.mnuPasteRows_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuDeleteRow
             // 
             this.mnuDeleteRow.Name = "mnuDeleteRow";
             this.mnuDeleteRow.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.mnuDeleteRow.Size = new System.Drawing.Size(171, 22);
+            this.mnuDeleteRow.Size = new System.Drawing.Size(180, 22);
             this.mnuDeleteRow.Text = "Delete row";
             this.mnuDeleteRow.Click += new System.EventHandler(this.mnuDeleteRow_Click);
             // 
             // cancelRowToolStripMenuItem
             // 
             this.cancelRowToolStripMenuItem.Name = "cancelRowToolStripMenuItem";
-            this.cancelRowToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.cancelRowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cancelRowToolStripMenuItem.Text = "Cancel row";
             this.cancelRowToolStripMenuItem.Click += new System.EventHandler(this.cancelRowToolStripMenuItem_Click);
             // 
@@ -2040,7 +1613,7 @@
             this.txtRate.CustomButton.UseSelectable = true;
             this.txtRate.CustomButton.Visible = false;
             this.txtRate.Lines = new string[] {
-        "1.0000"};
+        "1.00000"};
             this.txtRate.Location = new System.Drawing.Point(184, 126);
             this.txtRate.MaxLength = 32767;
             this.txtRate.Name = "txtRate";
@@ -2054,7 +1627,7 @@
             this.txtRate.Size = new System.Drawing.Size(62, 25);
             this.txtRate.Style = MetroFramework.MetroColorStyle.Green;
             this.txtRate.TabIndex = 20;
-            this.txtRate.Text = "1.0000";
+            this.txtRate.Text = "1.00000";
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.UseSelectable = true;
             this.txtRate.UseStyleColors = true;
@@ -2578,221 +2151,6 @@
             this.RemainMessage.ReadOnly = true;
             this.RemainMessage.Width = 86;
             // 
-            // lineNumDataGridViewTextBoxColumn
-            // 
-            this.lineNumDataGridViewTextBoxColumn.DataPropertyName = "LineNum";
-            this.lineNumDataGridViewTextBoxColumn.HeaderText = "LineNum";
-            this.lineNumDataGridViewTextBoxColumn.Name = "lineNumDataGridViewTextBoxColumn";
-            this.lineNumDataGridViewTextBoxColumn.Visible = false;
-            this.lineNumDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // projectIdDataGridViewTextBoxColumn
-            // 
-            this.projectIdDataGridViewTextBoxColumn.DataPropertyName = "ProjectId";
-            this.projectIdDataGridViewTextBoxColumn.HeaderText = "ProjectId";
-            this.projectIdDataGridViewTextBoxColumn.Name = "projectIdDataGridViewTextBoxColumn";
-            this.projectIdDataGridViewTextBoxColumn.Visible = false;
-            this.projectIdDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // projectNumDataGridViewTextBoxColumn
-            // 
-            this.projectNumDataGridViewTextBoxColumn.DataPropertyName = "ProjectNum";
-            this.projectNumDataGridViewTextBoxColumn.HeaderText = "ProjectNum";
-            this.projectNumDataGridViewTextBoxColumn.Name = "projectNumDataGridViewTextBoxColumn";
-            this.projectNumDataGridViewTextBoxColumn.Visible = false;
-            this.projectNumDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // costIdDataGridViewTextBoxColumn
-            // 
-            this.costIdDataGridViewTextBoxColumn.DataPropertyName = "CostId";
-            this.costIdDataGridViewTextBoxColumn.HeaderText = "CostId";
-            this.costIdDataGridViewTextBoxColumn.Name = "costIdDataGridViewTextBoxColumn";
-            this.costIdDataGridViewTextBoxColumn.Visible = false;
-            this.costIdDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // costCodeDataGridViewTextBoxColumn
-            // 
-            this.costCodeDataGridViewTextBoxColumn.DataPropertyName = "CostCode";
-            this.costCodeDataGridViewTextBoxColumn.HeaderText = "Cost Code";
-            this.costCodeDataGridViewTextBoxColumn.Name = "costCodeDataGridViewTextBoxColumn";
-            this.costCodeDataGridViewTextBoxColumn.Visible = false;
-            this.costCodeDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // costDescriptionDataGridViewTextBoxColumn
-            // 
-            this.costDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CostDescription";
-            this.costDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.costDescriptionDataGridViewTextBoxColumn.Name = "costDescriptionDataGridViewTextBoxColumn";
-            this.costDescriptionDataGridViewTextBoxColumn.Visible = false;
-            this.costDescriptionDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // cBDAmountDataGridViewTextBoxColumn
-            // 
-            this.cBDAmountDataGridViewTextBoxColumn.DataPropertyName = "CBDAmount";
-            this.cBDAmountDataGridViewTextBoxColumn.HeaderText = "CBD";
-            this.cBDAmountDataGridViewTextBoxColumn.Name = "cBDAmountDataGridViewTextBoxColumn";
-            this.cBDAmountDataGridViewTextBoxColumn.Visible = false;
-            this.cBDAmountDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // cTGAmountDataGridViewTextBoxColumn
-            // 
-            this.cTGAmountDataGridViewTextBoxColumn.DataPropertyName = "CTGAmount";
-            this.cTGAmountDataGridViewTextBoxColumn.HeaderText = "CTG";
-            this.cTGAmountDataGridViewTextBoxColumn.Name = "cTGAmountDataGridViewTextBoxColumn";
-            this.cTGAmountDataGridViewTextBoxColumn.Visible = false;
-            this.cTGAmountDataGridViewTextBoxColumn.Width = 58;
-            // 
-            // mP1AmountDataGridViewTextBoxColumn
-            // 
-            this.mP1AmountDataGridViewTextBoxColumn.DataPropertyName = "MP1Amount";
-            this.mP1AmountDataGridViewTextBoxColumn.HeaderText = "MP1";
-            this.mP1AmountDataGridViewTextBoxColumn.Name = "mP1AmountDataGridViewTextBoxColumn";
-            this.mP1AmountDataGridViewTextBoxColumn.Visible = false;
-            this.mP1AmountDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // budgetCostAmountDataGridViewTextBoxColumn
-            // 
-            this.budgetCostAmountDataGridViewTextBoxColumn.DataPropertyName = "BudgetCostAmount";
-            this.budgetCostAmountDataGridViewTextBoxColumn.HeaderText = "Budget Cost";
-            this.budgetCostAmountDataGridViewTextBoxColumn.Name = "budgetCostAmountDataGridViewTextBoxColumn";
-            this.budgetCostAmountDataGridViewTextBoxColumn.Visible = false;
-            this.budgetCostAmountDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // origAmountDataGridViewTextBoxColumn
-            // 
-            this.origAmountDataGridViewTextBoxColumn.DataPropertyName = "OrigAmount";
-            this.origAmountDataGridViewTextBoxColumn.HeaderText = "Original";
-            this.origAmountDataGridViewTextBoxColumn.Name = "origAmountDataGridViewTextBoxColumn";
-            this.origAmountDataGridViewTextBoxColumn.Visible = false;
-            this.origAmountDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // fcstCostAmountDataGridViewTextBoxColumn
-            // 
-            this.fcstCostAmountDataGridViewTextBoxColumn.DataPropertyName = "FcstCostAmount";
-            this.fcstCostAmountDataGridViewTextBoxColumn.HeaderText = "Cost Usage";
-            this.fcstCostAmountDataGridViewTextBoxColumn.Name = "fcstCostAmountDataGridViewTextBoxColumn";
-            this.fcstCostAmountDataGridViewTextBoxColumn.Visible = false;
-            this.fcstCostAmountDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // actCostAmountDataGridViewTextBoxColumn
-            // 
-            this.actCostAmountDataGridViewTextBoxColumn.DataPropertyName = "ActCostAmount";
-            this.actCostAmountDataGridViewTextBoxColumn.HeaderText = "Actual Cost";
-            this.actCostAmountDataGridViewTextBoxColumn.Name = "actCostAmountDataGridViewTextBoxColumn";
-            this.actCostAmountDataGridViewTextBoxColumn.Visible = false;
-            this.actCostAmountDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // ufLastForecastDataGridViewTextBoxColumn
-            // 
-            this.ufLastForecastDataGridViewTextBoxColumn.DataPropertyName = "UfLastForecast";
-            this.ufLastForecastDataGridViewTextBoxColumn.HeaderText = "Last Forecast";
-            this.ufLastForecastDataGridViewTextBoxColumn.Name = "ufLastForecastDataGridViewTextBoxColumn";
-            this.ufLastForecastDataGridViewTextBoxColumn.Visible = false;
-            this.ufLastForecastDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // ufBudgetRemainDataGridViewTextBoxColumn
-            // 
-            this.ufBudgetRemainDataGridViewTextBoxColumn.DataPropertyName = "UfBudgetRemain";
-            this.ufBudgetRemainDataGridViewTextBoxColumn.HeaderText = "Budget Remain";
-            this.ufBudgetRemainDataGridViewTextBoxColumn.Name = "ufBudgetRemainDataGridViewTextBoxColumn";
-            this.ufBudgetRemainDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ufBudgetRemainDataGridViewTextBoxColumn.Visible = false;
-            this.ufBudgetRemainDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // ufProjectReasonDataGridViewTextBoxColumn
-            // 
-            this.ufProjectReasonDataGridViewTextBoxColumn.DataPropertyName = "UfProjectReason";
-            this.ufProjectReasonDataGridViewTextBoxColumn.HeaderText = "Project Reason";
-            this.ufProjectReasonDataGridViewTextBoxColumn.Name = "ufProjectReasonDataGridViewTextBoxColumn";
-            this.ufProjectReasonDataGridViewTextBoxColumn.Visible = false;
-            this.ufProjectReasonDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // lastUpdateDateDataGridViewTextBoxColumn
-            // 
-            this.lastUpdateDateDataGridViewTextBoxColumn.DataPropertyName = "LastUpdateDate";
-            this.lastUpdateDateDataGridViewTextBoxColumn.HeaderText = "LastUpdateDate";
-            this.lastUpdateDateDataGridViewTextBoxColumn.Name = "lastUpdateDateDataGridViewTextBoxColumn";
-            this.lastUpdateDateDataGridViewTextBoxColumn.Visible = false;
-            this.lastUpdateDateDataGridViewTextBoxColumn.Width = 136;
-            // 
-            // lastUpdateByDataGridViewTextBoxColumn
-            // 
-            this.lastUpdateByDataGridViewTextBoxColumn.DataPropertyName = "LastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.HeaderText = "LastUpdateBy";
-            this.lastUpdateByDataGridViewTextBoxColumn.Name = "lastUpdateByDataGridViewTextBoxColumn";
-            this.lastUpdateByDataGridViewTextBoxColumn.Visible = false;
-            this.lastUpdateByDataGridViewTextBoxColumn.Width = 117;
-            // 
-            // creationDateDataGridViewTextBoxColumn
-            // 
-            this.creationDateDataGridViewTextBoxColumn.DataPropertyName = "CreationDate";
-            this.creationDateDataGridViewTextBoxColumn.HeaderText = "CreationDate";
-            this.creationDateDataGridViewTextBoxColumn.Name = "creationDateDataGridViewTextBoxColumn";
-            this.creationDateDataGridViewTextBoxColumn.Visible = false;
-            this.creationDateDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // createdByDataGridViewTextBoxColumn
-            // 
-            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
-            this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
-            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
-            this.createdByDataGridViewTextBoxColumn.Visible = false;
-            this.createdByDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // excessCostDataGridViewTextBoxColumn
-            // 
-            this.excessCostDataGridViewTextBoxColumn.DataPropertyName = "ExcessCost";
-            this.excessCostDataGridViewTextBoxColumn.HeaderText = "ExcessCost";
-            this.excessCostDataGridViewTextBoxColumn.Name = "excessCostDataGridViewTextBoxColumn";
-            this.excessCostDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // remarksDataGridViewTextBoxColumn
-            // 
-            this.remarksDataGridViewTextBoxColumn.DataPropertyName = "Remarks";
-            this.remarksDataGridViewTextBoxColumn.HeaderText = "Remarks";
-            this.remarksDataGridViewTextBoxColumn.Name = "remarksDataGridViewTextBoxColumn";
-            this.remarksDataGridViewTextBoxColumn.Visible = false;
-            this.remarksDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // costRequisitionDataGridViewTextBoxColumn
-            // 
-            this.costRequisitionDataGridViewTextBoxColumn.DataPropertyName = "CostRequisition";
-            this.costRequisitionDataGridViewTextBoxColumn.HeaderText = "CostRequisition";
-            this.costRequisitionDataGridViewTextBoxColumn.Name = "costRequisitionDataGridViewTextBoxColumn";
-            this.costRequisitionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.costRequisitionDataGridViewTextBoxColumn.Visible = false;
-            this.costRequisitionDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // remainPercentageDataGridViewTextBoxColumn
-            // 
-            this.remainPercentageDataGridViewTextBoxColumn.DataPropertyName = "RemainPercentage";
-            this.remainPercentageDataGridViewTextBoxColumn.HeaderText = "RemainPercentage";
-            this.remainPercentageDataGridViewTextBoxColumn.Name = "remainPercentageDataGridViewTextBoxColumn";
-            this.remainPercentageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.remainPercentageDataGridViewTextBoxColumn.Visible = false;
-            this.remainPercentageDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // remainMessageDataGridViewTextBoxColumn
-            // 
-            this.remainMessageDataGridViewTextBoxColumn.DataPropertyName = "RemainMessage";
-            this.remainMessageDataGridViewTextBoxColumn.HeaderText = "RemainMessage";
-            this.remainMessageDataGridViewTextBoxColumn.Name = "remainMessageDataGridViewTextBoxColumn";
-            this.remainMessageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.remainMessageDataGridViewTextBoxColumn.Visible = false;
-            this.remainMessageDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            this.idDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // projectCostModelBindingSource
-            // 
-            this.projectCostModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Projects.ProjectCostModel);
-            // 
             // bindingNav
             // 
             this.bindingNav.AddNewItem = null;
@@ -3055,6 +2413,664 @@
             this.printPurchaseOrderToolStripMenuItem.ToolTipText = "Print Purchase Order";
             this.printPurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.printPurchaseOrderToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // mnuLineAdjustment
+            // 
+            this.mnuLineAdjustment.Name = "mnuLineAdjustment";
+            this.mnuLineAdjustment.Size = new System.Drawing.Size(180, 22);
+            this.mnuLineAdjustment.Text = "Line Adjustment";
+            this.mnuLineAdjustment.Click += new System.EventHandler(this.mnuLineAdjustment_Click);
+            // 
+            // poHeaderIdDataGridViewTextBoxColumn
+            // 
+            this.poHeaderIdDataGridViewTextBoxColumn.DataPropertyName = "PoHeaderId";
+            this.poHeaderIdDataGridViewTextBoxColumn.HeaderText = "PoHeaderId";
+            this.poHeaderIdDataGridViewTextBoxColumn.Name = "poHeaderIdDataGridViewTextBoxColumn";
+            this.poHeaderIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.poHeaderIdDataGridViewTextBoxColumn.Visible = false;
+            this.poHeaderIdDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // poNumDataGridViewTextBoxColumn
+            // 
+            this.poNumDataGridViewTextBoxColumn.DataPropertyName = "PoNum";
+            this.poNumDataGridViewTextBoxColumn.HeaderText = "PO No.";
+            this.poNumDataGridViewTextBoxColumn.Name = "poNumDataGridViewTextBoxColumn";
+            this.poNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.poNumDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // pODateDataGridViewTextBoxColumn
+            // 
+            this.pODateDataGridViewTextBoxColumn.DataPropertyName = "PODate";
+            this.pODateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.pODateDataGridViewTextBoxColumn.Name = "pODateDataGridViewTextBoxColumn";
+            this.pODateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pODateDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // typeLookupCodeDataGridViewTextBoxColumn
+            // 
+            this.typeLookupCodeDataGridViewTextBoxColumn.DataPropertyName = "TypeLookupCode";
+            this.typeLookupCodeDataGridViewTextBoxColumn.HeaderText = "TypeLookupCode";
+            this.typeLookupCodeDataGridViewTextBoxColumn.Name = "typeLookupCodeDataGridViewTextBoxColumn";
+            this.typeLookupCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeLookupCodeDataGridViewTextBoxColumn.Visible = false;
+            this.typeLookupCodeDataGridViewTextBoxColumn.Width = 144;
+            // 
+            // lastUpdateDateDataGridViewTextBoxColumn1
+            // 
+            this.lastUpdateDateDataGridViewTextBoxColumn1.DataPropertyName = "LastUpdateDate";
+            this.lastUpdateDateDataGridViewTextBoxColumn1.HeaderText = "LastUpdateDate";
+            this.lastUpdateDateDataGridViewTextBoxColumn1.Name = "lastUpdateDateDataGridViewTextBoxColumn1";
+            this.lastUpdateDateDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lastUpdateDateDataGridViewTextBoxColumn1.Visible = false;
+            this.lastUpdateDateDataGridViewTextBoxColumn1.Width = 136;
+            // 
+            // lastUpdatedByDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedByDataGridViewTextBoxColumn.DataPropertyName = "LastUpdatedBy";
+            this.lastUpdatedByDataGridViewTextBoxColumn.HeaderText = "LastUpdatedBy";
+            this.lastUpdatedByDataGridViewTextBoxColumn.Name = "lastUpdatedByDataGridViewTextBoxColumn";
+            this.lastUpdatedByDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastUpdatedByDataGridViewTextBoxColumn.Visible = false;
+            this.lastUpdatedByDataGridViewTextBoxColumn.Width = 126;
+            // 
+            // creationDateDataGridViewTextBoxColumn1
+            // 
+            this.creationDateDataGridViewTextBoxColumn1.DataPropertyName = "CreationDate";
+            this.creationDateDataGridViewTextBoxColumn1.HeaderText = "CreationDate";
+            this.creationDateDataGridViewTextBoxColumn1.Name = "creationDateDataGridViewTextBoxColumn1";
+            this.creationDateDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.creationDateDataGridViewTextBoxColumn1.Visible = false;
+            this.creationDateDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // createdByDataGridViewTextBoxColumn1
+            // 
+            this.createdByDataGridViewTextBoxColumn1.DataPropertyName = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn1.HeaderText = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn1.Name = "createdByDataGridViewTextBoxColumn1";
+            this.createdByDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.createdByDataGridViewTextBoxColumn1.Visible = false;
+            this.createdByDataGridViewTextBoxColumn1.Width = 98;
+            // 
+            // buyerNameDataGridViewTextBoxColumn
+            // 
+            this.buyerNameDataGridViewTextBoxColumn.DataPropertyName = "BuyerName";
+            this.buyerNameDataGridViewTextBoxColumn.HeaderText = "Buyer";
+            this.buyerNameDataGridViewTextBoxColumn.Name = "buyerNameDataGridViewTextBoxColumn";
+            this.buyerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.buyerNameDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // vendorIdDataGridViewTextBoxColumn
+            // 
+            this.vendorIdDataGridViewTextBoxColumn.DataPropertyName = "VendorId";
+            this.vendorIdDataGridViewTextBoxColumn.HeaderText = "VendorId";
+            this.vendorIdDataGridViewTextBoxColumn.Name = "vendorIdDataGridViewTextBoxColumn";
+            this.vendorIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vendorIdDataGridViewTextBoxColumn.Visible = false;
+            this.vendorIdDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // vendorSiteIdDataGridViewTextBoxColumn
+            // 
+            this.vendorSiteIdDataGridViewTextBoxColumn.DataPropertyName = "VendorSiteId";
+            this.vendorSiteIdDataGridViewTextBoxColumn.HeaderText = "VendorSiteId";
+            this.vendorSiteIdDataGridViewTextBoxColumn.Name = "vendorSiteIdDataGridViewTextBoxColumn";
+            this.vendorSiteIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vendorSiteIdDataGridViewTextBoxColumn.Visible = false;
+            this.vendorSiteIdDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // vendorNumDataGridViewTextBoxColumn
+            // 
+            this.vendorNumDataGridViewTextBoxColumn.DataPropertyName = "VendorNum";
+            this.vendorNumDataGridViewTextBoxColumn.HeaderText = "Vendor Code";
+            this.vendorNumDataGridViewTextBoxColumn.Name = "vendorNumDataGridViewTextBoxColumn";
+            this.vendorNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vendorNumDataGridViewTextBoxColumn.Width = 119;
+            // 
+            // vendorNameDataGridViewTextBoxColumn
+            // 
+            this.vendorNameDataGridViewTextBoxColumn.DataPropertyName = "VendorName";
+            this.vendorNameDataGridViewTextBoxColumn.HeaderText = "Vendor Name";
+            this.vendorNameDataGridViewTextBoxColumn.Name = "vendorNameDataGridViewTextBoxColumn";
+            this.vendorNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vendorNameDataGridViewTextBoxColumn.Width = 122;
+            // 
+            // shipToLocationIdDataGridViewTextBoxColumn
+            // 
+            this.shipToLocationIdDataGridViewTextBoxColumn.DataPropertyName = "ShipToLocationId";
+            this.shipToLocationIdDataGridViewTextBoxColumn.HeaderText = "ShipToLocationId";
+            this.shipToLocationIdDataGridViewTextBoxColumn.Name = "shipToLocationIdDataGridViewTextBoxColumn";
+            this.shipToLocationIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.shipToLocationIdDataGridViewTextBoxColumn.Visible = false;
+            this.shipToLocationIdDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // billToLocationIdDataGridViewTextBoxColumn
+            // 
+            this.billToLocationIdDataGridViewTextBoxColumn.DataPropertyName = "BillToLocationId";
+            this.billToLocationIdDataGridViewTextBoxColumn.HeaderText = "BillToLocationId";
+            this.billToLocationIdDataGridViewTextBoxColumn.Name = "billToLocationIdDataGridViewTextBoxColumn";
+            this.billToLocationIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.billToLocationIdDataGridViewTextBoxColumn.Visible = false;
+            this.billToLocationIdDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // termIdDataGridViewTextBoxColumn
+            // 
+            this.termIdDataGridViewTextBoxColumn.DataPropertyName = "TermId";
+            this.termIdDataGridViewTextBoxColumn.HeaderText = "TermId";
+            this.termIdDataGridViewTextBoxColumn.Name = "termIdDataGridViewTextBoxColumn";
+            this.termIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.termIdDataGridViewTextBoxColumn.Visible = false;
+            this.termIdDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // termCodeDataGridViewTextBoxColumn
+            // 
+            this.termCodeDataGridViewTextBoxColumn.DataPropertyName = "TermCode";
+            this.termCodeDataGridViewTextBoxColumn.HeaderText = "TermCode";
+            this.termCodeDataGridViewTextBoxColumn.Name = "termCodeDataGridViewTextBoxColumn";
+            this.termCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.termCodeDataGridViewTextBoxColumn.Visible = false;
+            this.termCodeDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // termDescDataGridViewTextBoxColumn
+            // 
+            this.termDescDataGridViewTextBoxColumn.DataPropertyName = "TermDesc";
+            this.termDescDataGridViewTextBoxColumn.HeaderText = "TermDesc";
+            this.termDescDataGridViewTextBoxColumn.Name = "termDescDataGridViewTextBoxColumn";
+            this.termDescDataGridViewTextBoxColumn.ReadOnly = true;
+            this.termDescDataGridViewTextBoxColumn.Visible = false;
+            this.termDescDataGridViewTextBoxColumn.Width = 92;
+            // 
+            // currencyCodeDataGridViewTextBoxColumn
+            // 
+            this.currencyCodeDataGridViewTextBoxColumn.DataPropertyName = "CurrencyCode";
+            this.currencyCodeDataGridViewTextBoxColumn.HeaderText = "CurrencyCode";
+            this.currencyCodeDataGridViewTextBoxColumn.Name = "currencyCodeDataGridViewTextBoxColumn";
+            this.currencyCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.currencyCodeDataGridViewTextBoxColumn.Visible = false;
+            this.currencyCodeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // rateTypeDataGridViewTextBoxColumn
+            // 
+            this.rateTypeDataGridViewTextBoxColumn.DataPropertyName = "RateType";
+            this.rateTypeDataGridViewTextBoxColumn.HeaderText = "RateType";
+            this.rateTypeDataGridViewTextBoxColumn.Name = "rateTypeDataGridViewTextBoxColumn";
+            this.rateTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rateTypeDataGridViewTextBoxColumn.Visible = false;
+            this.rateTypeDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // rateDateDataGridViewTextBoxColumn
+            // 
+            this.rateDateDataGridViewTextBoxColumn.DataPropertyName = "RateDate";
+            this.rateDateDataGridViewTextBoxColumn.HeaderText = "RateDate";
+            this.rateDateDataGridViewTextBoxColumn.Name = "rateDateDataGridViewTextBoxColumn";
+            this.rateDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rateDateDataGridViewTextBoxColumn.Visible = false;
+            this.rateDateDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // rateDataGridViewTextBoxColumn
+            // 
+            this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
+            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate";
+            this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
+            this.rateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rateDataGridViewTextBoxColumn.Visible = false;
+            this.rateDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // authorizationStatusDataGridViewTextBoxColumn
+            // 
+            this.authorizationStatusDataGridViewTextBoxColumn.DataPropertyName = "AuthorizationStatus";
+            this.authorizationStatusDataGridViewTextBoxColumn.HeaderText = "AuthorizationStatus";
+            this.authorizationStatusDataGridViewTextBoxColumn.Name = "authorizationStatusDataGridViewTextBoxColumn";
+            this.authorizationStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.authorizationStatusDataGridViewTextBoxColumn.Visible = false;
+            this.authorizationStatusDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // revisionNumDataGridViewTextBoxColumn
+            // 
+            this.revisionNumDataGridViewTextBoxColumn.DataPropertyName = "RevisionNum";
+            this.revisionNumDataGridViewTextBoxColumn.HeaderText = "RevisionNum";
+            this.revisionNumDataGridViewTextBoxColumn.Name = "revisionNumDataGridViewTextBoxColumn";
+            this.revisionNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.revisionNumDataGridViewTextBoxColumn.Visible = false;
+            this.revisionNumDataGridViewTextBoxColumn.Width = 114;
+            // 
+            // revisedDateDataGridViewTextBoxColumn
+            // 
+            this.revisedDateDataGridViewTextBoxColumn.DataPropertyName = "RevisedDate";
+            this.revisedDateDataGridViewTextBoxColumn.HeaderText = "RevisedDate";
+            this.revisedDateDataGridViewTextBoxColumn.Name = "revisedDateDataGridViewTextBoxColumn";
+            this.revisedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.revisedDateDataGridViewTextBoxColumn.Visible = false;
+            this.revisedDateDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // approvedFlagDataGridViewCheckBoxColumn
+            // 
+            this.approvedFlagDataGridViewCheckBoxColumn.DataPropertyName = "ApprovedFlag";
+            this.approvedFlagDataGridViewCheckBoxColumn.HeaderText = "ApprovedFlag";
+            this.approvedFlagDataGridViewCheckBoxColumn.Name = "approvedFlagDataGridViewCheckBoxColumn";
+            this.approvedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.approvedFlagDataGridViewCheckBoxColumn.Visible = false;
+            this.approvedFlagDataGridViewCheckBoxColumn.Width = 104;
+            // 
+            // approvedDateDataGridViewTextBoxColumn
+            // 
+            this.approvedDateDataGridViewTextBoxColumn.DataPropertyName = "ApprovedDate";
+            this.approvedDateDataGridViewTextBoxColumn.HeaderText = "ApprovedDate";
+            this.approvedDateDataGridViewTextBoxColumn.Name = "approvedDateDataGridViewTextBoxColumn";
+            this.approvedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.approvedDateDataGridViewTextBoxColumn.Visible = false;
+            this.approvedDateDataGridViewTextBoxColumn.Width = 128;
+            // 
+            // remarksDataGridViewTextBoxColumn1
+            // 
+            this.remarksDataGridViewTextBoxColumn1.DataPropertyName = "Remarks";
+            this.remarksDataGridViewTextBoxColumn1.HeaderText = "Remarks";
+            this.remarksDataGridViewTextBoxColumn1.Name = "remarksDataGridViewTextBoxColumn1";
+            this.remarksDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.remarksDataGridViewTextBoxColumn1.Visible = false;
+            this.remarksDataGridViewTextBoxColumn1.Width = 85;
+            // 
+            // closedDateDataGridViewTextBoxColumn
+            // 
+            this.closedDateDataGridViewTextBoxColumn.DataPropertyName = "ClosedDate";
+            this.closedDateDataGridViewTextBoxColumn.HeaderText = "ClosedDate";
+            this.closedDateDataGridViewTextBoxColumn.Name = "closedDateDataGridViewTextBoxColumn";
+            this.closedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.closedDateDataGridViewTextBoxColumn.Visible = false;
+            this.closedDateDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // approvalRequiredFlagDataGridViewTextBoxColumn
+            // 
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.DataPropertyName = "ApprovalRequiredFlag";
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.HeaderText = "ApprovalRequiredFlag";
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.Name = "approvalRequiredFlagDataGridViewTextBoxColumn";
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.ReadOnly = true;
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.Visible = false;
+            this.approvalRequiredFlagDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // cancelFlagDataGridViewCheckBoxColumn
+            // 
+            this.cancelFlagDataGridViewCheckBoxColumn.DataPropertyName = "CancelFlag";
+            this.cancelFlagDataGridViewCheckBoxColumn.HeaderText = "CancelFlag";
+            this.cancelFlagDataGridViewCheckBoxColumn.Name = "cancelFlagDataGridViewCheckBoxColumn";
+            this.cancelFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.cancelFlagDataGridViewCheckBoxColumn.Visible = false;
+            this.cancelFlagDataGridViewCheckBoxColumn.Width = 86;
+            // 
+            // statusCodeDataGridViewTextBoxColumn
+            // 
+            this.statusCodeDataGridViewTextBoxColumn.DataPropertyName = "StatusCode";
+            this.statusCodeDataGridViewTextBoxColumn.HeaderText = "StatusCode";
+            this.statusCodeDataGridViewTextBoxColumn.Name = "statusCodeDataGridViewTextBoxColumn";
+            this.statusCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusCodeDataGridViewTextBoxColumn.Visible = false;
+            this.statusCodeDataGridViewTextBoxColumn.Width = 106;
+            // 
+            // taxCodeDataGridViewTextBoxColumn
+            // 
+            this.taxCodeDataGridViewTextBoxColumn.DataPropertyName = "TaxCode";
+            this.taxCodeDataGridViewTextBoxColumn.HeaderText = "TaxCode";
+            this.taxCodeDataGridViewTextBoxColumn.Name = "taxCodeDataGridViewTextBoxColumn";
+            this.taxCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.taxCodeDataGridViewTextBoxColumn.Visible = false;
+            this.taxCodeDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // taxRateDataGridViewTextBoxColumn
+            // 
+            this.taxRateDataGridViewTextBoxColumn.DataPropertyName = "TaxRate";
+            this.taxRateDataGridViewTextBoxColumn.HeaderText = "TaxRate";
+            this.taxRateDataGridViewTextBoxColumn.Name = "taxRateDataGridViewTextBoxColumn";
+            this.taxRateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.taxRateDataGridViewTextBoxColumn.Visible = false;
+            this.taxRateDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // subTotalDataGridViewTextBoxColumn
+            // 
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.subTotalDataGridViewTextBoxColumn.Visible = false;
+            this.subTotalDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // taxAmountDataGridViewTextBoxColumn
+            // 
+            this.taxAmountDataGridViewTextBoxColumn.DataPropertyName = "TaxAmount";
+            this.taxAmountDataGridViewTextBoxColumn.HeaderText = "TaxAmount";
+            this.taxAmountDataGridViewTextBoxColumn.Name = "taxAmountDataGridViewTextBoxColumn";
+            this.taxAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.taxAmountDataGridViewTextBoxColumn.Visible = false;
+            this.taxAmountDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            this.discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
+            this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            this.discountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.discountDataGridViewTextBoxColumn.Visible = false;
+            this.discountDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // freightDataGridViewTextBoxColumn
+            // 
+            this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
+            this.freightDataGridViewTextBoxColumn.HeaderText = "Freight";
+            this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
+            this.freightDataGridViewTextBoxColumn.ReadOnly = true;
+            this.freightDataGridViewTextBoxColumn.Visible = false;
+            this.freightDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // totalAmountDataGridViewTextBoxColumn
+            // 
+            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
+            this.totalAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalAmountDataGridViewTextBoxColumn.Visible = false;
+            this.totalAmountDataGridViewTextBoxColumn.Width = 114;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Visible = false;
+            this.statusDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // statusNameDataGridViewTextBoxColumn
+            // 
+            this.statusNameDataGridViewTextBoxColumn.DataPropertyName = "StatusName";
+            this.statusNameDataGridViewTextBoxColumn.HeaderText = "StatusName";
+            this.statusNameDataGridViewTextBoxColumn.Name = "statusNameDataGridViewTextBoxColumn";
+            this.statusNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusNameDataGridViewTextBoxColumn.Visible = false;
+            this.statusNameDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // projectIdDataGridViewTextBoxColumn1
+            // 
+            this.projectIdDataGridViewTextBoxColumn1.DataPropertyName = "ProjectId";
+            this.projectIdDataGridViewTextBoxColumn1.HeaderText = "ProjectId";
+            this.projectIdDataGridViewTextBoxColumn1.Name = "projectIdDataGridViewTextBoxColumn1";
+            this.projectIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.projectIdDataGridViewTextBoxColumn1.Visible = false;
+            this.projectIdDataGridViewTextBoxColumn1.Width = 88;
+            // 
+            // projectNumDataGridViewTextBoxColumn1
+            // 
+            this.projectNumDataGridViewTextBoxColumn1.DataPropertyName = "ProjectNum";
+            this.projectNumDataGridViewTextBoxColumn1.HeaderText = "ProjectNum";
+            this.projectNumDataGridViewTextBoxColumn1.Name = "projectNumDataGridViewTextBoxColumn1";
+            this.projectNumDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.projectNumDataGridViewTextBoxColumn1.Visible = false;
+            this.projectNumDataGridViewTextBoxColumn1.Width = 107;
+            // 
+            // receivedFlagDataGridViewCheckBoxColumn
+            // 
+            this.receivedFlagDataGridViewCheckBoxColumn.DataPropertyName = "ReceivedFlag";
+            this.receivedFlagDataGridViewCheckBoxColumn.HeaderText = "ReceivedFlag";
+            this.receivedFlagDataGridViewCheckBoxColumn.Name = "receivedFlagDataGridViewCheckBoxColumn";
+            this.receivedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.receivedFlagDataGridViewCheckBoxColumn.Visible = false;
+            this.receivedFlagDataGridViewCheckBoxColumn.Width = 99;
+            // 
+            // buyerIdDataGridViewTextBoxColumn
+            // 
+            this.buyerIdDataGridViewTextBoxColumn.DataPropertyName = "BuyerId";
+            this.buyerIdDataGridViewTextBoxColumn.HeaderText = "BuyerId";
+            this.buyerIdDataGridViewTextBoxColumn.Name = "buyerIdDataGridViewTextBoxColumn";
+            this.buyerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.buyerIdDataGridViewTextBoxColumn.Visible = false;
+            this.buyerIdDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // submitFlagDataGridViewCheckBoxColumn
+            // 
+            this.submitFlagDataGridViewCheckBoxColumn.DataPropertyName = "SubmitFlag";
+            this.submitFlagDataGridViewCheckBoxColumn.HeaderText = "SubmitFlag";
+            this.submitFlagDataGridViewCheckBoxColumn.Name = "submitFlagDataGridViewCheckBoxColumn";
+            this.submitFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.submitFlagDataGridViewCheckBoxColumn.Visible = false;
+            this.submitFlagDataGridViewCheckBoxColumn.Width = 83;
+            // 
+            // jobFlagDataGridViewCheckBoxColumn
+            // 
+            this.jobFlagDataGridViewCheckBoxColumn.DataPropertyName = "JobFlag";
+            this.jobFlagDataGridViewCheckBoxColumn.HeaderText = "JobFlag";
+            this.jobFlagDataGridViewCheckBoxColumn.Name = "jobFlagDataGridViewCheckBoxColumn";
+            this.jobFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.jobFlagDataGridViewCheckBoxColumn.Visible = false;
+            this.jobFlagDataGridViewCheckBoxColumn.Width = 63;
+            // 
+            // revisionNoteDataGridViewTextBoxColumn
+            // 
+            this.revisionNoteDataGridViewTextBoxColumn.DataPropertyName = "RevisionNote";
+            this.revisionNoteDataGridViewTextBoxColumn.HeaderText = "RevisionNote";
+            this.revisionNoteDataGridViewTextBoxColumn.Name = "revisionNoteDataGridViewTextBoxColumn";
+            this.revisionNoteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.revisionNoteDataGridViewTextBoxColumn.Visible = false;
+            this.revisionNoteDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // pOHeaderModelBindingSource
+            // 
+            this.pOHeaderModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Purchasing.POHeaderModel);
+            // 
+            // lineNumDataGridViewTextBoxColumn
+            // 
+            this.lineNumDataGridViewTextBoxColumn.DataPropertyName = "LineNum";
+            this.lineNumDataGridViewTextBoxColumn.HeaderText = "LineNum";
+            this.lineNumDataGridViewTextBoxColumn.Name = "lineNumDataGridViewTextBoxColumn";
+            this.lineNumDataGridViewTextBoxColumn.Visible = false;
+            this.lineNumDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // projectIdDataGridViewTextBoxColumn
+            // 
+            this.projectIdDataGridViewTextBoxColumn.DataPropertyName = "ProjectId";
+            this.projectIdDataGridViewTextBoxColumn.HeaderText = "ProjectId";
+            this.projectIdDataGridViewTextBoxColumn.Name = "projectIdDataGridViewTextBoxColumn";
+            this.projectIdDataGridViewTextBoxColumn.Visible = false;
+            this.projectIdDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // projectNumDataGridViewTextBoxColumn
+            // 
+            this.projectNumDataGridViewTextBoxColumn.DataPropertyName = "ProjectNum";
+            this.projectNumDataGridViewTextBoxColumn.HeaderText = "ProjectNum";
+            this.projectNumDataGridViewTextBoxColumn.Name = "projectNumDataGridViewTextBoxColumn";
+            this.projectNumDataGridViewTextBoxColumn.Visible = false;
+            this.projectNumDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // costIdDataGridViewTextBoxColumn
+            // 
+            this.costIdDataGridViewTextBoxColumn.DataPropertyName = "CostId";
+            this.costIdDataGridViewTextBoxColumn.HeaderText = "CostId";
+            this.costIdDataGridViewTextBoxColumn.Name = "costIdDataGridViewTextBoxColumn";
+            this.costIdDataGridViewTextBoxColumn.Visible = false;
+            this.costIdDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // costCodeDataGridViewTextBoxColumn
+            // 
+            this.costCodeDataGridViewTextBoxColumn.DataPropertyName = "CostCode";
+            this.costCodeDataGridViewTextBoxColumn.HeaderText = "Cost Code";
+            this.costCodeDataGridViewTextBoxColumn.Name = "costCodeDataGridViewTextBoxColumn";
+            this.costCodeDataGridViewTextBoxColumn.Visible = false;
+            this.costCodeDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // costDescriptionDataGridViewTextBoxColumn
+            // 
+            this.costDescriptionDataGridViewTextBoxColumn.DataPropertyName = "CostDescription";
+            this.costDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.costDescriptionDataGridViewTextBoxColumn.Name = "costDescriptionDataGridViewTextBoxColumn";
+            this.costDescriptionDataGridViewTextBoxColumn.Visible = false;
+            this.costDescriptionDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // cBDAmountDataGridViewTextBoxColumn
+            // 
+            this.cBDAmountDataGridViewTextBoxColumn.DataPropertyName = "CBDAmount";
+            this.cBDAmountDataGridViewTextBoxColumn.HeaderText = "CBD";
+            this.cBDAmountDataGridViewTextBoxColumn.Name = "cBDAmountDataGridViewTextBoxColumn";
+            this.cBDAmountDataGridViewTextBoxColumn.Visible = false;
+            this.cBDAmountDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // cTGAmountDataGridViewTextBoxColumn
+            // 
+            this.cTGAmountDataGridViewTextBoxColumn.DataPropertyName = "CTGAmount";
+            this.cTGAmountDataGridViewTextBoxColumn.HeaderText = "CTG";
+            this.cTGAmountDataGridViewTextBoxColumn.Name = "cTGAmountDataGridViewTextBoxColumn";
+            this.cTGAmountDataGridViewTextBoxColumn.Visible = false;
+            this.cTGAmountDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // mP1AmountDataGridViewTextBoxColumn
+            // 
+            this.mP1AmountDataGridViewTextBoxColumn.DataPropertyName = "MP1Amount";
+            this.mP1AmountDataGridViewTextBoxColumn.HeaderText = "MP1";
+            this.mP1AmountDataGridViewTextBoxColumn.Name = "mP1AmountDataGridViewTextBoxColumn";
+            this.mP1AmountDataGridViewTextBoxColumn.Visible = false;
+            this.mP1AmountDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // budgetCostAmountDataGridViewTextBoxColumn
+            // 
+            this.budgetCostAmountDataGridViewTextBoxColumn.DataPropertyName = "BudgetCostAmount";
+            this.budgetCostAmountDataGridViewTextBoxColumn.HeaderText = "Budget Cost";
+            this.budgetCostAmountDataGridViewTextBoxColumn.Name = "budgetCostAmountDataGridViewTextBoxColumn";
+            this.budgetCostAmountDataGridViewTextBoxColumn.Visible = false;
+            this.budgetCostAmountDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // origAmountDataGridViewTextBoxColumn
+            // 
+            this.origAmountDataGridViewTextBoxColumn.DataPropertyName = "OrigAmount";
+            this.origAmountDataGridViewTextBoxColumn.HeaderText = "Original";
+            this.origAmountDataGridViewTextBoxColumn.Name = "origAmountDataGridViewTextBoxColumn";
+            this.origAmountDataGridViewTextBoxColumn.Visible = false;
+            this.origAmountDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // fcstCostAmountDataGridViewTextBoxColumn
+            // 
+            this.fcstCostAmountDataGridViewTextBoxColumn.DataPropertyName = "FcstCostAmount";
+            this.fcstCostAmountDataGridViewTextBoxColumn.HeaderText = "Cost Usage";
+            this.fcstCostAmountDataGridViewTextBoxColumn.Name = "fcstCostAmountDataGridViewTextBoxColumn";
+            this.fcstCostAmountDataGridViewTextBoxColumn.Visible = false;
+            this.fcstCostAmountDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // actCostAmountDataGridViewTextBoxColumn
+            // 
+            this.actCostAmountDataGridViewTextBoxColumn.DataPropertyName = "ActCostAmount";
+            this.actCostAmountDataGridViewTextBoxColumn.HeaderText = "Actual Cost";
+            this.actCostAmountDataGridViewTextBoxColumn.Name = "actCostAmountDataGridViewTextBoxColumn";
+            this.actCostAmountDataGridViewTextBoxColumn.Visible = false;
+            this.actCostAmountDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // ufLastForecastDataGridViewTextBoxColumn
+            // 
+            this.ufLastForecastDataGridViewTextBoxColumn.DataPropertyName = "UfLastForecast";
+            this.ufLastForecastDataGridViewTextBoxColumn.HeaderText = "Last Forecast";
+            this.ufLastForecastDataGridViewTextBoxColumn.Name = "ufLastForecastDataGridViewTextBoxColumn";
+            this.ufLastForecastDataGridViewTextBoxColumn.Visible = false;
+            this.ufLastForecastDataGridViewTextBoxColumn.Width = 114;
+            // 
+            // ufBudgetRemainDataGridViewTextBoxColumn
+            // 
+            this.ufBudgetRemainDataGridViewTextBoxColumn.DataPropertyName = "UfBudgetRemain";
+            this.ufBudgetRemainDataGridViewTextBoxColumn.HeaderText = "Budget Remain";
+            this.ufBudgetRemainDataGridViewTextBoxColumn.Name = "ufBudgetRemainDataGridViewTextBoxColumn";
+            this.ufBudgetRemainDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ufBudgetRemainDataGridViewTextBoxColumn.Visible = false;
+            this.ufBudgetRemainDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // ufProjectReasonDataGridViewTextBoxColumn
+            // 
+            this.ufProjectReasonDataGridViewTextBoxColumn.DataPropertyName = "UfProjectReason";
+            this.ufProjectReasonDataGridViewTextBoxColumn.HeaderText = "Project Reason";
+            this.ufProjectReasonDataGridViewTextBoxColumn.Name = "ufProjectReasonDataGridViewTextBoxColumn";
+            this.ufProjectReasonDataGridViewTextBoxColumn.Visible = false;
+            this.ufProjectReasonDataGridViewTextBoxColumn.Width = 127;
+            // 
+            // lastUpdateDateDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateDateDataGridViewTextBoxColumn.DataPropertyName = "LastUpdateDate";
+            this.lastUpdateDateDataGridViewTextBoxColumn.HeaderText = "LastUpdateDate";
+            this.lastUpdateDateDataGridViewTextBoxColumn.Name = "lastUpdateDateDataGridViewTextBoxColumn";
+            this.lastUpdateDateDataGridViewTextBoxColumn.Visible = false;
+            this.lastUpdateDateDataGridViewTextBoxColumn.Width = 136;
+            // 
+            // lastUpdateByDataGridViewTextBoxColumn
+            // 
+            this.lastUpdateByDataGridViewTextBoxColumn.DataPropertyName = "LastUpdateBy";
+            this.lastUpdateByDataGridViewTextBoxColumn.HeaderText = "LastUpdateBy";
+            this.lastUpdateByDataGridViewTextBoxColumn.Name = "lastUpdateByDataGridViewTextBoxColumn";
+            this.lastUpdateByDataGridViewTextBoxColumn.Visible = false;
+            this.lastUpdateByDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // creationDateDataGridViewTextBoxColumn
+            // 
+            this.creationDateDataGridViewTextBoxColumn.DataPropertyName = "CreationDate";
+            this.creationDateDataGridViewTextBoxColumn.HeaderText = "CreationDate";
+            this.creationDateDataGridViewTextBoxColumn.Name = "creationDateDataGridViewTextBoxColumn";
+            this.creationDateDataGridViewTextBoxColumn.Visible = false;
+            this.creationDateDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // createdByDataGridViewTextBoxColumn
+            // 
+            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            this.createdByDataGridViewTextBoxColumn.Visible = false;
+            this.createdByDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // excessCostDataGridViewTextBoxColumn
+            // 
+            this.excessCostDataGridViewTextBoxColumn.DataPropertyName = "ExcessCost";
+            this.excessCostDataGridViewTextBoxColumn.HeaderText = "ExcessCost";
+            this.excessCostDataGridViewTextBoxColumn.Name = "excessCostDataGridViewTextBoxColumn";
+            this.excessCostDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // remarksDataGridViewTextBoxColumn
+            // 
+            this.remarksDataGridViewTextBoxColumn.DataPropertyName = "Remarks";
+            this.remarksDataGridViewTextBoxColumn.HeaderText = "Remarks";
+            this.remarksDataGridViewTextBoxColumn.Name = "remarksDataGridViewTextBoxColumn";
+            this.remarksDataGridViewTextBoxColumn.Visible = false;
+            this.remarksDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // costRequisitionDataGridViewTextBoxColumn
+            // 
+            this.costRequisitionDataGridViewTextBoxColumn.DataPropertyName = "CostRequisition";
+            this.costRequisitionDataGridViewTextBoxColumn.HeaderText = "CostRequisition";
+            this.costRequisitionDataGridViewTextBoxColumn.Name = "costRequisitionDataGridViewTextBoxColumn";
+            this.costRequisitionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costRequisitionDataGridViewTextBoxColumn.Visible = false;
+            this.costRequisitionDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // remainPercentageDataGridViewTextBoxColumn
+            // 
+            this.remainPercentageDataGridViewTextBoxColumn.DataPropertyName = "RemainPercentage";
+            this.remainPercentageDataGridViewTextBoxColumn.HeaderText = "RemainPercentage";
+            this.remainPercentageDataGridViewTextBoxColumn.Name = "remainPercentageDataGridViewTextBoxColumn";
+            this.remainPercentageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remainPercentageDataGridViewTextBoxColumn.Visible = false;
+            this.remainPercentageDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // remainMessageDataGridViewTextBoxColumn
+            // 
+            this.remainMessageDataGridViewTextBoxColumn.DataPropertyName = "RemainMessage";
+            this.remainMessageDataGridViewTextBoxColumn.HeaderText = "RemainMessage";
+            this.remainMessageDataGridViewTextBoxColumn.Name = "remainMessageDataGridViewTextBoxColumn";
+            this.remainMessageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remainMessageDataGridViewTextBoxColumn.Visible = false;
+            this.remainMessageDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // projectCostModelBindingSource
+            // 
+            this.projectCostModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Projects.ProjectCostModel);
+            // 
             // POEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3085,7 +3101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPOs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOHeaderModelBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprovalList)).EndInit();
@@ -3098,10 +3113,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudget)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectCostModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).EndInit();
             this.bindingNav.ResumeLayout(false);
             this.bindingNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pOHeaderModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectCostModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3294,5 +3310,7 @@
         private MetroFramework.Controls.MetroTextBox txtCurrencyCode5;
         private MetroFramework.Controls.MetroTextBox txtFreight;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem mnuLineAdjustment;
     }
 }

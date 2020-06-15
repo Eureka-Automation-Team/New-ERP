@@ -347,7 +347,7 @@ namespace Eureka.Data.AdoNet.Manufacturing
                  Description = reader["Description"].AsString(),
                  Manager = reader["Manager"].AsString(),
                  //StartDate = reader["StartDate"].AsDateTime(),
-                 StartDate = (reader["StartDate"] != DBNull.Value) ? reader["StartDate"].AsDateTime() : (DateTime?)null,
+                 StartDate = reader["StartDate"].AsDateTime(),
                  //EndDate = reader["EndDate"].AsDateTime(),
                  //EndDate = (reader["EndDate"] != DBNull.Value) ? reader["EndDate"].AsDateTime() : (DateTime?)null,
                  CancelFlag = (reader["CancelFlag"].AsInt() == 1) ? true : false,
@@ -435,6 +435,56 @@ namespace Eureka.Data.AdoNet.Manufacturing
                 "@PrimaryQuantity", model.PrimaryQuantity,
                 "@MachineId", model.MachineId
             };
+        }
+
+        public List<JobTaskModel> GetReleaseTasks()
+        {
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
+                            WHERE jt.ReleaseFlag = 1 AND jt.ReadyFlag = 1 AND jt.StartFlag = 0 AND jt.CancelFlag = 0
+                            ORDER BY jt.TaskSeq ASC";
+
+            return db.Read(sql, MakeWithStats).ToList();
+        }
+
+        public List<JobTaskModel> GetQueuingTasks()
+        {
+            string sql = @"SELECT  jt.Id, jt.TaskSeq, jt.JobEntityId
+                                , jt.TaskNumber, jt.JobNumber, jt.Description
+                                , jt.Manager, jt.StartDate, jt.EndDate
+                                , jt.CancelFlag, jt.LastUpdateDate, jt.LastUpdatedBy
+                                , jt.CreationDate, jt.CreatedBy, jt.ErrorText
+                                , jt.ReadyFlag, jt.Source, jt.ShelfNumber
+                                , jt.McProcessFlag, jt.McPickFlag, jt.McLoadFlag
+                                , jt.McFinishFlag, jt.MaterialCode, jt.TableNumber
+                                , jt.NcFile, jt.DueDate, jt.MachineNo
+                                , jt.Priority, jt.McUnloadFlag, jt.McPushFlag
+                                , jt.OnShelfFlag, jt.OutboundFlag, jt.QCStatus, jt.StandardTime
+                                , jt.ReleaseFlag, jt.UploadNcfileFlag, jt.ReserveShelfFlag
+                                , jt.OutboundFinishFlag, jt.StartFlag, jt.MachineNoReady
+                                , jb.PrimaryItemCode, jb.PrimaryItemModel, jb.PrimaryQuantity
+                                , jt.TransferNCFileToMachineFlag, jt.TransferMessage, jt.MachineId
+                            FROM  JobTasks jt
+                            LEFT JOIN JobEntities jb ON(jt.JobEntityId = jb.Id)
+                            WHERE jt.ReleaseFlag = 1 AND jt.ReadyFlag = 1 AND jt.StartFlag = 0 AND jt.CancelFlag = 0
+                            ORDER BY jt.TaskSeq ASC";
+
+            return db.Read(sql, MakeWithStats).ToList();
         }
     }
 }

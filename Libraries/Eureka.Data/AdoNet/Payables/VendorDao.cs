@@ -31,7 +31,9 @@ namespace Eureka.Data.AdoNet.Payables
                               , v.end_date_active
                               , v.vat_registration_num
                               , v.term_code
+                              , concat(s.address_line1, ' ', s.address_line2, ' ', s.address_line3) address
                           FROM ap_suppliers v
+                            LEFT JOIN ap_supplier_sites_all s ON(v.vendor_id = s.vendor_id)
                          ORDER BY v.vendor_name ASC";
 
             return db.Read(sql, Make).ToList();
@@ -56,7 +58,9 @@ namespace Eureka.Data.AdoNet.Payables
                               , v.end_date_active
                               , v.vat_registration_num
                               , v.term_code
+                              , concat(s.address_line1, ' ', s.address_line2, ' ', s.address_line3) address
                           FROM ap_suppliers v
+                            LEFT JOIN ap_supplier_sites_all s ON(v.vendor_id = s.vendor_id)
                          WHERE v.vendor_id = @vendor_id";
 
             object[] parms = { "@vendor_id", id };
@@ -82,7 +86,9 @@ namespace Eureka.Data.AdoNet.Payables
                               , v.end_date_active
                               , v.vat_registration_num
                               , v.term_code
+                              , concat(s.address_line1, ' ', s.address_line2, ' ', s.address_line3) address
                           FROM ap_suppliers v
+                            LEFT JOIN ap_supplier_sites_all s ON(v.vendor_id = s.vendor_id)
                          WHERE v.vendor_number = @vendor_number";
 
             object[] parms = { "@vendor_number", number };
@@ -181,7 +187,8 @@ namespace Eureka.Data.AdoNet.Payables
                  StartDataActive = reader["start_data_active"].AsDateTime(),
                  EndDateActive = reader["end_date_active"].AsDateTime(),
                  VatRegistrationNum = reader["vat_registration_num"].AsString(),
-                 TermCode = reader["term_code"].AsString()
+                 TermCode = reader["term_code"].AsString(),
+                 Address = reader["address"].AsString()
              };
 
         private object[] Take(VendorModel model)

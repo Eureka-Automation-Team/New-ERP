@@ -1511,7 +1511,6 @@ namespace Eureka.Froms.Presentations.Purchasing
                 Cursor.Current = Cursors.Default;
             }
         }
-
         
         private void Reset_ProjectCost()
         {

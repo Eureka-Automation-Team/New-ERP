@@ -17,9 +17,9 @@ namespace Eureka.Core.Domain.Manufacturing
         public string Description { get; set; }
         public string Manager { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}")]
-        public Nullable<DateTime> StartDate { get; set; }
+        public DateTime StartDate { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}")]
-        public Nullable<DateTime> EndDate 
+        public DateTime EndDate 
         { 
             get { return StartDate.AsDateTime().AddMinutes(StandardTime); }             
         }

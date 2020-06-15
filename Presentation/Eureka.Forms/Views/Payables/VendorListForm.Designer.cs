@@ -56,22 +56,23 @@
             this.txtVendorNum = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.dgvVendors = new MetroFramework.Controls.MetroGrid();
-            this.vendorModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.txtPageNumber = new MetroFramework.Controls.MetroTextBox();
             this.butPreviousPage = new MetroFramework.Controls.MetroButton();
             this.butNextPage = new MetroFramework.Controls.MetroButton();
+            this.vendorModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendorNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vatRegistrationNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNav)).BeginInit();
             this.bindingNav.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorModelBindingSource)).BeginInit();
             this.metroPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNav
@@ -104,7 +105,7 @@
             this.bindingNav.Name = "bindingNav";
             this.bindingNav.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingNav.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNav.Size = new System.Drawing.Size(468, 27);
+            this.bindingNav.Size = new System.Drawing.Size(694, 27);
             this.bindingNav.TabIndex = 10;
             this.bindingNav.Text = "Navigator";
             // 
@@ -153,6 +154,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -237,7 +239,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 87);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(468, 60);
+            this.metroPanel1.Size = new System.Drawing.Size(694, 60);
             this.metroPanel1.TabIndex = 11;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -343,7 +345,7 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(20, 147);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(468, 237);
+            this.metroPanel2.Size = new System.Drawing.Size(694, 237);
             this.metroPanel2.TabIndex = 12;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -372,7 +374,8 @@
             this.vendorIdDataGridViewTextBoxColumn,
             this.vendorNumberDataGridViewTextBoxColumn,
             this.vendorNameDataGridViewTextBoxColumn,
-            this.vatRegistrationNumDataGridViewTextBoxColumn});
+            this.vatRegistrationNumDataGridViewTextBoxColumn,
+            this.Address});
             this.dgvVendors.DataSource = this.vendorModelBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -407,7 +410,7 @@
             this.dgvVendors.RowTemplate.Height = 60;
             this.dgvVendors.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVendors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendors.Size = new System.Drawing.Size(468, 237);
+            this.dgvVendors.Size = new System.Drawing.Size(694, 237);
             this.dgvVendors.StandardTab = true;
             this.dgvVendors.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvVendors.TabIndex = 37;
@@ -417,10 +420,6 @@
             this.dgvVendors.UseStyleColors = true;
             this.dgvVendors.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVendors_CellDoubleClick);
             this.dgvVendors.SelectionChanged += new System.EventHandler(this.dgvVendors_SelectionChanged);
-            // 
-            // vendorModelBindingSource
-            // 
-            this.vendorModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Payables.VendorModel);
             // 
             // metroPanel3
             // 
@@ -433,7 +432,7 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(20, 384);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(468, 29);
+            this.metroPanel3.Size = new System.Drawing.Size(694, 29);
             this.metroPanel3.TabIndex = 27;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -456,7 +455,7 @@
             this.txtPageNumber.CustomButton.UseSelectable = true;
             this.txtPageNumber.CustomButton.Visible = false;
             this.txtPageNumber.Lines = new string[0];
-            this.txtPageNumber.Location = new System.Drawing.Point(348, 1);
+            this.txtPageNumber.Location = new System.Drawing.Point(574, 1);
             this.txtPageNumber.MaxLength = 32767;
             this.txtPageNumber.Name = "txtPageNumber";
             this.txtPageNumber.PasswordChar = '\0';
@@ -479,7 +478,7 @@
             // butPreviousPage
             // 
             this.butPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butPreviousPage.Location = new System.Drawing.Point(309, 1);
+            this.butPreviousPage.Location = new System.Drawing.Point(535, 1);
             this.butPreviousPage.Name = "butPreviousPage";
             this.butPreviousPage.Size = new System.Drawing.Size(37, 25);
             this.butPreviousPage.TabIndex = 3;
@@ -490,7 +489,7 @@
             // butNextPage
             // 
             this.butNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butNextPage.Location = new System.Drawing.Point(431, 1);
+            this.butNextPage.Location = new System.Drawing.Point(657, 1);
             this.butNextPage.Name = "butNextPage";
             this.butNextPage.Size = new System.Drawing.Size(37, 25);
             this.butNextPage.TabIndex = 2;
@@ -498,14 +497,19 @@
             this.butNextPage.UseSelectable = true;
             this.butNextPage.Click += new System.EventHandler(this.butNextPage_Click);
             // 
+            // vendorModelBindingSource
+            // 
+            this.vendorModelBindingSource.DataSource = typeof(Eureka.Core.Domain.Payables.VendorModel);
+            // 
             // vendorIdDataGridViewTextBoxColumn
             // 
+            this.vendorIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.vendorIdDataGridViewTextBoxColumn.DataPropertyName = "VendorId";
             this.vendorIdDataGridViewTextBoxColumn.HeaderText = "VendorId";
             this.vendorIdDataGridViewTextBoxColumn.Name = "vendorIdDataGridViewTextBoxColumn";
             this.vendorIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.vendorIdDataGridViewTextBoxColumn.Visible = false;
-            this.vendorIdDataGridViewTextBoxColumn.Width = 110;
+            this.vendorIdDataGridViewTextBoxColumn.Width = 90;
             // 
             // vendorNumberDataGridViewTextBoxColumn
             // 
@@ -532,12 +536,21 @@
             this.vatRegistrationNumDataGridViewTextBoxColumn.ReadOnly = true;
             this.vatRegistrationNumDataGridViewTextBoxColumn.Width = 146;
             // 
+            // Address
+            // 
+            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 80;
+            // 
             // VendorListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(508, 433);
+            this.ClientSize = new System.Drawing.Size(734, 433);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.bindingNav);
@@ -557,8 +570,8 @@
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendorModelBindingSource)).EndInit();
             this.metroPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vendorModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,5 +610,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vendorNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vendorNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vatRegistrationNumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
     }
 }

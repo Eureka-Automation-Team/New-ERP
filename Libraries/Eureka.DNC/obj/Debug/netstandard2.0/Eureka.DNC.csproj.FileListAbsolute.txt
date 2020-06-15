@@ -7,4 +7,3 @@ D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.csproj.CopyComplete
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.dll
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.pdb
-D:\EUREKA\src\EurekaSystem\Libraries\Eureka.DNC\obj\Debug\netstandard2.0\Eureka.DNC.csprojAssemblyReference.cache

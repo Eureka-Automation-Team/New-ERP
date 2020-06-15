@@ -139,6 +139,7 @@
     <Compile Include="Presentations\Projects\ProjectListPresenter.cs" />
     <Compile Include="Presentations\Purchasing\CurrencyPresenter.cs" />
     <Compile Include="Presentations\Purchasing\POEntryPresenter.cs" />
+    <Compile Include="Presentations\Purchasing\POLineAdjustmentPresenter.cs" />
     <Compile Include="Presentations\Purchasing\POLineSelectionPresenter.cs" />
     <Compile Include="Presentations\Purchasing\POListPresenter.cs" />
     <Compile Include="Presentations\Purchasing\POReceiptListPresenter.cs" />
@@ -289,6 +290,7 @@
     </Compile>
     <Compile Include="Views\Purchasing\ICurrencyListView.cs" />
     <Compile Include="Views\Purchasing\IPOEntryView.cs" />
+    <Compile Include="Views\Purchasing\IPOLineAdjustmentView.cs" />
     <Compile Include="Views\Purchasing\IPOLineSelectionView.cs" />
     <Compile Include="Views\Purchasing\IPOListView.cs" />
     <Compile Include="Views\Purchasing\IPOReceiptListView.cs" />
@@ -308,6 +310,12 @@
     </Compile>
     <Compile Include="Views\Purchasing\POEntryForm.Designer.cs">
       <DependentUpon>POEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Purchasing\POLineAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Purchasing\POLineAdjustment.Designer.cs">
+      <DependentUpon>POLineAdjustment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Purchasing\POLineSelectionForm.cs">
       <SubType>Form</SubType>
@@ -457,6 +465,9 @@
     <EmbeddedResource Include="Views\Purchasing\POEntryForm.resx">
       <DependentUpon>POEntryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Purchasing\POLineAdjustment.resx">
+      <DependentUpon>POLineAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Purchasing\POLineSelectionForm.resx">
       <DependentUpon>POLineSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -514,6 +525,7 @@
     <None Include="Properties\DataSources\Eureka.Core.Domain.Projects.ProjectCostModel.datasource" />
     <None Include="Properties\DataSources\Eureka.Core.Domain.Projects.ProjectModel.datasource" />
     <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.POHeaderModel.datasource" />
+    <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.POLineModel.datasource" />
     <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.POReportModel.datasource" />
     <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.RcvReportModel.datasource" />
     <None Include="Properties\DataSources\Eureka.Core.Domain.Purchasing.RequisitionHeaderModel.datasource" />

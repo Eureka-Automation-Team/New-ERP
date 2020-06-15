@@ -18,6 +18,9 @@ namespace Eureka.CNC.Views
         event EventHandler QCNG_Click;
         event EventHandler Sorting_Changed;
         event EventHandler ReSchedule_Click;
+        event EventHandler InsertUrgent;
+        event EventHandler CellValidate;
+        event EventHandler UpdateSchedule;
 
         string SortBy { get; set; }
         string SortType { get; set; }

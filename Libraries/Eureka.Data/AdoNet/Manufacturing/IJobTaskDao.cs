@@ -26,5 +26,8 @@ namespace Eureka.Data.AdoNet.Manufacturing
         void Update(JobTaskModel model);
 
         void Delete(JobTaskModel model);
+        List<JobTaskModel> GetReleaseTasks();
+
+        List<JobTaskModel> GetQueuingTasks();
     }
 }

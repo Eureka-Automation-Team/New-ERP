@@ -15,6 +15,7 @@ namespace Eureka.Services.Manufacturing
         List<JobTaskModel> GetPendingTasks();
         List<JobTaskModel> GetTasksByDateRange(DateTime startDate, DateTime endDate);
         List<JobTaskModel> GetInspectionTask();
+        List<JobTaskModel> GetReleaseTasks();
         List<JobTaskModel> GetTasksByJobID(int jobId);
         List<JobEntityModel> GetJobsByDate(DateTime startDate, DateTime endDate);
         string GetNewJobNumber();

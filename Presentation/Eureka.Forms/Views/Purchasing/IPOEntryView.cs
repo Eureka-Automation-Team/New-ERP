@@ -32,6 +32,7 @@ namespace Eureka.Froms.Views.Purchasing
         event EventHandler Refresh_Click;
         event EventHandler Cancel_Click;
         event EventHandler Cancel_Line;
+        event EventHandler LineAdjustment;
 
         POHeaderModel poHead { get; set; }
         POLineModel poLineSelected { get; set; }
@@ -41,6 +42,7 @@ namespace Eureka.Froms.Views.Purchasing
         List<ProjectCostModel> projBudget { get; set; }
         BindingSource bindingHead { get; set; }
         BindingSource bindingBudgetLines { get; set; }
+
 
         void BindingPO(List<POHeaderModel> list);
         void BindingLines(List<POLineModel> list);

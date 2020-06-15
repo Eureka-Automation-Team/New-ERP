@@ -120,5 +120,10 @@ namespace Eureka.Services.Manufacturing
         {
             return factory.JobTaskDao.GetByDateRange(startDate, endDate);
         }
+
+        public List<JobTaskModel> GetReleaseTasks()
+        {
+            return factory.JobTaskDao.GetReleaseTasks();
+        }
     }
 }

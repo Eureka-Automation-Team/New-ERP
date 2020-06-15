@@ -123,7 +123,7 @@ namespace Eureka.Froms.Views.Purchasing
                     txtCurrencyCode3.Text = value.CurrencyCode;
                     txtCurrencyCode4.Text = value.CurrencyCode;
                     txtCurrencyCode5.Text = value.CurrencyCode;
-                    txtRate.Text = value.Rate.ToString("#0.0000");
+                    txtRate.Text = value.Rate.ToString("#0.00000");
                     txtBuyerName.Text = value.BuyerName;
                     txtTaxCode.Text = value.TaxCode;
                     txtTaxRate.Text = value.TaxRate.ToString();
@@ -221,6 +221,18 @@ namespace Eureka.Froms.Views.Purchasing
             set { pOHeaderModelBindingSource = value; }
         }
 
+        //public double poDiscount
+        //{
+        //    get { return Convert.ToDouble(string.IsNullOrEmpty(txtDiscount.Text) ? "0" : txtDiscount.Text); }
+        //    set { txtDiscount.Text = value.ToString("#,##0.000"); }
+        //}
+
+        //public double poFreight
+        //{
+        //    get { return Convert.ToDouble(string.IsNullOrEmpty(txtFreight.Text) ? "0" : txtFreight.Text); }
+        //    set { txtFreight.Text = value.ToString("#,##0.000"); }
+        //}
+
         public event EventHandler Form_Load;
 
         public event EventHandler Filter_Click;
@@ -257,6 +269,7 @@ namespace Eureka.Froms.Views.Purchasing
         public event EventHandler Refresh_Click;
         public event EventHandler Cancel_Click;
         public event EventHandler Cancel_Line;
+        public event EventHandler LineAdjustment;
 
         public void BindingPO(List<POHeaderModel> list)
         {
@@ -474,7 +487,7 @@ namespace Eureka.Froms.Views.Purchasing
         {
             dgvLine.Columns[0].Visible = false;
             dgvLine.Columns[1].Visible = false;
-            dgvLine.Columns[2].Visible = false;
+            //dgvLine.Columns[2].Visible = false;
             //dgvLine.Columns[3].Visible = false;
             //dgvLine.Columns[4].Visible = false;
             //dgvLine.Columns[5].Visible = false;
@@ -556,6 +569,7 @@ namespace Eureka.Froms.Views.Purchasing
 
             dgvLine.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLine.AllowUserToResizeColumns = true;
+            dgvLine.Columns[2].ReadOnly = true;
             dgvLine.Columns[13].ReadOnly = true;
             dgvLine.Columns[45].ReadOnly = true;
         }
@@ -590,18 +604,18 @@ namespace Eureka.Froms.Views.Purchasing
 
         private void dgvLine_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            var grid = sender as DataGridView;
-            var rowIdx = (e.RowIndex + 1).ToString();
+            //var grid = sender as DataGridView;
+            //var rowIdx = (e.RowIndex + 1).ToString();
 
-            var centerFormat = new StringFormat()
-            {
-                // right alignment might actually make more sense for numbers
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+            //var centerFormat = new StringFormat()
+            //{
+            //    // right alignment might actually make more sense for numbers
+            //    Alignment = StringAlignment.Center,
+            //    LineAlignment = StringAlignment.Center
+            //};
 
-            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+            //var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            //e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
 
         private void printPurchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -637,8 +651,8 @@ namespace Eureka.Froms.Views.Purchasing
 
         private void chkApprovedFlag_CheckedChanged(object sender, EventArgs e)
         {
-            if (Approved_Click != null)
-                Approved_Click(sender, e);
+            //if (Approved_Click != null)
+            //    Approved_Click(sender, e);
         }
 
         public string GetNote()
@@ -765,6 +779,12 @@ namespace Eureka.Froms.Views.Purchasing
 
             if (Cancel_Line != null)
                 Cancel_Line(dgvLine, e);
+        }
+
+        private void mnuLineAdjustment_Click(object sender, EventArgs e)
+        {
+            if (LineAdjustment != null)
+                LineAdjustment(sender, e);
         }
     }
 }
