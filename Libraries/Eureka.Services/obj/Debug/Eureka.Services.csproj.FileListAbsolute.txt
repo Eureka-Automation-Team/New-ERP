@@ -111,3 +111,4 @@ D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Services\obj\Debug\Eureka.Services.c
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Services\obj\Debug\Eureka.Services.csproj.CopyComplete
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Services\obj\Debug\Eureka.Services.dll
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Services\obj\Debug\Eureka.Services.pdb
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Services\obj\Debug\Eureka.Services.csproj.CoreCompileInputs.cache

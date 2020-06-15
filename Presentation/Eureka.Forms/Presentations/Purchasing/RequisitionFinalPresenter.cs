@@ -376,13 +376,20 @@ namespace Eureka.Froms.Presentations.Purchasing
             }
             //Combind Vendor Detail.
             head = CombindVendor(head);
+            CurrencyModel curr = _repoPO.GetToCurrencyByCode(head.CurrencyCode);
+            double rRate = curr.ConversionRate == 0 ? 1 : curr.ConversionRate;
+            DateTime? rRateDate = curr.ConversionDate;
 
-            head.SubTotal = _view.linesSelected.Sum(x => x.ExtendedAmount * (head.Rate == 0 ? 1 : head.Rate));
+            CurrencyModel currHead = _repoPO.GetCurrencyByCode(head.CurrencyCode);
+            head.Rate = currHead.ConversionRate == 0 ? 1 : currHead.ConversionRate;
+            head.RateDate = currHead.ConversionDate;
+
+            head.SubTotal = _view.linesSelected.Sum(x => x.ExtendedAmount * (rRate == 0 ? 1 : rRate));
             head.PoNum = _repoPO.GetDocNoByType(typeLookup);
             head.PoHeaderId = _repoPO.InsertPO(head);
 
             //Validate to Add Line
-            if(head.PoHeaderId != 0)
+            if (head.PoHeaderId != 0)
             {
                 try
                 {
@@ -409,7 +416,7 @@ namespace Eureka.Froms.Presentations.Purchasing
                             pol.CostCode = item.CostCode;                           
                             pol.BOM = item.BomNo;
                             pol.Suplier = item.SuplierSymbol;
-                            pol.BaseUnitPrice = item.FinalUnitPrice * (head.Rate == 0 ? 1 : head.Rate);
+                            pol.BaseUnitPrice = item.FinalUnitPrice * (rRate == 0 ? 1 : rRate);
                             pol.UnitPrice = pol.BaseUnitPrice;// item.FinalUnitPrice * (head.Rate == 0 ? 1 : head.Rate);
                             pol.DueDate = item.DueDate;
                             pol.ECN = item.EcnNo;
@@ -418,6 +425,8 @@ namespace Eureka.Froms.Presentations.Purchasing
                             pol.LeadTime = item.LeadTime;
                             pol.LoadBomDate = item.LoadBomDate;
                             pol.CurrencyCode = head.CurrencyCode;
+
+                            //Ex.rate to THB rate*****************
                             pol.CurrencyRate = head.Rate == 0 ? 1 : head.Rate;
 
                             //Set PO line to Encumbrance => Yes
@@ -487,8 +496,8 @@ namespace Eureka.Froms.Presentations.Purchasing
                     if (curr != null)
                     {
                         po.CurrencyCode = vendor.InvoiceCurrencyCode;
-                        po.Rate = curr.ConversionRate == 0 ? 1 : curr.ConversionRate;
-                        po.RateDate = curr.ConversionDate;
+                        //po.Rate = curr.ConversionRate == 0 ? 1 : curr.ConversionRate;
+                        //po.RateDate = curr.ConversionDate;
                     }
                 }
 

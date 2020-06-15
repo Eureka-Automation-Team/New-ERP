@@ -131,3 +131,4 @@ D:\EUREKA\src\EurekaSystem\Presentation\Eureka.CNC\bin\Debug\MxFwlib32.dll
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.CNC\bin\Debug\STA_MessageQueue.dll
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.CNC\obj\Debug\Eureka.CNC.Views.MachineListForm.resources
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.CNC\obj\Debug\Eureka.CNC.Views.Controls.SingleCalendarForm.resources
+D:\EUREKA\src\EurekaSystem\Presentation\Eureka.CNC\obj\Debug\Eureka.CNC.csproj.CoreCompileInputs.cache

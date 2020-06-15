@@ -121,3 +121,4 @@ D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\bin\Debug\Microsoft.SqlServ
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Inventory.ItemsDupplicateForm.resources
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Security.ChangPassword.resources
 D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.Views.Purchasing.POLineAdjustment.resources
+D:\EUREKA\src\EurekaSystem\Presentation\Eureka.Forms\obj\Debug\Eureka.Forms.csproj.CoreCompileInputs.cache

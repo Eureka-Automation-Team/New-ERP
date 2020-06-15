@@ -10,3 +10,4 @@ D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Data\obj\Debug\Eureka.Data.csproj.Co
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Data\obj\Debug\Eureka.Data.dll
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Data\obj\Debug\Eureka.Data.pdb
 D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Data\obj\Debug\Eureka.Data.csprojAssemblyReference.cache
+D:\EUREKA\src\EurekaSystem\Libraries\Eureka.Data\obj\Debug\Eureka.Data.csproj.CoreCompileInputs.cache
